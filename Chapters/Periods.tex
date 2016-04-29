@@ -1,0 +1,124 @@
+\section{Recovery of periods from {\harps} data}
+\protect\label{section:harps}
+
+{\FirstP} computed periodograms for periods between 40 days and 130 days, in steps of 0.01 days (14 minutes, 20 seconds)
+taking into account the minimum period of 50 days given by \citet{kurster99} and the 82 days of
+\citealt{benedict92,benedict93,benedict98,kiraga07} and the 116.6 days of \citet[Table 3]{suarezmascareno15}. Many of
+the routines reported a large number of strong shorter periods down to 0.01 days, but {\Firstp} discounted these for the
+purposes of this study, given that the main concern was the rotation period and not other much shorter periodic
+behaviour.
+
+Many of the periodograms showed several strong peaks outside the range of 80 to 120 days which were stronger than peaks
+within that range. In some cases, as shown in Table \ref{table:peak5compall} periods reported by others are the
+fourth or fifth strongest peak with stronger peaks in the range 40 to 60 days or greater than 120 days, so {\Firstp}
+decided to note the 5 strongest peaks of the periodograms in most cases.
+
+{\FirstP} tried all the methods described above in Section \ref{section:linemeas} and various combinations thereof. A
+summary of various results is presented in Table \ref{table:peak5compall}.
+
+\section{Periods from EW, {\ha} Index and PR methods}
+\protect\label{section:harpsper}
+
+{\FirstP} computed periodograms from the results for the measures described above in \ref{section:linemeas} using all
+three Lomb-Scargle routines and some results are exhibited in Fig. \ref{fig:harpspgrams1}. Unlike with the {\asas}
+photometry data, the three routines did not yield consistent results. The main results are summarised in Table
+\ref{table:peak5compall}. In the first two panels of Fig. \ref{fig:harpspgrams1} are shown the periodograms for the
+Equivalent Widths and Peak Ratios respectively, processed by {\gatspy}. In the bottom panel of
+Fig. \ref{fig:harpspgrams1} is shown the Peak Ratio results after binning to 1 day, showing a returned period close to
+82.6 days. It was noticeable that the Equivalent Width and {\ha} Index measures delivered almost identical results in
+most cases, particularly with the {\gatspy} routine.
+
+\begin{table}[!htbp]
+\centering
+\scalebox{0.75}{
+\begin{tabular}{|l|l|l|r|r|r|r|r|}
+\hline
+\textbf{Measure}&\textbf{Data treatment} & Routine & \textbf{Peak 1} & \textbf{Peak 2} & \textbf{Peak 3} & \textbf{Peak 4} & \textbf{Peak 5} \\\hline
+\multirow{12}{*}{Equivalent Width}&\multirow{3}{*}{Original data} & \scipy & 116.2 & 41.4 & 52.1 & 46.2 & 48.9 \\
+&& \astroml & 45.0 & 57.6 & 59.4 & 104.2 & 84.4 \\
+&& \gatspy & 49.1 & 41.4 & 49.9 & 57.0 & 116.3 \\\cline{2-8}
+&\multirow{3}{*}{Clipped} & \scipy & 118.4 & 57.7 & 106.8 & 105.3 & 44.9 \\
+&& \astroml & 45.0 & 51.2 & 57.7 & 47.4 & 84.5 \\
+&& \gatspy & 44.9 & 118.4 & 57.8 & 107.2 & 46.4 \\\cline{2-8}
+&\multirow{3}{*}{Binned} & \scipy & 41.4 & 53.2 & 110.5 & 62.6 & 116.1 \\
+&& \astroml & 115.5 & 87.7 & 71.1 & 59.4 & 123.0 \\
+&& \gatspy & 41.4 & 53.2 & 110.5 & 62.6 & 49.9 \\\cline{2-8}
+&\multirow{3}{*}{Clipped/Binned} & \scipy & 45.0 & 59.5 & 71.4 & 89.0 & 109.7 \\
+&& \astroml & 59.5 & 45.0 & 71.3 & 49.9 & 51.2 \\
+&& \gatspy & 45.0 & 59.5 & 71.4 & 89.0 & 107.7 \\\hline
+\multirow{3}{*}{{\ha} Index}&\multirow{3}{*}{Original data} & \scipy & 116.2 & 41.4 & 52.1 & 48.9 & 53.0 \\
+&& \astroml & 45.0 & 51.2 & 57.6 & 84.5 & 116.6 \\
+&& \gatspy & 49.1 & 41.4 & 49.9 & 57.0 & 116.3 \\\hline
+\multirow{12}{*}{Peak Ratios}&\multirow{3}{*}{Original data} & \scipy & 41.9 & 92.4 & 81.1 & 49.7 & 44.1 \\
+&& \astroml & 80.0 & 103.9 & 92.5 & 49.2 & 45.5 \\
+&& \gatspy & 81.0 & 41.9 & 92.4 & 103.9 & 44.1 \\\cline{2-8}
+&\multirow{3}{*}{Clipped} & \scipy & 41.9 & 81.3 & 49.8 & 92.1 & 44.1 \\
+&& \astroml & 49.9 & 41.9 & 91.9 & 101.5 & 58.1 \\
+&& \gatspy & 81.2 & 41.9 & 49.8 & 92.2 & 44.1 \\\cline{2-8}
+&\multirow{3}{*}{Binned} & \scipy & 82.2 & 61.0 & 80.9 & 49.6 & 40.6 \\
+&& \astroml & 71.1 & 115.2 & 80.0 & 91.8 & 123.2 \\
+&& \gatspy & 82.3 & 61.0 & 49.4 & 81.0 & 40.6 \\\cline{2-8}
+&\multirow{3}{*}{Clipped/Binned} & \scipy & 82.2 & 61.1 & 40.5 & 81.0 & 115.8 \\
+&& \astroml & 108.0 & 71.2 & 80.0 & 57.1 & 65.5 \\
+&& \gatspy & 82.2 & 61.1 & 40.5 & 81.0 & 49.3 \\\hline
+\end{tabular}}
+\caption{The five highest peaks from the periodograms are shown, left to right, from various methods of
+  selecting and treating the data and with the 3 Python library routines used to calculate periodograms for, from top to
+  bottom, Equivalent Width, {\ha} Index and Peak Ratios. Periods between 40 days and 130 days are shown. Clipping is
+to below 1 standard deviation from the median and binning is to one day.}
+\protect\label{table:peak5compall}
+\end{table}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.18]{Figures/summpgrams.png} \\
+\end{center}   
+\caption{This figure shows sample periodograms from the {\ha} peak of the {\harps} data, for the range between 40 days
+  and 130 days in steps of 0.01 days. All were made using the {\gatspy} routine.  The top panel shows the periodogram
+  derived from the Equivalent Widths (EW) and the middle and bottom panels ones derived from the Peak Ratios (PR). None
+  have any clipping of data but the bottom panel is binned to 1 day.  The strongest five peaks are marked on the top two
+  panels and the strongest peak of 82.2 days is marked on the bottom panel with the vertical lines.  The results are set
+  out more fully in Table \ref{table:peak5compall}.}
+\protect\label{fig:harpspgrams1}
+\end{figure}
+
+{\FirstP} considered various other treatments of the data prior to obtaining periodograms. One treatment was to obtain
+periodograms of the Equivalent Width and Peak Ratios from the residual spectra after division by the line with the
+lowest equivalent width and also the mean of the lowest five spectra. These spectra were ones timed at 5 April 2011 UTC
+03:26:33 (the lowest), 16 March 2006 UTC 06:37:59, 14 March 2007 UTC 07:28:29, 8 April 2011 UTC 06:28:17 and 22 April
+2011 UTC 05:07:46. {\FirstP} also examined periodograms from the skewness and, following \citet{flores16},
+the kurtosis of the {\ha} peaks before and after clipping and binning. However neither of these measurements proved
+materially different from the other measurements. It was again possible to reproduce the 116-day period of
+\citet{suarezmascareno15} from both the skewness and kurtosis measures.
+
+The periodograms obtained from the {\ha} measurements on the {\harps} data showed a large number of ``beat''
+frequencies. They were taken over 11 years from 2004 to 2014 inclusive, however the bulk of these, 207 out of 260, were
+in 2013 and 2014. It seemed possible if other periodic behaviour was selectively affecting {\ha} as opposed to the
+overall intensity as obtained by \asas, restriction to just the two years might eliminate this. However, on trying this
+did not materially affect the quality of the results from these measurements, although the ``beat'' frequencies were
+reduced somewhat. It was noticeable, however that all the measurements failed to reproduce the 116-day period after a
+different set of observation times was taken, either by selecting only 2013-4 data or by adding in additional
+observational data taken in 2016.
+
+The periodograms obtained for all the methods were similar in general appearance to those in Fig. \ref{fig:harpspgrams1}
+but all with different peaks, apart from the Equivalent Width measure being generally similar to the {\ha} Index as
+Table \ref{table:peak5compall} makes clear. Periods close to the {\asas} or {\hst} results appear more often with the
+Peak Ratio measure, otherwise it was noticeable that periods of around 41 days were revealed in a few places,
+particularly frequently for Peak Ratio. It can be seen that 116.3 days, as found by \citet{suarezmascareno15}, are
+observed in the Equivalent Width and {\ha} Index measure.
+
+In an attempt to remove data contaminated from flares, {\Firstp} clipped spectra with various upper bounds of Equivalent
+Width. As discussed in Section \ref{section:uvesflares}, {\Firstp} decided to select the spectra with the lower 90\% of
+the Equivalent Widths (i.e. removing the 10\% of profiles containing the highest EWs), which was approximately a maximum
+of 1 standard deviation from the median in both the {\harps} and {\uves} data, eliminating the upper 23 spectra from the
+{\harps} data. This was then binned to 1 day, giving a net 55 observation dates. This led to a significant improvement
+in the results particularly from the Peak Ratio measure, as illustrated in the last panel of Fig. \ref{fig:harpspgrams1}
+(although that is binned and not clipped) however no particular improvement was noted in the other measures.  {\FirstP}
+also considered eliminating two very isolated epochs of 25 July 2005 at 23:43:51 and 14 March 2007 at 07:28:29, in case
+these contained contaminating periodic data, but this made no discernible difference to the results. {\FirstP} also
+calculated results for the {\ha} Index but again found the results to be virtually indistinguishable from the Equivalent
+Width results after this process.
+
+Again as with the {\asas} and {\hst} data, {\Firstp} checked for other periodic signals of up to the span of the data,
+but were unable to discern any strong period and in particular no sign of the 442-day period reported in
+\citet{cincunegui07}.
