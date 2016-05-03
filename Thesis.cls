@@ -194,7 +194,7 @@
 
 \newcommand\IfPaper[1]{}
 \newcommand\IfThesis[1]{#1}
-\newcommand\paperorthesis{dissertation}
+\newcommand\paperorthesis{report}
 \newcommand\PaperThesis[2]{#2}
 \newcommand\Firstp{I}
 \newcommand\FirstP{I}
