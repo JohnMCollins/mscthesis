@@ -1,14 +1,21 @@
 \chapter{Spectra of \prox} % Main chapter title
 \protect\label{chapter:proxima}
-\lhead{Chapter 3. \emph{Spectra of \prox}}
+\lhead{Chapter \ref{chapter:proxima}. \emph{Spectra of \prox}}
 
-{\FirstP} looked at two sources of spectra for \prox, the {\uves} spectra taken between 10th and 14th March 2009 studied
-in \citet{fuhrmeister11} and the {\harps} spectra, with 260 data points between May 2004 and January 2014 from the ESO
-archive\footnote{Based on data obtained from the ESO Science Archive Facility from program 072.C-0488(E).}. The {\uves}
-data were obtained with a 0.8/1.10'' slit, yielding a resolution of approximately 60,000, while the resolution of
-{\harps} is approximately 120,000. {\FirstP} also studied the X-ray data from XMM-Newton used in the
-\citet{fuhrmeister11} paper\footnote{Provided by Fuhrmeister, priv. comm.} to identify any association between strong
-X-ray values and possible corresponding changes to the {\ha} profile.
+{\FirstP} looked at two sources of spectra for \prox. Firstly {\Firstp} used the {\uves} spectra taken between 10th and
+14th March 2009 studied in \citet{fuhrmeister11}. The {\uves} data were obtained with a 0.8/1.10'' slit, yielding a
+resolution of approximately 60,000, while the resolution of {\harps} is approximately 120,000. {\FirstP} also studied
+the X-ray data from XMM-Newton used in the \citet{fuhrmeister11} paper\footnote{Provided by Fuhrmeister, priv. comm.} to
+identify any association between strong X-ray values and possible corresponding changes to the {\ha} profile.
+
+Secondly, {\Firstp} took the {\harps} spectra, with 260 data points between May 2004 and January 2014 from the ESO
+archive\footnote{Based on data obtained from the ESO Science Archive Facility from programs 072.C-0488(E),
+  082.C-0718(B), 183.C-0437(A) and 191.C-0505(A).}. Since this {\paperorthesis} was started, 56 additional {\harps} data
+points became available taken between January and March 2016\footnote{Based on data obtained from the ESO Science
+  Archive Facility from programs 096.C-0082(A) through to 096.C-0082(F).}. I used the observation times for the data up
+to January 2014 ``The Original Data'' for the modelling in Chapter \ref{chapter:modelling} and the data for some of the
+results in this chapter, however for the bulk of the results in this chapter are from the ``Full Set'' of observations
+to March 2016.
 
 \section{{\harps} and {\uves} spectra of \prox}
 
@@ -28,9 +35,12 @@ the variations in the line and \horn s to see if periodicity may be reliably rec
 
 In Fig. \ref{fig:harpsfirstha}, on the left panel, {\Firstp} show two example spectra, in this case from {\harps} nearly
 2 years apart, clearly showing the changes in the amplitude and shape of the {\ha} line. Fig. \ref{fig:harpsfirstha}
-also illustrates the regions used to investigate periodic variability. {\FirstP} used the {\harps} data referred to in
-\citet[Table 3]{suarezmascareno15}, which consists of 260 spectra taken between 27 May 2004 and 14 Jan 2014.
-%together wish some additional data collected between 19 Jan 2016 and 30 Mar 2016.
+also illustrates the regions used to investigate periodic variability.
+
+{\FirstP} used the {\harps} data referred to above, initially the original 260 spectra taken between 27 May 2004 and 14
+Jan 2014. This data is used to calculate the periodicity in \citet[Table 3]{suarezmascareno15}. Later the Full Set of
+available data to March 2016 was added.
+
 To calculate the equivalent width, the spectra were normalised by iteratively fitting a cubic polynomial to all the
 points in all the spectra, apart from the {\ha} region, then excluding points outside 2 standard deviations above or
 below the fitted polynomial to eliminate both emission and absorption lines. With the normalised spectra, {\Firstp}
@@ -41,10 +51,8 @@ value of the ``red'' \horn, i.e. that for the longer wavelength, divided by the 
 values of the flux are interpolated up to the boundaries of the regions chosen, to minimise integer pixel noise
 effects. The number of pixels in the regions, as highlighted in Fig. \ref{fig:harpsfirstha} are either 35 or 36 for the
 {\ha} region and 11 or 12 for the red {\horn} and 14 or 15 for the blue {\horn} on {\uves}. The corresponding numbers on
-{\harps} are 98 or 99, 26 or 27 and 27 or 28 respectively.
-% The number of pixels could vary by one due to differing
-% wavelength corrections caused by the heliocentric component of the Radial Velocities. However the interpolation
-% adjustment proved unnecessary for Peak Ratios, being based upon the mean values of the points in the selected ranges.
+{\harps} are 98 or 99, 26 or 27 and 27 or 28 respectively. (The number of pixels could vary by one due to differing
+wavelength corrections caused by the heliocentric component of the Radial Velocities.)
 
 {\FirstP} restricted the {\ha} region for calculation of the Equivalent Width to the minima on either side of the peak
 to that from 6561.917{\AA} to 6563.839\AA) as delineated by the dark red vertical lines. The regions selected for the
@@ -62,9 +70,9 @@ region. (The Gaussian used to simulate {\ha} in that paper is considerably broad
 telluric line at 6564.2{\AA} can impinge on the former.) All the spectral lines identifiable from the Vienna Atomic Line
 Database (VALD) are TiO transitions, with the exception of a MgH line at 6564.29\AA.
 
-% All the spectra showed a prominent TiO absorption line in the region from 6572.468{\AA} to 6573.288{\AA} and this is
-% also highlighted in the right panel of Fig. \ref{fig:harpsfirstha} as the dark green shaded area. {\FirstP} also
-% calculated the Equivalent Width of this region for comparison with the {\ha} Equivalent Width.
+All the spectra showed a prominent TiO absorption line in the region from 6572.468{\AA} to 6573.288{\AA} and this is
+also highlighted in the right panel of Fig. \ref{fig:harpsfirstha} as the dark green shaded area. {\FirstP} also
+calculated the Equivalent Width of this region for comparison with the {\ha} Equivalent Width.
 
 In \citet{suarezmascareno15}, the authors use an \textit{{\ha} index}, based in turn upon the work in
 \citet{gomesdasilva11}, computed by the formula:
@@ -85,7 +93,7 @@ spectra do not have to be normalised for the {\ha} Index calculation.
 The region chosen for calculation of the {\ha} Equivalent Width in this {\paperorthesis} is slightly wider than that
 chosen for the {\ha} index in the \citet{suarezmascareno15}. This was chosen as in {\Firstposs} view it on average
 encompassed the base of the {\ha} peak more accurately. It should be remembered that the regions were chosen from
-normalised spectra in this {\paperorthesis} but from unnormalised spectra for calculating the {\ha} index, which would
+normalised spectra in this {\paperorthesis} but from unnormalised spectra for calculating the {\ha} Index, which would
 appear rather different. In practice there was negligible difference between the calculated results for either method
 using the two pairs of limits.
 
@@ -104,9 +112,8 @@ calculations.
   vertical lines shows the region used for calculation of the {\ha} equivalent width in this \paperorthesis. The regions
   shaded in red and blue respectively show the regions used for calculation of the sizes of the two \horn s. The solid
   vertical green lines and green shaded areas in the right panel show the regions for calculation of the {\ha} index in
-  other papers.% Dotted vertical lines in the left panel are TiO transitions identified from the VALD.
-% the shaded dark green
-%  region in the right panel from 6572.468{\AA} to 6573.288{\AA} show the prominent TiO I transition line referred to in
+  other papers. The shaded dark green region in the right panel from 6572.468{\AA} to 6573.288{\AA} show the prominent
+  TiO I transition line referred to below. FIXME.
 %  section \ref{section:discussion}.
 }
  \protect\label{fig:harpsfirstha}
