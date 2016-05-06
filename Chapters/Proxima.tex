@@ -245,7 +245,7 @@ From & To & No. & EW  & Index & PR \\\hline
 29/06/2008 & 06/04/2010 & 25 & 0.315 $ \pm $ 0.007 & 0.031 $ \pm $ 0.001 & 1.020 $ \pm $ 0.035 \\
 19/02/2011 & 03/06/2011 & 12 & 0.312 $ \pm $ 0.008 & 0.032 $ \pm $ 0.001 & 1.036 $ \pm $ 0.024 \\
 18/01/2013 & 10/01/2014 & 207 & 0.310 $ \pm $ 0.006 & 0.032 $ \pm $ 0.001 & 1.047 $ \pm $ 0.027 \\
-19/01/2016 & 30/03/2016 & 56 & 0.319 $ \pm $ 0.015 & 0.031 $ \pm $ 0.001 & 1.005 $ \pm $ 0.028 \\
+19/01/2016 & 30/03/2016 & 56 & 0.319 $ \pm $ 0.015 & 0.031 $ \pm $ 0.001 & 1.005 $ \pm $ 0.028 \\\hline
 \multicolumn{2}{|c|}{ALL} & 316 & 0.312 $ \pm $ 0.010 & 0.032 $ \pm $ 0.001 & 1.036 $ \pm $ 0.033 \\\hline
 \end{tabular}}
 \caption{Results for calculation of median and standard deviation of the equivalent widths of the TiO transition at 6572.468{\AA} to
@@ -253,8 +253,8 @@ From & To & No. & EW  & Index & PR \\\hline
 \protect\label{table:titable}
 \end{table}
 
-As Table \ref{table:titable} shows, {\Firstp} also considered working with an ``index'' along the same lines as the {\ha}
-Index, but considered the size and variations (0.032 $\pm$ 0.001) were too small to be useful.
+As Table \ref{table:titable} shows, an ``index'' was also considered along the same lines as the {\ha} Index, but the
+size and variations (0.032 $\pm$ 0.001) were far too small to be useful.
 
 \section{Flares on {\uves} data and X-ray values}
 \protect\label{section:uvesflares}
@@ -275,14 +275,15 @@ potentially misleading, so these are re-displayed all to the same scale below in
  \protect\label{fig:uvrxp1}
 \end{figure}
 
-In Fig. \ref{fig:uvrxp1} {\Firstp} noticed that the Peak Ratios for the first day (10 March 2009) seemed to have periodic nature for a portion of
-the plot, as did a much smaller portion of the plot for the third day (14 March 2009). The portion on the first day had
-a strong period of approximately half an hour and the third day a much weaker period of about 20 minutes.  However there
-were no other periods found in the other day of a similar strength or value, either for Peak Ratios or Equivalent
-Widths. However {\Firstp} noted that in \citet[Section 4.1]{barnes14} there is speculation of instrumentation error on
-the first and third days applied to this data. By cross-correlation using the 6565-6585{\AA} region, {\Firstp} shifted
-the spectra to compensate for apparent radial velocity variations. This enables {\Firstobj} to reduce the periodic
-signal in the first day's plot and almost completely in the third day's plot.
+In Fig. \ref{fig:uvrxp1} {\Firstp} it is apparrent that the Peak Ratios for the first day (10 March 2009) seemed to have
+periodic nature for a portion of the plot, as did a much smaller portion of the plot for the third day (14 March
+2009). The portion on the first day had a strong period of approximately half an hour and the third day a much weaker
+period of about 20 minutes.  However there were no other periods found in the other day of a similar strength or value,
+either for Peak Ratios or Equivalent Widths. However it was noted that in \citet[Section 4.1]{barnes14} there is
+speculation of instrumentation error on the first and third days applied to this data. By cross-correlation using the
+6565-6585{\AA} region, it is possible to shift the spectra to compensate for apparent radial velocity variations. This
+enables the periodic signal to be reduced substantially in the first day's plot and almost completely in the third day's
+plot.
 
 %As these periods were not directly relevant to this project, focusing on the rotation period of
 %\prox, {\Firstp} decided not to investigate this particular possible behaviour further until appropriate data is
@@ -303,39 +304,44 @@ minimised if the proportion of data with the lower 90\% of Equivalent Widths wer
 this was approximately one standard deviation from the median, 2.0 in the case of {\uves} and 3.8 in the case of
 {\harps}.
 
-The {\harps} data contains four spectra with large values of Equivalent Width at 16 July 2004 UTC 01:52:40, 27 March
-2011 UTC 05:20:09, 05 May 2013 UTC 03:31:16 and 5 May 2013 UTC 03:41:47 with values of 21.69, 18.12, 6.76 and 6.19
-respectively.  {\FirstP} also noted that these spectra had a noticeable He-6678 line associated with these which appears
-at first analysis to disappear rapidly after the peaks, not appearing significantly on higher {\ha} Equivalent Width
-values outside those four spectra, suggesting that those four might be major flares.
+The {\harps} data contains seven spectra with particularly large values of Equivalent Width of over 6.000, listed in
+Table \ref{table:excessews}.  Following \citet[fig. 8]{fuhrmeister08} in relation to flares on CN Leonis, the He-6678
+line Equivalent Widths were also calculated and are also included in that table. It was noticeable that only a few
+spectra had any significant He-6678 activity, only seven spectra had Equivalent Widths greater than one standard
+deviation of 0.059 above the median of 0.054, which are listed in the table. If these are clipped from the He-6678
+results, the standard deviation of the He-6678 line Equivalent Widths sinks to 0.10. In Fig. \ref{fig:dualews} the
+Equivalent Widths for {\ha} and He-6678 are plotted against each other for each of the three years 2013, 2014 and
+2016, showing the correlation only when the {\ha} line is maximal.
 
 \begin{table}[!htbp]
 \centering
 \scalebox{0.75}{
 \begin{tabular}{|l|r|r|}
 \hline
-Epoch & EW & He-6678 \\\hline
+Epoch & \multicolumn{1}{|c|}{EW} & He-6678 \\\hline
 18/03/2016 UTC 08:59:02 & 23.991 & 0.853 \\
 16/07/2004 UTC 01:52:40 & 21.693 & 0.312 \\
 27/03/2011 UTC 05:20:09 & 18.123 & 0.591 \\
-31/01/2016 UTC 08:51:35 & 7.298 & 0.099 \\
-26/02/2016 UTC 09:07:05 & 6.898 & 0.110 \\
+31/01/2016 UTC 08:51:35 & 7.298 & *0.099 \\
+26/02/2016 UTC 09:07:05 & 6.898 & *0.110 \\
 05/05/2013 UTC 03:31:16 & 6.756 & 0.276 \\
 05/05/2013 UTC 03:41:47 & 6.192 & 0.177 \\\hline
+14/05/2013 UTC 06:07:49 & $\dagger$5.425 & 0.115 \\
+05/05/2013 UTC 03:53:13 & $\dagger$5.786 & 0.114 \\\hline
 \end{tabular}}
-\caption{The seven spectra with Equivalent Widths over 6, in descending order.}
+\caption{The seven spectra with Equivalent Widths over 6.000, in descending order, also showing the values of the
+  Equivalent Width and that of the He-6678 absorption line. Five spectra have the one of the seven strongest {\ha} lines
+  and also one of the seven strongest {\ha} lines. The two He-6678 Equivalent Widths marked with * are where the spectra
+  have one of the seven strongest {\ha} lines but are not in the seven strongest He-6678 lines and vice versa for the
+  two lines at the bottom of the table marked with $\dagger$.}
 \protect\label{table:excessews}
 \end{table}
-
-Regarding these lines find that the He-6678
-line, highlighted in \citet[fig. 8]{fuhrmeister08} in relation to flares on CN Leonis, is visible in the spectra with
-{\ha} Equivalent values of above 5.5, including the seven lines omitted. A comparison is shown in Fig. \ref{fig:dualews}.
 
 \begin{figure}[!htbp]
 \begin{center}
 \includegraphics[scale=0.18]{Figures/dualcomb.png} \\
 \end{center}   
 \caption{The plots show the {\ha} Equivalent Width in black and the He-6678 Equivalent Widths in blue for the {\harps}
-  observations in the years 2013, 2014 and 2015.}
+  observations in the years 2013, 2014 and 2015. Vertical scales for {\ha} and for He-6678 are the same in each plot.}
  \protect\label{fig:dualews}
 \end{figure}
