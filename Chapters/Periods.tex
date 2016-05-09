@@ -1,23 +1,19 @@
 \section{Recovery of periods from {\harps} data}
-\protect\label{section:harps}
-
-{\FirstP} computed periodograms for periods between 40 days and 130 days, in steps of 0.01 days (14 minutes, 20 seconds)
-taking into account the minimum period of 50 days given by \citet{kurster99} and the 82 days of
-\citealt{benedict92,benedict93,benedict98,kiraga07} and the 116.6 days of \citet[Table 3]{suarezmascareno15}. Many of
-the routines reported a large number of strong shorter periods down to 0.01 days, but {\Firstp} discounted these for the
-purposes of this study, given that the main concern was the rotation period and not other much shorter periodic
-behaviour.
-
-Many of the periodograms showed several strong peaks outside the range of 80 to 120 days which were stronger than peaks
-within that range. In some cases, as shown in Table \ref{table:peak5compall} periods reported by others are the
-fourth or fifth strongest peak with stronger peaks in the range 40 to 60 days or greater than 120 days, so {\Firstp}
-decided to note the 5 strongest peaks of the periodograms in most cases.
-
-{\FirstP} tried all the methods described above in Section \ref{section:linemeas} and various combinations thereof. A
-summary of various results is presented in Table \ref{table:peak5compall}.
-
-\section{Periods from various line measurements}
 \protect\label{section:harpsper}
+
+Periodograms were generated for periods between 40 days and 130 days, in steps of 0.01 days (14 minutes, 20 seconds)
+taking into account the 41.3 days of \citet{benedict93}, the minimum period of 50 days given by \citet{kurster99}, the
+82 days of \citealt{benedict92,benedict98,kiraga07} and the 116.6 days of \citet[Table 3]{suarezmascareno15}. Many of
+the routines reported a plethora of strong shorter periods down to 0.01 days, but these were discounted these for the
+purposes of this study, given that the main concern was the rotation period and not other much shorter periodic
+behaviour. The erratic behaviour of the periodograms below about 40 days make it impractical to extend the search down
+to include the 31.5 days of \citet{guinan96}. Many of the periodograms showed several strong peaks all over the range
+searched, with periods reported by others the fourth or fifth strongest peak, so the tables below show the 5 strongest
+peaks in all cases. Listed below are results from all the methods described in Sections \ref{section:linemeas} and
+\ref{section:alternativelines} with combinations where appropriate.
+
+\subsection{Equivalent Width measurements}
+\protect\label{section:ewper}
 
 {\FirstP} computed periodograms from the results for the measures described above in \ref{section:linemeas} using all
 three Lomb-Scargle routines and some results are exhibited in Fig. \ref{fig:harpspgrams1}. Unlike with the {\asas}
@@ -81,6 +77,21 @@ to below 1 standard deviation from the median and binning is to one day.}
   out more fully in Table \ref{table:peak5compall}.}
 \protect\label{fig:harpspgrams1}
 \end{figure}
+
+\subsection{{\ha} Index Measurements}
+\protect\label{section:haiper}
+
+\subsection{Peak Ratio Measurements}
+\protect\label{section:priper}
+
+\subsection{Periods from Residual spectra}
+\protect\label{section:residualper}
+
+\subsection{Skewness and Kurtosis measurements}
+\protect\label{section:skewkurtper}
+
+\subsection{TiO line and combined lines}
+\protect\label{section:tioper}
 
 {\FirstP} considered various other treatments of the data prior to obtaining periodograms. One treatment was to obtain
 periodograms of the Equivalent Width and Peak Ratios from the residual spectra after division by the line with the
