@@ -1,0 +1,30 @@
+#! /bin/bash
+
+PERIODS=40d:.01d:130d
+export PERIODS
+
+ORIGSPI=../../Workspace/Prox-HARPS.spi
+FULLSPI=../../Workspace/Prox-AllHARPS.spi
+
+Btchewcalc --interp --out Orig.ew $ORIGSPI
+Btchewcalc --interp --out Full.ew $FULLSPI
+
+Pruneew --upper 1 --lower 400 --median Orig.ew Pruneorig.ew
+Pruneew --upper 1 --lower 400 --median Full.ew Prunefull.ew
+
+Bucketew --sepdays 1 --lonely 300 Orig.ew Bucketorig.ew
+Bucketew --sepdays 1 --lonely 300 Full.ew Bucketfull.ew
+
+Bucketew --sepdays 1 --lonely 300 Pruneorig.ew PBorig.ew
+Bucketew --sepdays 1 --lonely 300 Prunefull.ew PBfull.ew
+
+for typ in Orig Pruneorig Bucketorig PBorig Full Prunefull Bucketfull PBfull
+do
+	lsconv --out $typ.ls $typ.ew &
+	Alsconv --out $typ.als $typ.ew &
+	Glsconv --out $typ.gls $typ.ew &
+done
+
+wait
+rm -f *.ew
+
