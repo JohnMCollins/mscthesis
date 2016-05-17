@@ -1,0 +1,54 @@
+#! /bin/bash
+
+PERIODS=40d:.01d:130d
+export PERIODS
+
+ORIGSPI=../../Workspace/Prox-HARPS.spi
+FULLSPI=../../Workspace/Prox-AllHARPS.spi
+
+Btchewcalc --rangename TiO --peakranges tiprb,tiprr --interp --out Orig.ew $ORIGSPI
+Btchewcalc --rangename TiO --peakranges tiprb,tiprr --interp --out Full.ew $FULLSPI
+Bucketew --sepdays 1 --lonely 300 Orig.ew Bucketorig.ew
+Bucketew --sepdays 1 --lonely 300 Full.ew Bucketfull.ew
+
+for sumt in ew pr
+do
+	for typ in Orig Bucketorig Full Bucketfull
+	do
+		lsconv --type $sumt --out $typ$sumt.ls $typ.ew &
+		Alsconv --type $sumt --out $typ$sumt.als $typ.ew &
+		Glsconv --type $sumt --out $typ$sumt.gls $typ.ew &
+	done
+done
+wait
+
+prow()
+{
+	typ="$1"
+	descr1="$2"
+	descr2="$3"
+	descr3="$4"
+	echo "$descr1 & \\scipy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
+	echo "$descr2 & \\astroml & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
+	echo "$descr3 & \\gatspy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
+}
+
+echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\hline'
+echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+prow Origew "Original data" "EW" ""
+prow Bucketorigew "Original data" "EW" "Binned"
+prow Origpr "Original data" "PR" ""
+prow Bucketorigpr "Original data" "PR" "binned"
+prow Fullew "Full data" "EW" ""
+prow Bucketfullew "Full data" "EW" "Binned"
+prow Fullpr "Full data" "PR" ""
+prow Bucketfullpr "Full data" "PR" "binned"
+
+echo '\end{tabular}'
+echo
+echo
+
+rm -f *.ew *.ls *.als *.gls
+
+

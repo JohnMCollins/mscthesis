@@ -23,9 +23,9 @@ Bucketew --sepdays 1 --lonely 300 Prunefull.ew PBfull.ew
 
 for typ in Orig Pruneorig Bucketorig PBorig origresid Full Prunefull Bucketfull PBfull fullresid
 do
-	lsconv --out $typ.ls $typ.ew &
-	Alsconv --out $typ.als $typ.ew &
-	Glsconv --out $typ.gls $typ.ew &
+	lsconv --type pr --out $typ.ls $typ.ew &
+	Alsconv --type pr --out $typ.als $typ.ew &
+	Glsconv --type pr --out $typ.gls $typ.ew &
 done
 wait
 

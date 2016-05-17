@@ -1,0 +1,39 @@
+#! /bin/bash
+
+PERIODS=40d:.01d:130d
+export PERIODS
+
+ORIGSPI=../../Workspace/Prox-HARPS.spi
+FULLSPI=../../Workspace/Prox-AllHARPS.spi
+
+Harpsind --out Orig.ew $ORIGSPI
+Harpsind --out Full.ew $FULLSPI
+
+for typ in Orig Full
+do
+	lsconv --out $typ.ls $typ.ew &
+	Alsconv --out $typ.als $typ.ew &
+	Glsconv --out $typ.gls $typ.ew &
+done
+wait
+
+prow()
+{
+	typ="$1"
+	descr1="$2"
+	descr2="$3"
+	descr3="$4"
+	echo "$descr1 & \\scipy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
+	echo "$descr2 & \\astroml & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
+	echo "$descr3 & \\gatspy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
+}
+
+echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\hline'
+echo '\textbf{Data}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+prow Orig "Set to 2014" "" ""
+prow Full "Full Set" "" ""
+echo '\end{tabular}'
+
+rm -f *.ew *.ls *.als *.gls
+

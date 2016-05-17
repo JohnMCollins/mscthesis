@@ -1,0 +1,119 @@
+#! /bin/bash
+
+PERIODS=40d:.01d:130d
+export PERIODS
+
+ORIGSPI=../../Workspace/Prox-HARPS.spi
+FULLSPI=../../Workspace/Prox-AllHARPS.spi
+
+Btchewcalc --interp --out Orig.ew $ORIGSPI
+Btchewcalc --interp --out Full.ew $FULLSPI
+
+Kurtcalc --out Orig_ks.ew $ORIGSPI
+Kurtcalc --out Full_ks.ew $FULLSPI
+
+Mergeew Orig.ew:1 Orig_ks.ew:1 Orig.ew:3 Orig_skew.ew
+Mergeew Full.ew:1 Full_ks.ew:1 Full.ew:3 Full_skew.ew
+Mergeew Orig.ew:1 Orig_ks.ew:2 Orig.ew:3 Orig_kurt.ew
+Mergeew Full.ew:1 Full_ks.ew:2 Full.ew:3 Full_kurt.ew
+
+Btchewcalc --interp --divspec 48 8 11 49 51 --out origresid.ew $ORIGSPI
+Btchewcalc --interp --divspec 48 8 11 49 51 --out fullresid.ew $FULLSPI
+
+Kurtcalc --divspec 48 8 11 49 51 --out orig_resid_ks.ew $ORIGSPI
+Kurtcalc --divspec 48 8 11 49 51 --out full_resid_ks.ew $FULLSPI
+
+Mergeew origresid.ew:1 orig_resid_ks.ew:1 origresid.ew:3 orig_resid_skew.ew
+Mergeew fullresid.ew:1 full_resid_ks.ew:1 fullresid.ew:3 full_resid_skew.ew
+Mergeew origresid.ew:1 orig_resid_ks.ew:2 origresid.ew:3 orig_resid_kurt.ew
+Mergeew fullresid.ew:1 full_resid_ks.ew:2 fullresid.ew:3 full_resid_kurt.ew
+
+Pruneew --upper 1 --lower 400 --median Orig_skew.ew Pruneorigskew.ew
+Pruneew --upper 1 --lower 400 --median Full_skew.ew Prunefullskew.ew
+Pruneew --upper 1 --lower 400 --median Orig_kurt.ew Pruneorigkurt.ew
+Pruneew --upper 1 --lower 400 --median Full_kurt.ew Prunefullkurt.ew
+
+Bucketew --sepdays 1 --lonely 300 Orig_skew.ew Bucketorigskew.ew
+Bucketew --sepdays 1 --lonely 300 Full_skew.ew Bucketfullskew.ew
+Bucketew --sepdays 1 --lonely 300 Orig_kurt.ew Bucketorigkurt.ew
+Bucketew --sepdays 1 --lonely 300 Full_kurt.ew Bucketfullkurt.ew
+
+Bucketew --sepdays 1 --lonely 300 Pruneorigskew.ew PBorigskew.ew
+Bucketew --sepdays 1 --lonely 300 Prunefullskew.ew PBfullskew.ew
+Bucketew --sepdays 1 --lonely 300 Pruneorigkurt.ew PBorigkurt.ew
+Bucketew --sepdays 1 --lonely 300 Prunefullkurt.ew PBfullkurt.ew
+
+for ks in skew kurt
+do
+	for typ in Orig_ Pruneorig Bucketorig PBorig orig_resid_ Full_ Prunefull Bucketfull PBfull full_resid_
+	do
+		lsconv --type ps --out $typ$ks.ls $typ$ks.ew &
+		Alsconv --type ps --out $typ$ks.als $typ$ks.ew &
+		Glsconv --type ps --out $typ$ks.gls $typ$ks.ew &
+	done
+done
+wait
+
+prow()
+{
+	typ="$1"
+	descr1="$2"
+	descr2="$3"
+	descr3="$4"
+	echo "$descr1 & \\scipy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
+	echo "$descr2 & \\astroml & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
+	echo "$descr3 & \\gatspy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
+}
+
+echo '% Skew originals'
+echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\hline'
+echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+prow Orig_skew "None" "" ""
+prow Pruneorigskew "Clipped" "" ""
+prow Bucketorigskew "Binned" "" ""
+prow PBorigskew "Clipped" "binned" ""
+prow orig_resid_skew "Residuals" "" ""
+echo '\end{tabular}'
+echo
+echo
+echo '% Kurt originals'
+echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\hline'
+echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+prow Orig_kurt "None" "" ""
+prow Pruneorigkurt "Clipped" "" ""
+prow Bucketorigkurt "Binned" "" ""
+prow PBorigkurt "Clipped" "binned" ""
+prow orig_resid_kurt "Residuals" "" ""
+echo '\end{tabular}'
+echo
+echo
+echo '% Skew full'
+echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\hline'
+echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+prow Full_skew "None" "" ""
+prow Prunefullskew "Clipped" "" ""
+prow Bucketfullskew "Binned" "" ""
+prow PBfullskew "Clipped" "binned" ""
+prow full_resid_skew "Residuals" "" ""
+echo '\end{tabular}'
+echo
+echo
+echo '% Kurt full'
+echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\hline'
+echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+prow Full_kurt "None" "" ""
+prow Prunefullkurt "Clipped" "" ""
+prow Bucketfullkurt "Binned" "" ""
+prow PBfullkurt "Clipped" "binned" ""
+prow full_resid_kurt "Residuals" "" ""
+echo '\end{tabular}'
+echo
+echo
+
+rm -f *.ew *.ls *.als *.gls
+
+
