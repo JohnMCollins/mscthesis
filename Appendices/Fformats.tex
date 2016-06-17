@@ -1,0 +1,43 @@
+\chapter{File formats} % Main appendix title
+\protect\label{chapter:fformats}
+\lhead{Appendix \ref{chapter:fformats}. \emph{File Formats}}
+
+The software developed uses the following file formats.
+
+\section{Spectral Information File}
+\protect\label{section:specinfofmt}
+
+The spectral information file, \texttt{specinfo}, is an XML file used to record the directory in which spectral
+observations are held and collate continuum normalisation, details of ranges, etc.
+
+A selection of software was developed to manipulate these files, including in particular \textbf{Sdadmin}, which
+provides for interactive adjustment of the ranges.
+
+\section{Equivalent Width Files}
+\protect\label{section:ewfmt}
+
+The software developed for processing Equivalent Widths and Peak Ratios uses an 8-column file format with the following
+fields in each row.
+
+\begin{enumerate}
+
+\item Observation date, the Julian Date of the observation.
+
+\item Barycentric Julian date of the observation. (In the case of models, this is a duplicate of column 1).
+
+\item Equivalent Width, as calculated.
+
+\item Calculated error on Equivalent Width.
+
+\item (Now unused) a former measure, abandoned, called ``Peak Size''.
+
+\item Error on previous column.
+
+\item Peak Ratio as calculated.
+
+\item Calculated error on Peak Ratio.
+
+\end{enumerate}
+ 
+``Short-cut'' options to some of the software take arguments \texttt{--type ew} or \texttt{--type pr} to select the
+columns for Equivalent Width or Peak Ratio respectively\footnote{Plus \texttt{--type ps} to select the now unused column}.

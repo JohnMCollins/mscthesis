@@ -1,9 +1,19 @@
 \section{Recovery of periods from {\harps} data}
 \protect\label{section:harpsper}
 
+After deriving the various measures described in \ref{section:linemeas}, attempts were made to derive periodograms, on
+the basis that the ``correct'' result was 82.6 days. As discussed in Appendix \ref{chapter:lsroutines}, all the routines
+tried gave different results for all the measures. The {\numrecs} routine, which does not allow easy selection of trial
+periods, usually did not find other than short periods of under 10 days. On the rare occasions where longer periods were
+found, the reported FAP was 1.0 or very close.
+
+As a result the three Python routines were used and the results compared. The periodograms were all ``noise like'' under
+about 40 days, so that had to be selected as a lower limit. For similar reasons 130 days had to be selected as an upper
+limit. This encompassed the 41.3 days of \citet{benedict93}, although this looks very likely to be a half-period alias,
+through to the 116.6 days of \citet[Table 3]{suarezmascareno15}.
 Periodograms were generated for periods between 40 days and 130 days, in steps of 0.01 days (14 minutes, 20 seconds)
 taking into account the 41.3 days of \citet{benedict93}, the minimum period of 50 days given by \citet{kurster99}, the
-82 days of \citealt{benedict92,benedict98,kiraga07} and the 116.6 days of \citet[Table 3]{suarezmascareno15}. Many of
+82 days of \citealt{benedict92,benedict98,kiraga07} and the 116.6 days of Many of
 the routines reported a plethora of strong shorter periods down to 0.01 days, but these were discounted these for the
 purposes of this study, given that the main concern was the rotation period and not other much shorter periodic
 behaviour. The erratic behaviour of the periodograms below about 40 days make it impractical to extend the search down
@@ -17,53 +27,12 @@ peaks in all cases. Listed below are results from all the methods described in S
 
 {\FirstP} computed periodograms from the results for the measures described above in \ref{section:linemeas} using all
 three Lomb-Scargle routines and some results are exhibited in Fig. \ref{fig:harpspgrams1}. Unlike with the {\asas}
-photometry data, the three routines did not yield consistent results. The main results are summarised in Table
-\ref{table:peak5compall}. In the first two panels of Fig. \ref{fig:harpspgrams1} are shown the periodograms for the
+photometry data, the three routines did not yield consistent results. The main results are summarised in Appendix \ref{chapter:pgramdetail}. In the first two panels of Fig. \ref{fig:harpspgrams1} are shown the periodograms for the
 Equivalent Widths and Peak Ratios respectively, processed by {\gatspy}. In the bottom panel of
 Fig. \ref{fig:harpspgrams1} is shown the Peak Ratio results after binning to 1 day, showing a returned period close to
 82.6 days. It was noticeable that the Equivalent Width and {\ha} Index measures delivered almost identical results in
 most cases, particularly with the {\gatspy} routine.
 
-\begin{table}[!htbp]
-\centering
-\scalebox{0.75}{
-\begin{tabular}{|l|l|l|r|r|r|r|r|}
-\hline
-\textbf{Measure}&\textbf{Data treatment} & \textbf{Routine} & \textbf{Peak 1} & \textbf{Peak 2} & \textbf{Peak 3} & \textbf{Peak 4} & \textbf{Peak 5} \\\hline
-\multirow{12}{*}{Equivalent Width}&\multirow{3}{*}{Original data} & \scipy & 116.2 & 41.4 & 52.1 & 46.2 & 48.9 \\
-&& \astroml & 45.0 & 57.6 & 59.4 & 104.2 & 84.4 \\
-&& \gatspy & 49.1 & 41.4 & 49.9 & 57.0 & 116.3 \\\cline{2-8}
-&\multirow{3}{*}{Clipped} & \scipy & 118.4 & 57.7 & 106.8 & 105.3 & 44.9 \\
-&& \astroml & 45.0 & 51.2 & 57.7 & 47.4 & 84.5 \\
-&& \gatspy & 44.9 & 118.4 & 57.8 & 107.2 & 46.4 \\\cline{2-8}
-&\multirow{3}{*}{Binned} & \scipy & 41.4 & 53.2 & 110.5 & 62.6 & 116.1 \\
-&& \astroml & 115.5 & 87.7 & 71.1 & 59.4 & 123.0 \\
-&& \gatspy & 41.4 & 53.2 & 110.5 & 62.6 & 49.9 \\\cline{2-8}
-&\multirow{3}{*}{Clipped/Binned} & \scipy & 45.0 & 59.5 & 71.4 & 89.0 & 109.7 \\
-&& \astroml & 59.5 & 45.0 & 71.3 & 49.9 & 51.2 \\
-&& \gatspy & 45.0 & 59.5 & 71.4 & 89.0 & 107.7 \\\hline
-\multirow{3}{*}{{\ha} Index}&\multirow{3}{*}{Original data} & \scipy & 116.2 & 41.4 & 52.1 & 48.9 & 53.0 \\
-&& \astroml & 45.0 & 51.2 & 57.6 & 84.5 & 116.6 \\
-&& \gatspy & 49.1 & 41.4 & 49.9 & 57.0 & 116.3 \\\hline
-\multirow{12}{*}{Peak Ratios}&\multirow{3}{*}{Original data} & \scipy & 41.9 & 92.4 & 81.1 & 49.7 & 44.1 \\
-&& \astroml & 80.0 & 103.9 & 92.5 & 49.2 & 45.5 \\
-&& \gatspy & 81.0 & 41.9 & 92.4 & 103.9 & 44.1 \\\cline{2-8}
-&\multirow{3}{*}{Clipped} & \scipy & 41.9 & 81.3 & 49.8 & 92.1 & 44.1 \\
-&& \astroml & 49.9 & 41.9 & 91.9 & 101.5 & 58.1 \\
-&& \gatspy & 81.2 & 41.9 & 49.8 & 92.2 & 44.1 \\\cline{2-8}
-&\multirow{3}{*}{Binned} & \scipy & 82.2 & 61.0 & 80.9 & 49.6 & 40.6 \\
-&& \astroml & 71.1 & 115.2 & 80.0 & 91.8 & 123.2 \\
-&& \gatspy & 82.3 & 61.0 & 49.4 & 81.0 & 40.6 \\\cline{2-8}
-&\multirow{3}{*}{Clipped/Binned} & \scipy & 82.2 & 61.1 & 40.5 & 81.0 & 115.8 \\
-&& \astroml & 108.0 & 71.2 & 80.0 & 57.1 & 65.5 \\
-&& \gatspy & 82.2 & 61.1 & 40.5 & 81.0 & 49.3 \\\hline
-\end{tabular}}
-\caption{The five highest peaks from the periodograms are shown, left to right, from various methods of
-  selecting and treating the data and with the 3 Python library routines used to calculate periodograms for, from top to
-  bottom, Equivalent Width, {\ha} Index and Peak Ratios. Periods between 40 days and 130 days are shown. Clipping is
-to below 1 standard deviation from the median and binning is to one day.}
-\protect\label{table:peak5compall}
-\end{table}
 
 \begin{figure}[!htbp]
 \begin{center}

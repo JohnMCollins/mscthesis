@@ -1,0 +1,84 @@
+\chapter{Lomb-Scargle Routines} % Main appendix title
+\protect\label{chapter:lsroutines}
+\lhead{Appendix \ref{chapter:lsroutines}. \emph{Lomb-Scargle Routines}}
+
+A selection of Lomb-Scargle routines were employed to process the data in this {\paperorthesis} as no single routine
+provided all the facilities needed. As many of the processes undertaken were repetitive in order to produce the tables
+for example in Appendix \ref{chapter:pgramdetail}, routines which could operate in ``batch'' mode were required. This
+ruled out using Systemic\footnote{Obtainable from http://www.stefanom.org}, for example, which has a GUI interface.
+
+\section{Numerical Recipes}
+
+The Lomb-Scargle routine in the {\numrecs} routines\footnote{This can be obtained from http://numerical-recipes/
+  in C and Fortran} was valuable in that it generates False Alarm Probabilities. The routine was enhanced for this
+{\paperorthesis} to extend to all the peaks found rather than just the maximum peak.
+
+The main benefit with {\numrecs} is that with this routine clear False Alarm Probabilities may be calculated, but a
+drawback is that there is comparatively little control over the periods examined. Some tuning of the oversampling factor
+and the maximum multiple of the Nyquist frequency may enable periods of interest to be recovered, but for many of the
+spectrographic datasets studied in this {\paperorthesis} such as the {\harps} ones in Section \ref{section:harpsper}
+there are dominant apparent periods of 2 days or less which swamp the results and which the routine homes in
+upon. Sometimes a careful choice of binning can improve this, but at the cost of losing too many data points.
+
+However in the case of the photometric results in Chapter \ref{chapter:photometry} the predominant peaks, found by this
+routine, are the ones of interest and a good estimate of the FAP is returned.
+
+\section{Scipy, AstroML, Gatspy}
+
+Also used were the Python Lomb-Scargle routines provided by {\scipy} library \citep{jones01}, the {\astroml} library,
+\citep{vanderplas12} and the {\gatspy} library, \citep{vanderplas15} and incorporated into Python software.
+
+The main benefit of these routines is that the periods to be considered may be specified explicitly. However the
+drawback is no FAP is calculated.
+
+If was found that with the photometric results in Chapter \ref{chapter:photometry} where the {\numrecs} routines gave a
+clear result and low FAP found, these routines returned identical results, but in the cases where the {\numrecs}
+routines did not find the periods sought, such as for the photometric and modelling data, these routines all gave
+differing results. In a few cases the {\scipy} library version gave division-by-zero errors and similar, hence the other
+two routines were generally preferred. However when the {\scipy} library did work, the results tended to agree more with
+the {\gatspy} routine than the {\astroml} routine, so in most cases the {\gatspy} routine was used.
+
+\section{Programs and usage}
+
+The {\numrecs} program takes 5 arguments.
+
+\begin{enumerate}
+
+\item The input file which should be 2-column rows of time and intensity. The program \textbf{Colselect} may be used to
+  select the required columns from a multi-column file.
+
+\item The output file in 3 columns, period, power and FAP.
+
+\item The oversampling factor, a float.
+
+\item The highest multiple of the Nyquist frequency, a float.
+
+\item A scaling factor, usually 1.0, which may be applied increase or reduce the differences between the times and then
+  adjust the results. In some cases this can cause better results to be produced.
+
+\end{enumerate}
+
+The {\scipy}, {\astroml} and {\gatspy} programs, \textbf{Lspfind}, \textbf{Alspfind} and \textbf{Glspfind} take a
+variety of keyword arguments of which the most important are:
+
+\begin{description}
+
+\item[\tt{--period}] Specifies the period range to search in the form start:interval:stop, for example
+  \texttt{40d:.01d:130d}. The values are specified as a floating-point number followed by \texttt{d} to denote days or \texttt{h} to
+  denote hours. If this is not specified, then the environment variable \texttt{PERIODS} is interrogated for a string of
+  similar format.
+
+\item[\tt{--outfile}] Specifies the output file as the three column format as for the {\numrecs} routine.
+
+\item[\tt{--icol}] Specifies the column of the input file, numbered from zero, to use for the intensity value, defaulting to
+  1.
+
+\item[\tt{--tcol}] Specifies the column of the input file, numbered from zero, to use for the times, defaulting to 0.
+
+\end{description}
+
+A final argument specifies the input file.
+
+Alternative versions of the programs, \textbf{Lsconv}, \textbf{Alsconv} and \textbf{Glsconv} are provided for quickly
+processing Equivalent Width result files described in \ref{section:ewfmt}, taking the argument \texttt{--type} with value \texttt{EW} or \texttt{PR} to
+select the appropriate column\footnote{Together with \texttt{PS} to select the now unused column.}.

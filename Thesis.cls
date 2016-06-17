@@ -155,6 +155,7 @@
 \usepackage{rotating}
 \usepackage{listings}
 \usepackage{styles/lstpatch}
+%\usepackage{enumitem}
 \lstset{captionpos=b,
         frame=tb,
         basicstyle=\scriptsize\ttfamily,
@@ -250,6 +251,7 @@
 \newcommand{\vlt}{{\sc vlt}}
 \newcommand{\hst}{{\sc hst}}
 
+\newcommand{\numrecs}{\textit{Numerical Recipes}}
 \newcommand{\scipy}{{\sc scipy}}
 \newcommand{\astroml}{{\sc astroml}}
 \newcommand{\gatspy}{{\sc gatspy}}
