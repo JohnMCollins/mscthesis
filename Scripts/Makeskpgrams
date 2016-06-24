@@ -30,22 +30,36 @@ Mergeew fullresid.ew:1 full_resid_ks.ew:2 fullresid.ew:3 full_resid_kurt.ew
 
 Pruneew --upper 1 --lower 400 --median Orig_skew.ew Pruneorigskew.ew
 Pruneew --upper 1 --lower 400 --median Full_skew.ew Prunefullskew.ew
+Pruneew --upper 3.8 --lower 0 --byval Full_skew.ew Prune3p8fullskew.ew
 Pruneew --upper 1 --lower 400 --median Orig_kurt.ew Pruneorigkurt.ew
 Pruneew --upper 1 --lower 400 --median Full_kurt.ew Prunefullkurt.ew
+Pruneew --upper 3.8 --lower 0 --byval Full_kurt.ew Prune3p8fullkurt.ew
 
 Bucketew --sepdays 1 --lonely 300 Orig_skew.ew Bucketorigskew.ew
 Bucketew --sepdays 1 --lonely 300 Full_skew.ew Bucketfullskew.ew
 Bucketew --sepdays 1 --lonely 300 Orig_kurt.ew Bucketorigkurt.ew
 Bucketew --sepdays 1 --lonely 300 Full_kurt.ew Bucketfullkurt.ew
+Bucketew --sepdays .5 --lonely 300 Orig_skew.ew Bucketp5origskew.ew
+Bucketew --sepdays .5 --lonely 300 Full_skew.ew Bucketp5fullskew.ew
+Bucketew --sepdays .5 --lonely 300 Orig_kurt.ew Bucketp5origkurt.ew
+Bucketew --sepdays .5 --lonely 300 Full_kurt.ew Bucketp5fullkurt.ew
 
 Bucketew --sepdays 1 --lonely 300 Pruneorigskew.ew PBorigskew.ew
 Bucketew --sepdays 1 --lonely 300 Prunefullskew.ew PBfullskew.ew
+Bucketew --sepdays 1 --lonely 300 Prune3p8fullskew.ew P3p8Bfullskew.ew
 Bucketew --sepdays 1 --lonely 300 Pruneorigkurt.ew PBorigkurt.ew
 Bucketew --sepdays 1 --lonely 300 Prunefullkurt.ew PBfullkurt.ew
+Bucketew --sepdays 1 --lonely 300 Prune3p8fullkurt.ew P3p8Bfullkurt.ew
+Bucketew --sepdays .5 --lonely 300 Pruneorigskew.ew PBp5origskew.ew
+Bucketew --sepdays .5 --lonely 300 Prunefullskew.ew PBp5fullskew.ew
+Bucketew --sepdays .5 --lonely 300 Prune3p8fullskew.ew P3p8Bp5fullskew.ew
+Bucketew --sepdays .5 --lonely 300 Pruneorigkurt.ew PBp5origkurt.ew
+Bucketew --sepdays .5 --lonely 300 Prunefullkurt.ew PBp5fullkurt.ew
+Bucketew --sepdays .5 --lonely 300 Prune3p8fullkurt.ew P3p8Bp5fullkurt.ew
 
 for ks in skew kurt
 do
-	for typ in Orig_ Pruneorig Bucketorig PBorig orig_resid_ Full_ Prunefull Bucketfull PBfull full_resid_
+	for typ in Orig_ Pruneorig Bucketorig Bucketp5orig PBorig PBp5orig orig_resid_ Full_ Prunefull Prune3p8full Bucketfull Bucketp5full PBfull P3p8Bfull PBp5full P3p8Bp5full full_resid_
 	do
 		lsconv --type ps --out $typ$ks.ls $typ$ks.ew &
 		Alsconv --type ps --out $typ$ks.als $typ$ks.ew &
@@ -60,9 +74,9 @@ prow()
 	descr1="$2"
 	descr2="$3"
 	descr3="$4"
-	echo "$descr1 & \\scipy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
-	echo "$descr2 & \\astroml & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
-	echo "$descr3 & \\gatspy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
+	echo "$descr1 & \\scipy & `Printpgram --bfperc 2 --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
+	echo "$descr2 & \\astroml & `Printpgram --bfperc 2 --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
+	echo "$descr3 & \\gatspy & `Printpgram --bfperc 2 --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
 }
 
 echo '% Skew originals'
@@ -70,9 +84,11 @@ echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
 echo '\hline'
 echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
 prow Orig_skew "None" "" ""
-prow Pruneorigskew "Clipped" "" ""
-prow Bucketorigskew "Binned" "" ""
-prow PBorigskew "Clipped" "binned" ""
+prow Pruneorigskew 'Clipped 1$\sigma$' "" ""
+prow Bucketorigskew "Binned" "1 day" ""
+prow Bucketp5origskew "Binned" "0.5 day" ""
+prow PBorigskew 'Clipped 1$\sigma$' "binned" "1 day"
+prow PBp5origskew 'Clipped 1$\sigma$' "binned" "0,5 day"
 prow orig_resid_skew "Residuals" "" ""
 echo '\end{tabular}'
 echo
@@ -82,9 +98,11 @@ echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
 echo '\hline'
 echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
 prow Orig_kurt "None" "" ""
-prow Pruneorigkurt "Clipped" "" ""
-prow Bucketorigkurt "Binned" "" ""
-prow PBorigkurt "Clipped" "binned" ""
+prow Pruneorigkurt 'Clipped 1$\sigma$' "" ""
+prow Bucketorigkurt "Binned" "1 day" ""
+prow Bucketp5origkurt "Binned" "0.5 day" ""
+prow PBorigkurt 'Clipped 1$\sigma$' "binned" "1 day"
+prow PBp5origkurt 'Clipped 1$\sigma$' "binned" "0,5 day"
 prow orig_resid_kurt "Residuals" "" ""
 echo '\end{tabular}'
 echo
@@ -94,9 +112,14 @@ echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
 echo '\hline'
 echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
 prow Full_skew "None" "" ""
-prow Prunefullskew "Clipped" "" ""
-prow Bucketfullskew "Binned" "" ""
-prow PBfullskew "Clipped" "binned" ""
+prow Prunefullskew 'Clipped 1$\sigma$' "" ""
+prow Prune3p8fullskew "Clipped" "To 3.8 EW" ""
+prow Bucketfullskew "Binned" "1 day" ""
+prow Bucketp5fullskew "Binned" "0.5 day" ""
+prow PBfullskew "Clipped" '1$\sigma$' "binned 1 day"
+prow PBp5fullskew 'Clipped' '1$\sigma$' "binned 0.5 day"
+prow P3p8Bfullskew "Clipped" "To 3.8 EW" "binned 1 day"
+prow P3p8Bp5fullskew "Clipped" "To 3.8 EW" "binned 0.5 day"
 prow full_resid_skew "Residuals" "" ""
 echo '\end{tabular}'
 echo
@@ -106,9 +129,14 @@ echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
 echo '\hline'
 echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
 prow Full_kurt "None" "" ""
-prow Prunefullkurt "Clipped" "" ""
-prow Bucketfullkurt "Binned" "" ""
-prow PBfullkurt "Clipped" "binned" ""
+prow Prunefullkurt 'Clipped 1$\sigma$' "" ""
+prow Prune3p8fullkurt "Clipped" "To 3.8 EW" ""
+prow Bucketfullkurt "Binned" "1 day" ""
+prow Bucketp5fullkurt "Binned" "0.5 day" ""
+prow PBfullkurt 'Clipped' '1$\sigma$' "binned 1 day"
+prow PBp5fullkurt 'Clipped' '1$\sigma$' "binned 0.5 day"
+prow P3p8Bfullkurt "Clipped" "To 3.8 EW" "binned 1 day"
+prow P3p8Bp5fullkurt "Clipped" "To 3.8 EW" "binned 0.5 day"
 prow full_resid_kurt "Residuals" "" ""
 echo '\end{tabular}'
 echo

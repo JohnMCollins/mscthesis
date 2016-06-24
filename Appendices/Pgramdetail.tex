@@ -16,54 +16,77 @@ period found in \citet{suarezmascareno15} is also returned with those, but not w
 \begin{table}[!htbp]
 \centering
 \scalebox{0.75}{
-\begin{tabular}{|l|l|r|r|r|r|r|}
+\begin{tabular}{|l|l|l|r|r|r|r|r|}
 \hline
-\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-None & \scipy & 116.2 & 41.4 & 52.1 & 46.2 & 48.9 \\
- & \astroml & 44.9 & 57.6 & 59.4 & 104.2 & 84.4 \\
- & \gatspy & 49.1 & 41.4 & 49.9 & 57.0 & 116.3 \\\hline
-Clipped & \scipy & 118.4 & 57.7 & 106.8 & 105.3 & 44.9 \\
- & \astroml & 45.0 & 51.2 & 57.7 & 47.4 & 84.5 \\
- & \gatspy & 44.9 & 118.4 & 57.8 & 107.2 & 46.4 \\\hline
-Binned & \scipy & 41.4 & 53.2 & 110.5 & 62.6 & 116.1 \\
-& \astroml & 115.5 & 87.7 & 71.1 & 59.4 & 40.0 \\
-& \gatspy & 41.4 & 53.2 & 110.5 & 62.6 & 49.9 \\\hline
-Clipped & \scipy & 45.0 & 59.5 & 71.4 & 89.0 & 109.7 \\
-binned & \astroml & 59.5 & 45.0 & 71.3 & 49.9 & 51.2 \\
-& \gatspy & 45.0 & 59.5 & 71.4 & 89.0 & 107.7 \\\hline
-Residuals & \scipy & 116.2 & 41.4 & 48.9 & 52.1 & 53.0 \\
- & \astroml & 45.0 & 59.4 & 57.6 & 84.3 & 104.2 \\
- & \gatspy & 49.1 & 41.4 & 49.9 & 57.0 & 116.3 \\\hline
+\textbf{Treatment}&\textbf{Points}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
+None & \multirow{3}{*}{260} & \scipy & 116.2 & \textit{41.4} & 52.1 & 46.2 & 48.9 \\
+ && \astroml & 44.9 & 57.6 & 59.4 & 104.2 & 84.4 \\
+ && \gatspy & 49.1 & \textit{41.4} & 49.9 & 57.0 & 116.3 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{237} & \scipy & 118.4 & 57.7 & 106.8 & 105.3 & 44.9 \\
+ && \astroml & 45.0 & 51.2 & 57.7 & 47.4 & 84.5 \\
+ && \gatspy & 44.9 & 118.4 & 57.8 & 107.2 & 46.4 \\\hline
+Binned & \multirow{3}{*}{57} & \scipy & \textit{41.4} & 53.2 & 110.5 & 62.6 & 116.1 \\
+1 day && \astroml & 115.5 & 87.7 & 71.1 & 59.4 & 40.0 \\
+ && \gatspy & \textit{41.4} & 53.2 & 110.5 & 62.6 & 49.9 \\\hline
+Binned & \multirow{3}{*}{89} & \scipy & \textit{41.4} & 110.4 & 53.1 & 49.0 & 49.9 \\
+0.5 day && \astroml & 45.0 & 115.0 & 59.4 & 110.3 & \textbf{82.6} \\
+ && \gatspy & \textit{41.4} & 49.0 & 57.0 & 59.3 & 49.9 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{55} & \scipy & 45.0 & 59.5 & 71.4 & 89.0 & 109.7 \\
+binned && \astroml & 59.5 & 45.0 & 71.3 & 49.9 & 51.2 \\
+1 day && \gatspy & 45.0 & 59.5 & 71.4 & 89.0 & 107.7 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{83} & \scipy & 45.0 & 59.5 & 51.2 & 71.3 & 117.3 \\
+binned && \astroml & 45.0 & 51.2 & 40.0 & 59.5 & 57.9 \\
+0,5 day && \gatspy & 45.0 & 59.5 & 51.3 & 71.5 & 117.3 \\\hline
+Residuals & \multirow{3}{*}{260} & \scipy & 116.2 & \textit{41.4} & 48.9 & 52.1 & 53.0 \\
+ && \astroml & 45.0 & 59.4 & 57.6 & 84.3 & 104.2 \\
+ && \gatspy & 49.1 & \textit{41.4} & 49.9 & 57.0 & 116.3 \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Equivalent Widths with various treatments of the
-  Original Set of data to January 2014.}
+  Original Set of data to January 2014. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:origewtaball}
 \end{table}
 
 \begin{table}[!htbp]
 \centering
 \scalebox{0.75}{
-\begin{tabular}{|l|l|r|r|r|r|r|}
+\begin{tabular}{|l|l|l|r|r|r|r|r|}
 \hline
-\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-None & \scipy & 49.0 & 41.4 & 62.6 & 56.8 & 53.2 \\
- & \astroml & 114.6 & 123.2 & 108.0 & 83.1 & 91.8 \\
- & \gatspy & 59.2 & 49.0 & 62.6 & 56.9 & 41.4 \\\hline
-Clipped & \scipy & 122.2 & 108.0 & 83.1 & 90.2 & 99.1 \\
- & \astroml & 123.1 & 114.9 & 107.8 & 83.1 & 91.8 \\
- & \gatspy & 122.5 & 108.0 & 59.1 & 48.1 & 50.1 \\\hline
-Binned & \scipy & 41.4 & 49.0 & 62.6 & 53.3 & 59.2 \\
-& \astroml & 123.0 & 114.5 & 91.7 & 101.1 & 107.8 \\
-& \gatspy & 41.4 & 59.2 & 49.0 & 62.6 & 53.3 \\\hline
-Clipped & \scipy & 114.9 & 123.3 & 108.0 & 87.0 & 83.2 \\
-binned & \astroml & 114.8 & 123.2 & 91.7 & 107.7 & 87.0 \\
-& \gatspy & 114.9 & 123.3 & 108.0 & 87.0 & 83.2 \\\hline
-Residuals & \scipy & 49.0 & 41.4 & 62.6 & 56.8 & 53.3 \\
- & \astroml & 114.6 & 123.2 & 108.0 & 83.1 & 91.8 \\
- & \gatspy & 59.2 & 49.0 & 62.6 & 56.9 & 41.4 \\\hline
+\textbf{Treatment}&\textbf{Points}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
+None & \multirow{3}{*}{316} & \scipy & 49.0 & \textit{41.4} & 62.6 & 56.8 & 53.2 \\
+ && \astroml & 114.6 & 123.2 & 108.0 & \textbf{83.1} & 91.8 \\
+ && \gatspy & 59.2 & 49.0 & 62.6 & 56.9 & \textit{41.4} \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{287} & \scipy & 122.2 & 108.0 & \textbf{83.1} & 90.2 & 99.1 \\
+ && \astroml & 123.1 & 114.9 & 107.8 & \textbf{83.1} & 91.8 \\
+ && \gatspy & 122.5 & 108.0 & 59.1 & 48.1 & 50.1 \\\hline
+Clipped & \multirow{3}{*}{277} & \scipy & 108.0 & 122.0 & \textbf{83.0} & 90.0 & 120.1 \\
+To 3.8 EW && \astroml & 123.3 & 114.7 & 107.9 & \textbf{83.2} & 87.0 \\
+ && \gatspy & 108.0 & 122.2 & 58.1 & \textbf{83.1} & 89.9 \\\hline
+Binned & \multirow{3}{*}{93} & \scipy & \textit{41.4} & 49.0 & 62.6 & 53.3 & 59.2 \\
+1 day && \astroml & 123.0 & 114.5 & 91.7 & 101.1 & 107.8 \\
+ && \gatspy & \textit{41.4} & 59.2 & 49.0 & 62.6 & 53.3 \\\hline
+Binned & \multirow{3}{*}{143} & \scipy & 49.0 & 59.2 & \textit{41.4} & 62.6 & 56.8 \\
+0.5 day && \astroml & 114.5 & 123.2 & 91.8 & \textbf{83.1} & 108.0 \\
+ && \gatspy & 59.2 & 49.0 & \textit{41.4} & 62.6 & 56.8 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{89} & \scipy & 114.9 & 123.3 & 108.0 & 87.0 & \textbf{83.2} \\
+binned && \astroml & 114.8 & 123.2 & 91.7 & 107.7 & 87.0 \\
+1 day && \gatspy & 114.9 & 123.3 & 108.0 & 87.0 & \textbf{83.2} \\\hline
+Clipped & \multirow{3}{*}{85} & \scipy & 114.8 & 108.0 & 123.4 & 86.9 & \textbf{83.1} \\
+To 3.8 EW && \astroml & 114.6 & 123.2 & 107.7 & 91.7 & 86.9 \\
+binned 1 day && \gatspy & 114.8 & 108.0 & 123.4 & 86.9 & \textbf{83.1} \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{129} & \scipy & 114.8 & 123.4 & 108.1 & \textbf{83.2} & 87.0 \\
+binned && \astroml & 114.8 & 123.1 & 91.9 & 107.7 & \textbf{83.2} \\
+0.5 day && \gatspy & 114.9 & 123.4 & 108.0 & \textbf{83.2} & 54.9 \\\hline
+Clipped & \multirow{3}{*}{122} & \scipy & 114.7 & 108.1 & 123.4 & 86.9 & \textbf{83.2} \\
+To 3.8 EW && \astroml & 114.7 & 123.3 & 107.9 & 92.0 & 87.0 \\
+binned 0.5 day && \gatspy & 114.8 & 108.0 & 123.4 & 86.9 & \textbf{83.2} \\\hline
+Residuals & \multirow{3}{*}{316} & \scipy & 49.0 & \textit{41.4} & 62.6 & 56.8 & 53.3 \\
+ && \astroml & 114.6 & 123.2 & 108.0 & \textbf{83.1} & 91.8 \\
+ && \gatspy & 59.2 & 49.0 & 62.6 & 56.9 & \textit{41.4} \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Equivalent Widths with various treatments of the
-  Full Set of data to March 2916.}
+  Full Set of data to March 2916. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:fullewtaball}
 \end{table}
 
@@ -111,53 +134,77 @@ Section \ref{section:appewtab} is not returned with this measurement.
 \begin{table}[!htbp]
 \centering
 \scalebox{0.75}{
-\begin{tabular}{|l|l|r|r|r|r|r|}
+\begin{tabular}{|l|l|l|r|r|r|r|r|}
 \hline
-\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-None & \scipy & 41.9 & 92.4 & 81.1 & 49.7 & 44.1 \\
- & \astroml & 80.0 & 103.9 & 92.5 & 49.2 & 45.5 \\
- & \gatspy & 81.0 & 41.9 & 92.4 & 103.9 & 44.1 \\\hline
-Clipped & \scipy & 41.9 & 81.3 & 49.8 & 92.1 & 44.1 \\
- & \astroml & 49.9 & 41.9 & 91.9 & 101.5 & 58.1 \\
- & \gatspy & 81.2 & 41.9 & 49.8 & 92.2 & 44.1 \\\hline
-Binned & \scipy & 82.2 & 61.0 & 80.9 & 49.6 & 40.6 \\
- & \astroml & 71.1 & 115.2 & 80.0 & 91.8 & 123.2 \\
- & \gatspy & 82.3 & 61.0 & 49.4 & 81.0 & 40.6 \\\hline
-Clipped & \scipy & 82.2 & 61.1 & 40.5 & 81.0 & 115.8 \\
-binned & \astroml & 108.0 & 71.2 & 80.0 & 57.1 & 65.5 \\
- & \gatspy & 82.2 & 61.1 & 40.5 & 81.0 & 49.3 \\\hline
-Residuals & \scipy & 41.9 & 41.4 & 49.7 & 92.4 & 44.2 \\
- & \astroml & 45.4 & 80.0 & 84.1 & 92.6 & 49.2 \\
- & \gatspy & 41.9 & 45.5 & 49.8 & 41.4 & 80.9 \\\hline
+\textbf{Treatment}&\textbf{Points}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
+None & \multirow{3}{*}{260} & \scipy & \textit{41.9} & 92.4 & \textbf{81.1} & 49.7 & 44.1 \\
+ && \astroml & 80.0 & 103.9 & 92.5 & 49.2 & 45.5 \\
+ && \gatspy & \textbf{81.0} & \textit{41.9} & 92.4 & 103.9 & 44.1 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{237} & \scipy & \textit{41.9} & \textbf{81.3} & 49.8 & 92.1 & 44.1 \\
+ && \astroml & 49.9 & \textit{41.9} & 91.9 & 101.5 & 58.1 \\
+ && \gatspy & \textbf{81.2} & \textit{41.9} & 49.8 & 92.2 & 44.1 \\\hline
+Binned & \multirow{3}{*}{57} & \scipy & \textbf{82.2} & 61.0 & 80.9 & 49.6 & \textit{40.6} \\
+1 day && \astroml & 71.1 & 115.2 & 80.0 & 91.8 & 123.2 \\
+ && \gatspy & \textbf{82.3} & 61.0 & 49.4 & \textbf{81.0} & \textit{40.6} \\\hline
+Binned & \multirow{3}{*}{89} & \scipy & 122.2 & 120.3 & \textbf{82.9} & 79.7 & 108.4 \\
+0.5 day && \astroml & 80.5 & 91.9 & 115.0 & 104.0 & 109.6 \\
+ && \gatspy & 122.1 & \textbf{83.0} & 79.8 & 108.4 & 78.1 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{55} & \scipy & \textbf{82.2} & 61.1 & \textit{40.5} & \textbf{81.0} & 115.8 \\
+binned && \astroml & 108.0 & 71.2 & 80.0 & 57.1 & 65.5 \\
+1 day && \gatspy & \textbf{82.2} & 61.1 & \textit{40.5} & \textbf{81.0} & 49.3 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{83} & \scipy & 122.2 & 120.2 & \textbf{82.6} & 108.3 & 78.2 \\
+binned && \astroml & 108.8 & 57.8 & 47.3 & 103.5 & 54.4 \\
+0,5 day && \gatspy & 122.2 & 120.5 & \textbf{82.7} & 108.3 & 79.7 \\\hline
+Residuals & \multirow{3}{*}{260} & \scipy & \textit{41.9} & \textit{41.4} & 49.7 & 92.4 & 44.2 \\
+ && \astroml & 45.4 & 80.0 & \textbf{84.1} & 92.6 & 49.2 \\
+ && \gatspy & \textit{41.9} & 45.5 & 49.8 & \textit{41.4} & 80.9 \\\hline
 \end{tabular}}
-\caption{This table shows the 5 highest peaks from the periodograms for Peak Ratios with various treatments of the Original Set of data to January 2014.}
+\caption{This table shows the 5 highest peaks from the periodograms for Peak Ratios with various treatments of the
+  Original Set of data to January 2014. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:origprtaball}
 \end{table}
 
 \begin{table}[!htbp]
 \centering
 \scalebox{0.75}{
-\begin{tabular}{|l|l|r|r|r|r|r|}
+\begin{tabular}{|l|l|l|r|r|r|r|r|}
 \hline
-\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-None & \scipy & 121.7 & 123.3 & 83.0 & 114.6 & 90.1 \\
- & \astroml & 60.6 & 52.1 & 49.1 & 56.9 & 57.9 \\
- & \gatspy & 121.8 & 49.9 & 114.7 & 83.0 & 42.0 \\\hline
-Clipped & \scipy & 122.3 & 91.8 & 83.0 & 115.0 & 42.0 \\
- & \astroml & 60.8 & 73.0 & 102.0 & 79.5 & 56.8 \\
- & \gatspy & 122.5 & 58.1 & 47.5 & 83.0 & 91.7 \\\hline
-Binned & \scipy & 82.2 & 40.6 & 51.1 & 63.6 & 66.8 \\
- & \astroml & 91.6 & 60.9 & 87.0 & 79.3 & 122.0 \\
- & \gatspy & 82.2 & 40.6 & 51.1 & 63.6 & 48.0 \\\hline
-Clipped & \scipy & 40.5 & 80.9 & 48.1 & 116.7 & 51.1 \\
-binned & \astroml & 114.8 & 91.4 & 122.1 & 122.7 & 107.4 \\
- & \gatspy & 40.5 & 80.9 & 48.1 & 119.9 & 116.7 \\\hline
-Residuals & \scipy & 121.6 & 123.7 & 49.8 & 90.0 & 83.0 \\
- & \astroml & 60.6 & 73.1 & 79.6 & 65.0 & 57.0 \\
- & \gatspy & 121.7 & 49.9 & 123.7 & 58.0 & 47.5 \\\hline
+\textbf{Treatment}&\textbf{Points}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
+None & \multirow{3}{*}{316} & \scipy & 121.7 & 123.3 & \textbf{83.0} & 114.6 & 90.1 \\
+ && \astroml & 60.6 & 52.1 & 49.1 & 56.9 & 57.9 \\
+ && \gatspy & 121.8 & 49.9 & 114.7 & \textbf{83.0} & \textit{42.0} \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{287} & \scipy & 122.3 & 91.8 & \textbf{83.0} & 115.0 & \textit{42.0} \\
+ && \astroml & 60.8 & 73.0 & 102.0 & 79.5 & 56.8 \\
+ && \gatspy & 122.5 & 58.1 & 47.5 & \textbf{83.0} & 91.7 \\\hline
+Clipped & \multirow{3}{*}{277} & \scipy & 122.2 & 114.9 & 91.8 & \textbf{82.9} & 49.8 \\
+To 3.8 EW && \astroml & 101.8 & 73.1 & 114.3 & 79.3 & 91.2 \\
+ && \gatspy & 122.5 & 49.9 & 58.0 & 115.0 & 91.8 \\\hline
+Binned & \multirow{3}{*}{93} & \scipy & \textbf{82.2} & \textit{40.6} & 51.1 & 63.6 & 66.8 \\
+1 day && \astroml & 91.6 & 60.9 & 87.0 & 79.3 & 122.0 \\
+ && \gatspy & \textbf{82.2} & \textit{40.6} & 51.1 & 63.6 & 48.0 \\\hline
+Binned & \multirow{3}{*}{143} & \scipy & 120.4 & 121.7 & \textbf{82.3} & 107.6 & 117.5 \\
+0.5 day && \astroml & 54.4 & 60.6 & 64.1 & 73.0 & 67.3 \\
+ && \gatspy & 120.7 & \textbf{82.3} & 107.5 & 117.4 & 80.0 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{89} & \scipy & \textit{40.5} & 80.9 & 48.1 & 116.7 & 51.1 \\
+binned && \astroml & 114.8 & 91.4 & 122.1 & 122.7 & 107.4 \\
+1 day && \gatspy & \textit{40.5} & 80.9 & 48.1 & 119.9 & 116.7 \\\hline
+Clipped & \multirow{3}{*}{85} & \scipy & \textit{40.5} & 80.9 & 116.4 & \textbf{81.8} & 48.0 \\
+To 3.8 EW && \astroml & 114.3 & 59.8 & 54.5 & 121.9 & 107.1 \\
+binned 1 day && \gatspy & \textit{40.5} & 80.9 & 116.5 & \textbf{81.9} & 48.0 \\\hline
+Clipped 1$\sigma$ & \multirow{3}{*}{129} & \scipy & 121.8 & 120.4 & \textbf{82.4} & 107.7 & 117.3 \\
+binned && \astroml & 60.8 & 73.0 & 69.0 & 91.2 & 54.4 \\
+0.5 day && \gatspy & 120.8 & 121.3 & \textbf{82.4} & 107.6 & 117.3 \\\hline
+Clipped & \multirow{3}{*}{122} & \scipy & 121.8 & 120.4 & \textbf{82.4} & 107.7 & 117.2 \\
+To 3.8 EW && \astroml & 91.2 & 67.4 & 73.0 & 101.8 & 69.0 \\
+binned 0.5 day && \gatspy & 120.7 & 121.3 & \textbf{82.4} & 107.6 & 117.2 \\\hline
+Residuals & \multirow{3}{*}{316} & \scipy & 121.6 & 123.7 & 49.8 & 90.0 & \textbf{83.0} \\
+ && \astroml & 60.6 & 73.1 & 79.6 & 65.0 & 57.0 \\
+ && \gatspy & 121.7 & 49.9 & 123.7 & 58.0 & 47.5 \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Peak Ratios with various treatments of the
-  Full Set of data to March 2916.}
+  Full Set of data to March 2916. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:fullprtaball}
 \end{table}
 
@@ -185,21 +232,28 @@ is attempted.
 None & \scipy & 122.8 & 98.3 & 87.6 & 117.2 & 106.0 \\
  & \astroml & 87.7 & 116.8 & 105.5 & 122.4 & 79.7 \\
  & \gatspy & 87.7 & 116.8 & 105.5 & 122.4 & 79.7 \\\hline
-Clipped & \scipy & 98.2 & 122.9 & 65.3 & 71.3 & 59.7 \\
+Clipped 1$\sigma$ & \scipy & 98.2 & 122.9 & 65.3 & 71.3 & 59.7 \\
  & \astroml & 87.5 & 65.5 & 115.8 & 79.8 & 98.2 \\
  & \gatspy & 87.5 & 65.5 & 115.8 & 79.8 & 98.2 \\\hline
 Binned & \scipy & 105.7 & 117.7 & 87.8 & 103.3 & 79.6 \\
- & \astroml & 105.7 & 117.7 & 87.8 & 103.3 & 48.8 \\
+1 day & \astroml & 105.7 & 117.7 & 87.8 & 103.3 & 48.8 \\
  & \gatspy & 105.7 & 117.7 & 87.8 & 103.3 & 48.8 \\\hline
-Clipped & \scipy & 59.6 & 87.7 & 117.1 & 65.5 & 105.6 \\
+Binned & \scipy & 105.8 & 87.7 & 117.3 & 79.6 & \textbf{81.2} \\
+0.5 day & \astroml & 105.7 & 87.7 & 117.4 & 79.6 & \textbf{81.2} \\
+ & \gatspy & 105.7 & 87.7 & 117.4 & 79.6 & \textbf{81.2} \\\hline
+Clipped 1$\sigma$ & \scipy & 59.6 & 87.7 & 117.1 & 65.5 & 105.6 \\
 binned & \astroml & 59.6 & 87.7 & 117.0 & 65.5 & 105.6 \\
- & \gatspy & 59.6 & 87.7 & 117.0 & 65.5 & 105.6 \\\hline
+1 day & \gatspy & 59.6 & 87.7 & 117.0 & 65.5 & 105.6 \\\hline
+Clipped 1$\sigma$ & \scipy & 87.6 & 116.5 & 65.5 & 59.7 & 105.5 \\
+binned & \astroml & 87.6 & 65.5 & 116.5 & 59.7 & 105.5 \\
+0,5 day & \gatspy & 87.6 & 65.5 & 116.5 & 59.7 & 105.5 \\\hline
 Residuals & \scipy & 71.8 & 73.8 & 57.7 & 93.0 & 98.4 \\
- & \astroml & 93.1 & 83.7 & 74.1 & 52.2 & 71.9 \\
- & \gatspy & 93.1 & 83.7 & 74.1 & 52.2 & 71.9 \\\hline
+ & \astroml & 93.1 & \textbf{83.7} & 74.1 & 52.2 & 71.9 \\
+ & \gatspy & 93.1 & \textbf{83.7} & 74.1 & 52.2 & 71.9 \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Skewness with various treatments of the Original
-  Set of data to January 2014.}
+  Set of data to January 2014. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:origskewtaball}
 \end{table}
 
@@ -212,21 +266,28 @@ Residuals & \scipy & 71.8 & 73.8 & 57.7 & 93.0 & 98.4 \\
 None & \scipy & 117.2 & 122.7 & 106.4 & 87.2 & 103.6 \\
  & \astroml & 116.7 & 80.9 & 87.3 & 105.2 & 103.7 \\
  & \gatspy & 116.7 & 80.9 & 87.3 & 105.2 & 103.7 \\\hline
-Clipped & \scipy & 117.2 & 87.3 & 59.6 & 65.4 & 122.5 \\
+Clipped 1$\sigma$ & \scipy & 117.2 & 87.3 & 59.6 & 65.4 & 122.5 \\
  & \astroml & 116.8 & 80.9 & 87.5 & 65.5 & 59.8 \\
  & \gatspy & 116.8 & 80.9 & 87.5 & 65.5 & 59.8 \\\hline
 Binned & \scipy & 116.5 & 105.3 & 88.8 & 103.7 & 87.6 \\
- & \astroml & 116.4 & 105.3 & 103.8 & 88.8 & 87.6 \\
+1 day & \astroml & 116.4 & 105.3 & 103.8 & 88.8 & 87.6 \\
  & \gatspy & 116.4 & 105.3 & 103.8 & 88.8 & 87.6 \\\hline
-Clipped & \scipy & 59.6 & 117.9 & 45.0 & 80.9 & 87.8 \\
-binned & \astroml & 59.6 & 118.1 & 81.0 & 105.7 & 45.0 \\
- & \gatspy & 59.6 & 118.1 & 81.0 & 105.7 & 45.0 \\\hline
+Binned & \scipy & 116.6 & 87.5 & 88.4 & 105.4 & 80.5 \\
+0.5 day & \astroml & 116.6 & 87.5 & 105.3 & 80.8 & 88.4 \\
+ & \gatspy & 116.6 & 87.5 & 105.3 & 80.8 & 88.4 \\\hline
+Clipped 1$\sigma$ & \scipy & 59.6 & 117.9 & 45.0 & 80.9 & 87.8 \\
+binned & \astroml & 59.6 & 118.1 & \textbf{81.0} & 105.7 & 45.0 \\
+1 day & \gatspy & 59.6 & 118.1 & \textbf{81.0} & 105.7 & 45.0 \\\hline
+Clipped 1$\sigma$ & \scipy & 117.2 & 59.6 & 87.7 & 65.6 & 80.8 \\
+binned & \astroml & 117.5 & 59.6 & 87.7 & 65.6 & \textbf{81.0} \\
+0,5 day & \gatspy & 117.5 & 59.6 & 87.7 & 65.6 & \textbf{81.0} \\\hline
 Residuals & \scipy & 117.6 & 106.6 & 103.5 & 74.0 & 51.4 \\
- & \astroml & 117.4 & 81.1 & 106.3 & 57.3 & 103.5 \\
- & \gatspy & 117.4 & 81.1 & 106.3 & 57.3 & 103.5 \\\hline
+ & \astroml & 117.4 & \textbf{81.1} & 106.3 & 57.3 & 103.5 \\
+ & \gatspy & 117.4 & \textbf{81.1} & 106.3 & 57.3 & 103.5 \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Kurtosis with various treatments of the Original
-  Set of data to January 2014.}
+  Set of data to January 2014. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:origkurttaball}
 \end{table}
 
@@ -236,24 +297,40 @@ Residuals & \scipy & 117.6 & 106.6 & 103.5 & 74.0 & 51.4 \\
 \begin{tabular}{|l|l|r|r|r|r|r|}
 \hline
 \textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-None & \scipy & 121.9 & 83.4 & 60.0 & 79.1 & 106.4 \\
- & \astroml & 83.4 & 122.2 & 60.0 & 63.4 & 77.7 \\
- & \gatspy & 83.4 & 122.2 & 60.0 & 63.4 & 77.7 \\\hline
-Clipped & \scipy & 121.9 & 99.1 & 59.9 & 83.3 & 65.1 \\
- & \astroml & 59.9 & 63.3 & 77.8 & 83.3 & 113.5 \\
- & \gatspy & 59.9 & 63.3 & 77.8 & 83.3 & 113.5 \\\hline
+None & \scipy & 121.9 & \textbf{83.4} & 60.0 & 79.1 & 106.4 \\
+ & \astroml & \textbf{83.4} & 122.2 & 60.0 & 63.4 & 77.7 \\
+ & \gatspy & \textbf{83.4} & 122.2 & 60.0 & 63.4 & 77.7 \\\hline
+Clipped 1$\sigma$ & \scipy & 121.9 & 99.1 & 59.9 & \textbf{83.3} & 65.1 \\
+ & \astroml & 59.9 & 63.3 & 77.8 & \textbf{83.3} & 113.5 \\
+ & \gatspy & 59.9 & 63.3 & 77.8 & \textbf{83.3} & 113.5 \\\hline
+Clipped & \scipy & 121.9 & 65.1 & 99.0 & \textbf{83.3} & 59.9 \\
+To 3.8 EW & \astroml & 60.0 & 86.1 & 113.7 & 77.7 & 122.2 \\
+ & \gatspy & 60.0 & 86.1 & 113.7 & 77.7 & 122.2 \\\hline
 Binned & \scipy & 106.8 & 79.2 & 85.8 & 121.5 & 64.8 \\
- & \astroml & 106.8 & 79.2 & 85.8 & 121.6 & 64.8 \\
+1 day & \astroml & 106.8 & 79.2 & 85.8 & 121.6 & 64.8 \\
  & \gatspy & 106.8 & 79.2 & 85.8 & 121.6 & 64.8 \\\hline
-Clipped & \scipy & 59.7 & 71.9 & 85.9 & 41.4 & 77.6 \\
-binned & \astroml & 59.7 & 71.9 & 85.9 & 41.4 & 107.0 \\
- & \gatspy & 59.7 & 71.9 & 85.9 & 41.4 & 107.0 \\\hline
+Binned & \scipy & 79.2 & 85.8 & 106.7 & 60.0 & \textbf{83.4} \\
+0.5 day & \astroml & 85.8 & 106.7 & 79.2 & 60.0 & \textbf{83.4} \\
+ & \gatspy & 85.8 & 106.7 & 79.2 & 60.0 & \textbf{83.4} \\\hline
+Clipped & \scipy & 59.7 & 71.9 & 85.9 & \textit{41.4} & 77.6 \\
+1$\sigma$ & \astroml & 59.7 & 71.9 & 85.9 & \textit{41.4} & 107.0 \\
+binned 1 day & \gatspy & 59.7 & 71.9 & 85.9 & \textit{41.4} & 107.0 \\\hline
+Clipped & \scipy & 59.9 & 86.0 & 113.5 & 72.0 & 77.7 \\
+1$\sigma$ & \astroml & 59.8 & 86.0 & 113.4 & 72.0 & 77.7 \\
+binned 0.5 day & \gatspy & 59.8 & 86.0 & 113.4 & 72.0 & 77.7 \\\hline
+Clipped & \scipy & 59.7 & 71.9 & 85.9 & 106.8 & 113.7 \\
+To 3.8 EW & \astroml & 59.7 & 71.9 & 85.9 & 106.9 & 113.6 \\
+binned 1 day & \gatspy & 59.7 & 71.9 & 85.9 & 106.9 & 113.6 \\\hline
+Clipped & \scipy & 86.0 & 113.6 & 59.9 & 77.7 & 72.0 \\
+To 3.8 EW & \astroml & 86.0 & 113.5 & 59.9 & 77.7 & 72.0 \\
+binned 0.5 day & \gatspy & 86.0 & 113.5 & 59.9 & 77.7 & 72.0 \\\hline
 Residuals & \scipy & 121.5 & 98.6 & 108.2 & 90.2 & 105.9 \\
- & \astroml & 108.2 & 121.8 & 105.8 & 90.1 & 83.4 \\
- & \gatspy & 108.2 & 121.8 & 105.8 & 90.1 & 83.4 \\\hline
+ & \astroml & 108.2 & 121.8 & 105.8 & 90.1 & \textbf{83.4} \\
+ & \gatspy & 108.2 & 121.8 & 105.8 & 90.1 & \textbf{83.4} \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Skewness with various treatments of the Full
-  Set of data to March 2016.}
+  Set of data to March 2016. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:fullskewtaball}
 \end{table}
 
@@ -263,26 +340,43 @@ Residuals & \scipy & 121.5 & 98.6 & 108.2 & 90.2 & 105.9 \\
 \begin{tabular}{|l|l|r|r|r|r|r|}
 \hline
 \textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-None & \scipy & 122.8 & 86.8 & 83.1 & 114.4 & 79.4 \\
- & \astroml & 122.9 & 114.6 & 86.8 & 86.0 & 83.0 \\
- & \gatspy & 122.9 & 114.6 & 86.8 & 86.0 & 83.0 \\\hline
-Clipped & \scipy & 122.9 & 86.9 & 114.5 & 65.1 & 83.1 \\
+None & \scipy & 122.8 & 86.8 & \textbf{83.1} & 114.4 & 79.4 \\
+ & \astroml & 122.9 & 114.6 & 86.8 & 86.0 & \textbf{83.0} \\
+ & \gatspy & 122.9 & 114.6 & 86.8 & 86.0 & \textbf{83.0} \\\hline
+Clipped 1$\sigma$ & \scipy & 122.9 & 86.9 & 114.5 & 65.1 & \textbf{83.1} \\
  & \astroml & 114.7 & 86.9 & 122.9 & 86.1 & 59.9 \\
  & \gatspy & 114.7 & 86.9 & 122.9 & 86.1 & 59.9 \\\hline
+Clipped & \scipy & 122.8 & 86.9 & 65.1 & 114.4 & \textbf{83.1} \\
+To 3.8 EW & \astroml & 114.6 & 86.9 & 86.1 & 122.8 & 59.9 \\
+ & \gatspy & 114.6 & 86.9 & 86.1 & 122.8 & 59.9 \\\hline
 Binned & \scipy & 114.6 & 121.9 & 107.5 & 86.8 & 101.3 \\
- & \astroml & 114.6 & 107.5 & 121.9 & 86.8 & 101.4 \\
+1 day & \astroml & 114.6 & 107.5 & 121.9 & 86.8 & 101.4 \\
  & \gatspy & 114.6 & 107.5 & 121.9 & 86.8 & 101.4 \\\hline
+Binned & \scipy & 114.6 & 86.8 & 122.9 & 107.6 & 79.4 \\
+0.5 day & \astroml & 114.6 & 86.8 & 122.9 & 107.6 & 79.4 \\
+ & \gatspy & 114.6 & 86.8 & 122.9 & 107.6 & 79.4 \\\hline
 Clipped & \scipy & 114.8 & 107.6 & 122.4 & 86.9 & 59.8 \\
-binned & \astroml & 114.8 & 107.6 & 122.4 & 86.8 & 59.8 \\
- & \gatspy & 114.8 & 107.6 & 122.4 & 86.8 & 59.8 \\\hline
-Residuals & \scipy & 106.9 & 51.4 & 85.4 & 82.6 & 122.2 \\
- & \astroml & 85.5 & 51.4 & 106.9 & 82.5 & 60.0 \\
- & \gatspy & 85.5 & 51.4 & 106.9 & 82.5 & 60.0 \\\hline
+1$\sigma$ & \astroml & 114.8 & 107.6 & 122.4 & 86.8 & 59.8 \\
+binned 1 day & \gatspy & 114.8 & 107.6 & 122.4 & 86.8 & 59.8 \\\hline
+Clipped & \scipy & 114.7 & 86.9 & 122.9 & 59.9 & 107.6 \\
+1$\sigma$ & \astroml & 114.7 & 86.8 & 122.9 & 107.6 & 59.9 \\
+binned 0.5 day & \gatspy & 114.7 & 86.8 & 122.9 & 107.6 & 59.9 \\\hline
+Clipped & \scipy & 114.7 & 107.6 & 122.3 & 86.8 & 59.8 \\
+To 3.8 EW & \astroml & 114.7 & 107.6 & 122.3 & 86.8 & 59.8 \\
+binned 1 day & \gatspy & 114.7 & 107.6 & 122.3 & 86.8 & 59.8 \\\hline
+Clipped & \scipy & 114.6 & 86.9 & 59.9 & 122.8 & 107.5 \\
+To 3.8 EW & \astroml & 114.7 & 86.8 & 122.9 & 107.5 & 59.9 \\
+binned 0.5 day & \gatspy & 114.7 & 86.8 & 122.9 & 107.5 & 59.9 \\\hline
+Residuals & \scipy & 106.9 & 51.4 & 85.4 & \textbf{82.6} & 122.2 \\
+ & \astroml & 85.5 & 51.4 & 106.9 & \textbf{82.5} & 60.0 \\
+ & \gatspy & 85.5 & 51.4 & 106.9 & \textbf{82.5} & 60.0 \\\hline
 \end{tabular}}
 \caption{This table shows the 5 highest peaks from the periodograms for Kurtosis with various treatments of the Full
-  Set of data to March 2016.}
+  Set of data to March 2016. Highlighted in bold are periods close to 82.6 days and in italics periods close
+  to 41.3 days.}
 \protect\label{table:fullkurttaball}
 \end{table}
+\clearpage
 
 \section{TiO line measurments}
 \protect\label{section:apptiotab}

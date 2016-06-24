@@ -12,16 +12,23 @@ Btchewcalc --interp --out Full.ew $FULLSPI
 Btchewcalc --interp --divspec 48 8 11 49 51 --out origresid.ew $ORIGSPI
 Btchewcalc --interp --divspec 48 8 11 49 51 --out fullresid.ew $FULLSPI
 
-Pruneew --upper 1 --lower 400 --median Orig.ew Pruneorig.ew
-Pruneew --upper 1 --lower 400 --median Full.ew Prunefull.ew
+Pruneew --upper 1 --lower 400 --median Orig.ew Prune1sorig.ew
+Pruneew --upper 1 --lower 400 --median Full.ew Prune1sfull.ew
+Pruneew --upper 3.8 --lower 0 --byval Full.ew Prune3p8full.ew
 
-Bucketew --sepdays 1 --lonely 300 Orig.ew Bucketorig.ew
-Bucketew --sepdays 1 --lonely 300 Full.ew Bucketfull.ew
+Bucketew --sepdays 1 --lonely 300 Orig.ew Bucket1orig.ew
+Bucketew --sepdays 1 --lonely 300 Full.ew Bucket1full.ew
+Bucketew --sepdays .5 --lonely 300 Orig.ew Bucketp5orig.ew
+Bucketew --sepdays .5 --lonely 300 Full.ew Bucketp5full.ew
 
-Bucketew --sepdays 1 --lonely 300 Pruneorig.ew PBorig.ew
-Bucketew --sepdays 1 --lonely 300 Prunefull.ew PBfull.ew
+Bucketew --sepdays 1 --lonely 300 Prune1sorig.ew P1sB1orig.ew
+Bucketew --sepdays 1 --lonely 300 Prune1sfull.ew P1sB1full.ew
+Bucketew --sepdays 1 --lonely 300 Prune3p8full.ew P3p8B1full.ew
+Bucketew --sepdays .5 --lonely 300 Prune1sorig.ew P1sBp5orig.ew
+Bucketew --sepdays .5 --lonely 300 Prune1sfull.ew P1sBp5full.ew
+Bucketew --sepdays .5 --lonely 300 Prune3p8full.ew P3p8Bp5full.ew
 
-for typ in Orig Pruneorig Bucketorig PBorig origresid Full Prunefull Bucketfull PBfull fullresid
+for typ in Orig Prune1sorig Bucket1orig Bucketp5orig P1sB1orig P1sBp5orig origresid Full Prune1sfull Prune3p8full Bucket1full Bucketp5full P1sB1full P3p8B1full P1sBp5full P3p8Bp5full fullresid
 do
 	lsconv --type pr --out $typ.ls $typ.ew &
 	Alsconv --type pr --out $typ.als $typ.ew &
@@ -35,29 +42,37 @@ prow()
 	descr1="$2"
 	descr2="$3"
 	descr3="$4"
-	echo "$descr1 & \\scipy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
-	echo "$descr2 & \\astroml & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
-	echo "$descr3 & \\gatspy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
+	npts=`wc -l <$typ.ew`
+	echo "$descr1 & \multirow{3}{*}{$npts} & \\scipy & `Printpgram --bfperc 2 --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
+	echo "$descr2 && \\astroml & `Printpgram --bfperc 2 --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
+	echo "$descr3 && \\gatspy & `Printpgram --bfperc 2 --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
 }
 
-echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\begin{tabular}{|l|l|l|r|r|r|r|r|}'
 echo '\hline'
-echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+echo '\textbf{Treatment}&Points&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
 prow Orig "None" "" ""
-prow Pruneorig "Clipped" "" ""
-prow Bucketorig "Binned" "" ""
-prow PBorig "Clipped" "binned" ""
+prow Prune1sorig 'Clipped 1$\sigma$' "" ""
+prow Bucket1orig "Binned" "1 day" ""
+prow Bucketp5orig "Binned" "0.5 day" ""
+prow P1sB1orig 'Clipped 1$\sigma$' "binned" "1 day"
+prow P1sBp5orig 'Clipped 1$\sigma$' "binned" "0,5 day"
 prow origresid "Residuals" "" ""
 echo '\end{tabular}'
 echo
 echo
-echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
+echo '\begin{tabular}{|l|l|l|r|r|r|r|r|}'
 echo '\hline'
-echo '\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
+echo '\textbf{Treatment}&Points&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline'
 prow Full "None" "" ""
-prow Prunefull "Clipped" "" ""
-prow Bucketfull "Binned" "" ""
-prow PBfull "Clipped" "binned" ""
+prow Prune1sfull 'Clipped 1$\sigma$' "" ""
+prow Prune3p8full "Clipped" "To 3.8 EW" ""
+prow Bucket1full "Binned" "1 day" ""
+prow Bucketp5full "Binned" "0.5 day" ""
+prow P1sB1full 'Clipped 1$\sigma$' "binned" "1 day"
+prow P3p8B1full "Clipped" "To 3.8 EW" "binned 1 day"
+prow P1sBp5full 'Clipped 1$\sigma$' "binned" "0.5 day"
+prow P3p8Bp5full "Clipped" "To 3.8 EW" "binned 0.5 day"
 prow fullresid "Residuals" "" ""
 echo '\end{tabular}'
 

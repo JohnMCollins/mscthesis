@@ -1,103 +1,94 @@
 \section{Recovery of periods from {\harps} data}
 \protect\label{section:harpsper}
 
-After deriving the various measures described in \ref{section:linemeas}, attempts were made to derive periodograms, on
-the basis that the ``correct'' result was 82.6 days. As discussed in Appendix \ref{chapter:lsroutines}, all the routines
-tried gave different results for all the measures. The {\numrecs} routine, which does not allow easy selection of trial
-periods, usually did not find other than short periods of under 10 days. On the rare occasions where longer periods were
-found, the reported FAP was 1.0 or very close.
+Attempts to derive periodograms from the results of the the various measures listed in Section \ref{section:linemeas}
+met with much less success than the photometric results from {\asas} and {\hst}, in that, as discussed in Appendix
+\ref{chapter:lsroutines} and listed in detail in Appendix \ref{chapter:pgramdetail}, all the various Lomb-Scargle
+routines gave very different results for almost every line measure or combination of measures. A full list of results is
+shown in Appendix \ref{chapter:pgramdetail}, showing the relative performance of the different routines and different
+line measurements. The {\numrecs} routine usually failed to find periods close to the 82.6 day period identified in the
+photometric results or on the occasions when it found it, gave a FAP at or very close to 1.0.
 
-As a result the three Python routines were used and the results compared. The periodograms were all ``noise like'' under
-about 40 days, so that had to be selected as a lower limit. For similar reasons 130 days had to be selected as an upper
-limit. This encompassed the 41.3 days of \citet{benedict93}, although this looks very likely to be a half-period alias,
-through to the 116.6 days of \citet[Table 3]{suarezmascareno15}.
-Periodograms were generated for periods between 40 days and 130 days, in steps of 0.01 days (14 minutes, 20 seconds)
-taking into account the 41.3 days of \citet{benedict93}, the minimum period of 50 days given by \citet{kurster99}, the
-82 days of \citealt{benedict92,benedict98,kiraga07} and the 116.6 days of Many of
-the routines reported a plethora of strong shorter periods down to 0.01 days, but these were discounted these for the
-purposes of this study, given that the main concern was the rotation period and not other much shorter periodic
-behaviour. The erratic behaviour of the periodograms below about 40 days make it impractical to extend the search down
-to include the 31.5 days of \citet{guinan96}. Many of the periodograms showed several strong peaks all over the range
-searched, with periods reported by others the fourth or fifth strongest peak, so the tables below show the 5 strongest
-peaks in all cases. Listed below are results from all the methods described in Sections \ref{section:linemeas} and
-\ref{section:alternativelines} with combinations where appropriate.
+To examine the performance as well as possible, all the three Python routines described in Appendix
+\ref{chapter:lsroutines} were tried with every set of data and the results compared. None of the routines gave any
+meaningful results for below 40 days, with a plethora of strong peaks down to fractions of a day, or above 120 to 130
+days, so all the periodograms were generated with periods between 40 and 130 days, in steps of 0.01 days (14 minutes, 20
+seconds). This encompassed the 41.3 days of \citet{benedict93}, although this looks very likely to be a half-period
+alias, through to and including the 116.6 days of \citet[Table 3]{suarezmascareno15} and encompassing the minimum period
+of 50 days given by \citet{kurster99} and the 82 days of \citealt{benedict92,benedict98,kiraga07}. The erratic behaviour
+of the periodograms below about 40 days made it impractical to extend the search down to include the 31.5 days of
+\citet{guinan96}, but in the light of the photometric results and the unanimity of other reports as to the period being
+longer than this, it was deemed not to matter.
 
-\subsection{Equivalent Width measurements}
-\protect\label{section:ewper}
+Many of the periodograms showed several strong peaks all over the range searched, typically with up to five outstanding
+peaks in the range searched, so for this {\paperorthesis} note was taken of the periods of the strongest peaks and of
+the five strongest peaks in the analyses of the periodograms.
 
-{\FirstP} computed periodograms from the results for the measures described above in \ref{section:linemeas} using all
-three Lomb-Scargle routines and some results are exhibited in Fig. \ref{fig:harpspgrams1}. Unlike with the {\asas}
-photometry data, the three routines did not yield consistent results. The main results are summarised in Appendix \ref{chapter:pgramdetail}. In the first two panels of Fig. \ref{fig:harpspgrams1} are shown the periodograms for the
-Equivalent Widths and Peak Ratios respectively, processed by {\gatspy}. In the bottom panel of
-Fig. \ref{fig:harpspgrams1} is shown the Peak Ratio results after binning to 1 day, showing a returned period close to
-82.6 days. It was noticeable that the Equivalent Width and {\ha} Index measures delivered almost identical results in
-most cases, particularly with the {\gatspy} routine.
+In Fig. \ref{fig:harpspgrams1} is shown how the different routines give different results with identical data; the upper
+panel showing the results from the {\astroml} routine and the lower panel showing the results from {\gatspy}. In
+Fig. \ref{fig:harpspgrams2} is shown a result from Peak Ratio calculation giving a value of 82.2 days returned by
+\gatspy.
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.20]{Figures/summpgrams.png} \\
+\end{center}   
+\caption{This figure shows sample periodograms from the {\ha} peak of the {\harps} data, calculating from Equivalent
+  Widths using {\astroml} for the upper panel and {\gatspy} for the lower panel. This corresponds to the second and
+  third rows of Table \ref{table:fullewtaball}. The strongest 5 peaks are highlighted in both cases.}
+\protect\label{fig:harpspgrams1}
+\end{figure}
 
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.18]{Figures/summpgrams.png} \\
+\includegraphics[scale=0.40]{Figures/harpsprbind1.png} \\
 \end{center}   
-\caption{This figure shows sample periodograms from the {\ha} peak of the {\harps} data, for the range between 40 days
-  and 130 days in steps of 0.01 days. All were made using the {\gatspy} routine.  The top panel shows the periodogram
-  derived from the Equivalent Widths (EW) and the middle and bottom panels ones derived from the Peak Ratios (PR). None
-  have any clipping of data but the bottom panel is binned to 1 day.  The strongest five peaks are marked on the top two
-  panels and the strongest peak of 82.2 days is marked on the bottom panel with the vertical lines.  The results are set
-  out more fully in Table \ref{table:peak5compall}.}
-\protect\label{fig:harpspgrams1}
+\caption{This figure shows a sample periodogram from the Peak Ratio measure from the Full Set of the data from {\harps}
+  binned to 1 day, processed by the {\gatspy} routine and displayed with the five highest peaks highlighted and showing
+  the values. This corresponds to the ninth row Table \ref{table:fullprtaball}.}
+\protect\label{fig:harpspgrams2}
 \end{figure}
 
-\subsection{{\ha} Index Measurements}
-\protect\label{section:haiper}
+Some efforts were made to remove data contaminated from flares, either by clipping spectra with various upper bounds of
+Equivalent Width, by binning data or both. Following the lead from {\uves} in Section \ref{section:uvesflares}, spectra
+were clipped where the Equivalent Width exceeded one standard deviation from the median. This was 3.8 for the Original
+Set or 4.2 for the Full Set of data. However the latter, which included some spectra with very large equivalent widths
+taken in 2016, did not yield any particular benefit, so with the full set of data, clipping to a maximum Equivalent
+Width of 3.8 in line with the Original Set was tried. Binning to 1 day was attempted as was binning to 0.5 days. In
+terms of effectiveness 
 
-\subsection{Peak Ratio Measurements}
-\protect\label{section:priper}
+The results from the {\ha} Index were almost identical to those from the Equivalent Width measure, so in the majority of
+the tables the latter is focused upon, together with Peak Ratios, Skewness and Kurtosis. The overall performance of the
+various measurements in terms of percentage return is given in Table \ref{table:perftable}.
 
-\subsection{Periods from Residual spectra}
-\protect\label{section:residualper}
+\begin{table}[!htbp]
+\centering
+\scalebox{0.75}{
+\begin{tabular}{|l|l|r|r|r|r|}
+\hline
+\textbf{Measure}&\textbf{Data set}&\multicolumn{2}{|c|}{\textbf{82.6 days}}&\multicolumn{2}{|c|}{\textbf{82.6 or 41.3 days}}\\\hline
+&&\textbf{Highest}&\textbf{Top 5}&\textbf{Highest}&\textbf{Top 5}\\\hline
+\multirow{2}{*}{Equivalent Width}&Original&0&5&19&42\\
+&Full&0&33&7&83\\\hline
+\multirow{2}{*}{Peak Ratio}&Original&29&62&48&76\\
+&Full&7&76&28&86\\\hline
+\multirow{2}{*}{Skewness}&Original&0&24&0&24\\
+&Full&6&40&6&50\\\hline
+\multirow{2}{*}{Kurtosis}&Original&0&29&0&29\\
+&Full&0&27&0&27\\\hline
+\end{tabular}}
+\caption{This table shows the approximate recovery performance of all line measurement methods employed with the
+  original and full data. All clipping and binning of the data is included in the summary. As several measures return
+  periods close to 41.3 days, or half the period of 82.6 days, the performance of that is shown in the data also.}
+\protect\label{table:perftable}
+\end{table}
 
-\subsection{Skewness and Kurtosis measurements}
-\protect\label{section:skewkurtper}
-
-\subsection{TiO line and combined lines}
-\protect\label{section:tioper}
-
-{\FirstP} considered various other treatments of the data prior to obtaining periodograms. One treatment was to obtain
-periodograms of the Equivalent Width and Peak Ratios from the residual spectra after division by the line with the
-lowest equivalent width and also the mean of the lowest five spectra. These spectra were ones timed at 5 April 2011 UTC
-03:26:33 (the lowest), 16 March 2006 UTC 06:37:59, 14 March 2007 UTC 07:28:29, 8 April 2011 UTC 06:28:17 and 22 April
-2011 UTC 05:07:46. {\FirstP} also examined periodograms from the skewness and, following \citet{flores16},
-the kurtosis of the {\ha} peaks before and after clipping and binning. However neither of these measurements proved
-materially different from the other measurements. It was again possible to reproduce the 116-day period of
-\citet{suarezmascareno15} from both the skewness and kurtosis measures.
-
-The periodograms obtained from the {\ha} measurements on the {\harps} data showed a large number of ``beat''
-frequencies. They were taken over 11 years from 2004 to 2014 inclusive, however the bulk of these, 207 out of 260, were
-in 2013 and 2014. It seemed possible if other periodic behaviour was selectively affecting {\ha} as opposed to the
-overall intensity as obtained by \asas, restriction to just the two years might eliminate this. However, on trying this
-did not materially affect the quality of the results from these measurements, although the ``beat'' frequencies were
-reduced somewhat. It was noticeable, however that all the measurements failed to reproduce the 116-day period after a
-different set of observation times was taken, either by selecting only 2013-4 data or by adding in additional
-observational data taken in 2016.
-
-The periodograms obtained for all the methods were similar in general appearance to those in Fig. \ref{fig:harpspgrams1}
-but all with different peaks, apart from the Equivalent Width measure being generally similar to the {\ha} Index as
-Table \ref{table:peak5compall} makes clear. Periods close to the {\asas} or {\hst} results appear more often with the
-Peak Ratio measure, otherwise it was noticeable that periods of around 41 days were revealed in a few places,
-particularly frequently for Peak Ratio. It can be seen that 116.3 days, as found by \citet{suarezmascareno15}, are
-observed in the Equivalent Width and {\ha} Index measure.
-
-In an attempt to remove data contaminated from flares, {\Firstp} clipped spectra with various upper bounds of Equivalent
-Width. As discussed in Section \ref{section:uvesflares}, {\Firstp} decided to select the spectra with the lower 90\% of
-the Equivalent Widths (i.e. removing the 10\% of profiles containing the highest EWs), which was approximately a maximum
-of 1 standard deviation from the median in both the {\harps} and {\uves} data, eliminating the upper 23 spectra from the
-{\harps} data. This was then binned to 1 day, giving a net 55 observation dates. This led to a significant improvement
-in the results particularly from the Peak Ratio measure, as illustrated in the last panel of Fig. \ref{fig:harpspgrams1}
-(although that is binned and not clipped) however no particular improvement was noted in the other measures.  {\FirstP}
-also considered eliminating two very isolated epochs of 25 July 2005 at 23:43:51 and 14 March 2007 at 07:28:29, in case
-these contained contaminating periodic data, but this made no discernible difference to the results. {\FirstP} also
-calculated results for the {\ha} Index but again found the results to be virtually indistinguishable from the Equivalent
-Width results after this process.
+Also examined was the peak for TiO peak highlighted in Fig. \ref{fig:harpsfirstha}, right panel and shown in larger
+scale in Fig. \ref{fig:tispec}. Results are presented in Table \ref{table:tipeakall} in Appendix \ref{chapter:pgramdetail}.
+However no trace of the 82.6 day period was seen in the results from this, although there were some hints of the 106 day
+period noticed in the {\asas} results in Section \ref{section:asas}. Attempts to combine this with the {\ha} peak to
+derive a type of a composite spectral index proved of little value as the {\ha] peak is so much greater.
 
 Again as with the {\asas} and {\hst} data, {\Firstp} checked for other periodic signals of up to the span of the data,
 but were unable to discern any strong period and in particular no sign of the 442-day period reported in

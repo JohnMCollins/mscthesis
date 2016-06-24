@@ -23,9 +23,9 @@ prow()
 	descr1="$2"
 	descr2="$3"
 	descr3="$4"
-	echo "$descr1 & \\scipy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
-	echo "$descr2 & \\astroml & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
-	echo "$descr3 & \\gatspy & `Printpgram --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
+	echo "$descr1 & \\scipy & `Printpgram --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.ls` \\\\"
+	echo "$descr2 & \\astroml & `Printpgram --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.als` \\\\"
+	echo "$descr3 & \\gatspy & `Printpgram --asdiff 82.6 41.3 --bfenh bold italic --prec 1 --maxn 5 --latex --noendl $typ.gls` \\\\\\hline"
 }
 
 echo '\begin{tabular}{|l|l|r|r|r|r|r|}'
