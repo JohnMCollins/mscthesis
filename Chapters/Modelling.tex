@@ -1,6 +1,6 @@
 \chapter{Modelling of {\prox} spectra}
 \protect\label{chapter:modelling}
-\lhead{Chapter 4. \emph{Modelling of {\prox} spectra}}
+\lhead{Chapter \ref{chapter:modelling} \emph{Modelling of {\prox} spectra}}
 
 In order to develop and refine the methods for evaluation of the periodicity of the sub-peaks in the {\prox} spectra, a
 version of the ``Doppler Tomography of Stars'' (DoTS) modelling software \citep{CCamerondotsa} was used. Although DoTS
@@ -14,9 +14,9 @@ was used for an effective temperature of 3000K. The plage intensities were calcu
 intensity for the Sun. Since no such observations exist for other stars, the same law was adopted with appropriate
 facular contrasts for {\ha} wavelengths (see \citet[figs 3 \& 4]{unruh99}).
 
-Since it was desired to simulate the {\ha} line profile, a local intensity profile is assumed for the photosphere and
+Since it was desired to simulate the {\ha} line profile, a local intensity profile was assumed for the photosphere and
 the plage. For inactive photospheres of \rdwarf s with similar spectral type to {\prox}, {\ha} is not visible (e.g. see
-{\ha} profile in \citet[fig. 6]{barnes14} for GJ1061). Hence for the quiet photosphere, a flat continuum is assumed For
+{\ha} profile in \citet[fig. 6]{barnes14} for GJ1061). Hence for the quiet photosphere, a flat continuum was assumed For
 active stars, {\ha} possesses a characteristic emission profile with self-absorption, resulting in a double-peaked
 profile. Since the \textit{vsini} is probably less than 0.1 km/s for \prox, the local line profile shape for {\ha} was
 based on the observed {\prox} line profile since it is unlikely to show rotational broadening. This profile was tuned to
@@ -42,7 +42,8 @@ assigned to each pixel. For a pixel containing plage, the synthetic {\ha} profil
 no visible profile (as note above), the continuum level is used. The line profile is shifted appropriately for the
 Doppler shift of each pixel in the model. The model enables the user to place circular spots of specified radii anywhere
 on the star. For each viewing angle (or equivalently observation phase), the appropriate intensity profiles of all
-visible pixels is calcalculated (according to position on the line and centre-to-limb variation) and sum them to obtain the simulated line profile.
+visible pixels is calculated (according to position on the line and centre-to-limb variation) and sum them to obtain
+the simulated line profile.
 
 A model star with plage regions that rotate into and out of view can thus potentially exhibit variability in the line
 shape since the pixels on different parts of the star possess different Doppler velocities. For stars such as \prox,
@@ -53,25 +54,27 @@ local intensity profile for {\ha} possesses a normalised peak intensity of N tim
 rotational velocity much greater than the instrument resolution, line asymmetries are likely to be much more reliable.
 
 \section{Plage distribution and results}
-During the course of experimentation with models, a selection of plage distributions was tried, ranging from a
-single large spot on one face to a randomly-placed spots of random sizes. However it was found that the variation in
-equivalent widths from a low spot coverage was bore no possible resemblance to that from observational data, in that just exhibited two extremes of Equivalent Widths
-and no intermediate values. On the other hand a coverage of more than about 30\% provided very limited swings in the
-Equivalent Width compared those observed from {\harps} and {\uves}. After some experimentation, a randomly distributed
-plage was settled upon which filled up to 2.5\% of the surface,towards the high end of the coverage of up to 2.7\%
-reported in \citet{guttenbrunner14} in relation to the Sun.
+\protect\label{section:plagedists}
+
+During the course of experimentation with models, a selection of plage distributions was tried, ranging from a single
+large spot on one face to randomly-placed spots of random sizes. However it was found that the variation in equivalent
+widths from a low spot coverage was bore no possible resemblance to that from observational data, in that just exhibited
+two extremes of Equivalent Widths and no intermediate values. On the other hand a coverage of more than about 30\%
+provided very limited swings in the Equivalent Width compared those observed from {\harps} and {\uves}. After some
+experimentation, a randomly distributed plage was settled upon which filled up to 2.5\% of the surface,towards the high
+end of the coverage of up to 2.7\% reported in \citet{guttenbrunner14} in relation to the Sun.
 % The second was the same combined with a highly fairly asymmetric
 % additional 1\% of coverage in a wedge between 0{\degree} and 37{\degree}. To avoid a concentration at the poles the
 %likelihood of selecting a latitude point was made to be approximately proportional to the cosine of the latitude.
 
 The models were all generated with the observation dates from the Original Set of {\harps}\footnote{This work was
-  completed before the 2016 data was available. Also, as discussed in Section ??, it proved useful to study the Original
-  Set of data as the 116.6 day period of \citet[Table 3]{suarezmascareno15} appeared in some cases.}, using possible rotation periods
-between 15 and 90 days in steps of 5 days and inclinations between 10{\degree} and 90{\degree} in steps of 5{\degree} to
-observe the various effects. Only a limited selection, usually multiples of 10 days and 10{\degree} are shown in this
-{\paperorthesis} to conserve space.
+  completed before the 2016 data was available. Also, as discussed in Section \ref{section:addflares}, it proved useful
+  to study the Original Set of data as the 116.6 day period of \citet[Table 3]{suarezmascareno15} appeared in some
+  cases.}, using possible rotation periods between 15 and 90 days in steps of 5 days and inclinations between
+10{\degree} and 90{\degree} in steps of 5{\degree} to observe the various effects. Only a limited selection, usually
+multiples of 10 days and 10{\degree} are shown in this {\paperorthesis} to conserve space.
 
-\IfThesis{In Fig. \ref{fig:extremew} some extremes are shown.
+In Fig. \ref{fig:extremew} some extremes are shown.
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -84,13 +87,12 @@ observe the various effects. Only a limited selection, usually multiples of 10 d
   used in the model and all the generated spectra superimposed.} 
 \protect\label{fig:extremew}
 \end{figure}
-}
 
 Here are presented in table \ref{table:modelcomp} a selection of typical results showing means and standard deviations
 for the Equivalent Width method (EW)) with the two plage distributions for various periods and with 30{\degree},
 60{\degree} and 90{\degree} inclinations and for 70, 80 and 90-day periods with 10{\degree} to 90{\degree} inclinations.
-Note that the PR results are not displayed as variations were insufficient to be displayed in less than 6
-figures, the Doppler variations are just not substantial enough.
+Note that the PR results are not displayed as variations were insufficient to be displayed in less than 6 figures, the
+Doppler variations are just not substantial enough.
 
 \begin{table}[!htbp]
 \centering
@@ -137,8 +139,8 @@ and inclination (between 10{\degree} and 90{\degree} in steps of 5\degree), a pe
 between 10 days and 130 days in steps of 0.01 days, from the calculated equivalent widths and noted the RMS error over
 all inclinations. In nearly all cases the error was rarely more than 0.02 days. It was rather a different matter for the
 Peak Ratios however, in that the variations observed in the Peak Ratios were typically $2{\times}10^{-5}$ at most or with
-the most extreme plage distributions could be stretched to $2{\times}10^{-4}$ These variations are just above the level
-at which it is possible to reliably measure the PeaK Ratio from the observed data but far below the observed Peak Ratio
+the most extreme plage distributions could be stretched to $2{\times}10^{-4}$. These variations are just above the level
+at which it is possible to reliably measure the Peak Ratio from the observed data but far below the observed Peak Ratio
 changes in the data which are two orders of magnitude higher, e.g. combining all the {\harps} data, a result of 0.997 $
 \pm $ 0.018 (one $\sigma$) was obtained.
 
@@ -146,9 +148,9 @@ changes in the data which are two orders of magnitude higher, e.g. combining all
 \protect\label{section:addflares}
 
 Despite the limitations of the simplistic model, it is clear that a good estimate of periodicity may be obtained from
-the Equivalent Width method, although the Peak Ratio variations could not be reproduced and that method reliably applied
+the Equivalent Width method, although the Peak Ratio variations could not be reproduced and that method reliably applied.
 These results are for a noiseless set of models and to compare with reality the performance of the modelling results and
-the anlysis methods in the presence of observational noise and also the influence of simulated flare events has to be
+the analysis methods in the presence of observational noise and also the influence of simulated flare events has to be
 considered.
 
 As a first step in moving to something like actual observational data, noise of a given signal to noise ratio was added
@@ -167,9 +169,9 @@ recovered, otherwise it was regarded as correctly recovered but with the given e
 difference was either substantially greater or substantially less than this. It was noticeable that in quite a number of
 cases a period close to 116 days was returned as a False Positive.
 
-Also examined was the possible effect of flares. The effect of flares was imulated by taking the spectra
+Also examined was the possible effect of flares. The effect of flares was simulated by taking the spectra
 which were clipped as having excessive Equivalent Width in Section \ref{section:harpsper}\footnote{N.B. This was done
-  with the Orignal Set of data and observation times as previously noted.} and adding in the same
+  with the Original Set of data and observation times as previously noted.} and adding in the same
 proportionate excess over the median Equivalent Width in the model as was found in the observed data. The result was a
 poorer performance than with noise alone, but not by much. With just noise, the performance became markedly low with a
 SNR of 15 or below but adding flares as described significantly reduced the performance with a SNR of 20 or below. These

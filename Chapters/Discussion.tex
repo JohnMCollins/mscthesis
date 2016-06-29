@@ -1,125 +1,104 @@
 \chapter{Discussion}
 \protect\label{chapter:discussion}
-\lhead{Chapter 5. \emph{Discussion}}
+\lhead{Chapter \ref{chapter:discussion} \emph{Discussion}}
 
-In consideration of the methods of processing the actual observational data, the consistency between the various results
-from \asas, supported by the {\hst} results, cannot be ignored. Not only do the three Lomb-Scargle routines tried yield
-identical results but the result of 82.6 $\pm$ 0.1 days for the period of {\prox} is completely consistent. An
-explanation for the secondary peak of 106.3 $\pm$ 0.1 days as being a ``beat'' between the rotation period and an Earth
-year is also available which {\Firstp} believe further confirms the likelihood of the rotation period of {\prox} being
-at or close to 82.6 days, especially when this is not observed in the {\hst} results, which are far less constrained by
-the time of year when observations of {\prox} may be made. It is therefore feasible to use the 82.6 day period, together
-with the 106.4 day period as a ``benchmark'' to assess the accuracy of the other methods of obtaining the rotation
-period.
+It is clear that the period of 82.6 $\pm$ 0.1 days given by the photometric results for {\asas} and confirmed by {\hst}
+in Chapter \ref{chapter:photometry} must be the rotation period of \prox, in line with \citet{benedict98} and confirmed
+by \citet{kiraga07}. There is a near-zero FAP value against 82.6 days and all the Lomb-Scargle routines which were tried
+gave exactly the same result with identical periodograms (apart from allowances for scaling of the power). The
+experiments in Section \ref{section:asasfap} with taking subsets of the data and noting the changes in FAP and the
+standard deviation of the error, with only limited extrapolation of the chart in Fig. \ref{fig:asasprop}, give
+confidence in assigning the error bar on this period as being no more than 0.1 days.
 
-In this context the results obtained using these methods involving analysis of the {\ha} peak of the spectra are rather
-mixed in their success. The three Lomb-Scargle routines tried give radically different results in most cases. The
-treatment of the data, in terms of taking residuals, clipping of extreme data and binning sometimes improve and
-sometimes worsen the accuracy of the returned value or increase or reduce the likelihood of a false positive. Sometimes
-half of the period is returned.
+It was not possible to obtain as clear-cut results from spectroscopic methods involving analysis of the {\ha} peak of
+the {\prox} spectra, in terms of returning the period at all, obtaining a clear-cut topmost peak in the periodograms or
+obtaining a reasonable error bar. As can be seen in the summary in Table \ref{table:perftable} or the full results in
+Appendix \ref{chapter:pgramdetail}, the Peak Ratio method appears to perform significantly better more often than the
+Equivalent Width method, with Skewness and Kurtosis methods somewhere in between and more consistent. They are of the
+same kind of order as the performance illustrated in Fig. \ref{fig:asasprop}, for the same number of observations, but
+clearly cannot be used standing alone to compute the rotation period. Clipping high equivalent width observations, or
+binning to various periods can improve some results, but not in any consistent way.
 
-The Peak Ratio does appear to perform better than the other methods, returning close to 82.6 days more often than the
-other two methods. The {\ha} Index method and the Equivalent Width method of analysing the peaks give the most similar
-results, in many cases identical to within 0.1 day, or possibly with some peaks interchanged. It has to be noted that
-the {\ha} Index method effectively normalises the data itself, whereas the Equivalent Width method uses data which has
-been normalised already. This perhaps gives added confidence in the applicability of both methods.  If the search space
-is restricted to periods in the region of 82.6 days, then it is clear that this value, or within a few percent of it,
-can be extracted using all the search methods, but standing alone, they cannot be considered to be a reliable
-periodicity measure for \prox, however they may well fare better for for other stars.
+There is also a strong peak of 106.3 $\pm$ 0.1 days on the {\asas} results and seen in some of the spectroscopic results
+and the modelling, but not seen in the {\hst} results. This period would appear to be a ``beat'' between the rotation
+period and an Earth year, which would not affect the {\hst} results, which are far less constrained by the time of year.
 
 It has proved possible to reproduce the 116.6 days of \citet[Table 3]{suarezmascareno15} in both the treatments of
-Equivalent Width and {\ha} Index and in some of the other variants of the handling of those, as shown in Table
-\ref{table:peak5compall}, together periodograms taken from the skewness and kurtosis. However, this peak is the fifth
-strongest in the periodograms if the period search is extended to 40 days and disappears if any kind of selection or
-binning is made from the data or if additional data from 2016 is included. In addition, it was noticed that some of the
-modelling results which failed to give the expected period (see Section \ref{section:addflares}) also gave periods close
-to 116.6 days from the same observation times as in the {\harps} data. From this analysis, {\Firstp} would have to
-discount this as a false positive, probably an artefact of the observation times and confirm the previously-assigned
-rotation period of the order of 82.5 days in \citet{benedict98} and confirmed elsewhere, including the photometric
-{\asas} and {\hst} data discussed in this paper and some of the results from the spectroscopic data.
+Equivalent Width and {\ha} Index and in some of the other variants of the handling of those, together with periodograms
+taken from the skewness and kurtosis. However, this peak is the fifth strongest in the periodograms if the period search
+is extended to 40 days and disappears if any kind of selection or binning is made from the data or if additional data
+from 2016 is included. In addition, it was noticed that some of the modelling results which failed to give the expected
+period (see Section \ref{section:addflares}) also gave periods close to 116.6 days from the same observation times as in
+the {\harps} data. From this analysis, this would have to be discounted as a false positive, probably an artefact of the
+observation times.
 
-It appears clear that there is a contamination of the {\ha} line of {\prox} from another periodic effect or effects
-specific to {\ha} which seriously compromise the utility of several measures of periodicity from the study of this line,
-although the Peak Ratio method would appear to fare better, especially when observations affected by the possible flare
-activity are masked out.
-%{\FirstP} briefly investigated the possibility of extracting periodicity from an absorption line identified
-%as a TiO transition
-%and highlighted in the second panel of Fig. \ref{fig:harpsfirstha}
-%but found the Periodogram results scarcely different from that from that from {\ha} in terms of identifying any strong
-%signal.
-% As is clear from Fig. \ref{fig:harpsfirstha} this line is much smaller than {\ha} and the corresponding
-% proportionate error is much greater.
-A future line of investigation might be worth considering by combining fluxes from various lines in various spectra
-orders to evaluate the Composite Spectral Index referred to in \citet{hall99} and \citet{hall00}.
+Limiting the portion of the spectrum to just the {\ha} line of \prox, even with the instrumental stability of {\harps}
+was proven to be less useful than {\asas} ground-based photometry for the recovery of period. A future line of
+investigation which might be worth considering is that of combining fluxes from various magnetic/activity sensitive lines
+in various spectral orders to re-evaluate the Composite Spectral Index referred to in \citet{hall99} and
+\citet{hall00}. This was briefly explored in the context of the examination of the TiO line in Section
+{section:harpsper}, but little benefit was achieved.
 
-Turning to the modelling results, whilst {\Firstp} were able to reproduce the variations in Equivalent Width seen in
-{\prox} using the DoTS model and show that the measurement of rotation period from periodicity has validity down to
-quite a poor SNR and despite the presence of significant flares, notwithstanding extensive experimentation, including
-relatively extreme values for the various parameters for limb-darkening and contrast or extreme distributions of plage,
-it proved impossible to approach even remotely the observed variations in Peak Ratio observed either in the {\harps} or
-{\uves} data and listed in Table \ref{table:ewtabfirst}.
+It was possible to reproduce the variations in Equivalent Width seen in {\prox} using the DoTS model and show that the
+recovery of the rotation period has validity. However, even with extensive experimentation, including relatively extreme
+values for the various parameters for limb-darkening and contrast or extreme distributions of plage, it was not possible
+to model the observed variations in Peak Ratio found either in the {\uves} or {\harps} data. It is clear that the
+variations in the two \horn s that are purely due to Doppler shift from the rotational velocity are not large; with a
+radius of 0.141 Solar \citep{demory09} and assuming a period of the order of 80 days the rotational velocity is at most
+90 m/s yielding a Doppler shift of at most 0.003{\AA} in the {\ha} line between the extremes of the disk and the centre,
+far too low to reproduce the variations in the {\ha} line profile as as illustrated in Fig. \ref{fig:harpsfirstha} for
+which the Peak Ratios were calculated as 0.997 $ \pm $ 0.018 (see Table \ref{table:ewtabfirst}). On the other hand, the
+best standard deviation on a Peak Ratio close to 1.0 which could be obtained from the models was $2{\times}10^{-5}$ or
+$2{\times}10^{-4}$ with very extreme plage distributions. This was not surprising due to the lack of Doppler broadening
+of the line profile.
 
-The variations in the two \horn s that are purely due to Doppler shift from the rotational velocity are not large; with
-a radius of 0.141 Solar \citep{demory09} and assuming a period of the order of 80 days the rotational velocity is at
-most 90 m/s yielding a Doppler shift of at most 0.003{\AA} in the {\ha} line between the extremes of the disk and the
-centre. Clearly the DoTS modelling of static plage is not adequate to emulate either the asymmetry or the variations in the
-\horn s in the {\ha} line profile as illustrated in Fig. \ref{fig:harpsfirstha}, as this rotational velocity is far too
-low for a Doppler shift to produce them from plage distributions as illustrated in Table \ref{table:modelcomp}.
+It is clear that the 2D model of static plage and spots supported by DoTS cannot reproduce the observed variations in
+the Peak Ratios. Likewise it cannot reproduce the range of phenomena which adversely affects obtaining periodicity from
+the Equivalent Widths. This points to the need for a 3D model including vertical processes to properly understand the
+behaviour of \prox. In \citet{mohanty02} and \citet{mohanty03}, where the activity of late \rdwarf s is found to be less
+closely tied to the rotation period for earlier type stars the authors propose a ``turbulent dynamo'' as the source of
+the activity, for which a 3D model is required.
 
-Trying to reproduce all the observed effects by flux profiles of plage regions in the chromosphere is undoubtedly
-over-simplistic. Moreover the combinations of limb darkening laws and especially the contrast refinements referred to in
-Section \ref{chapter:modelling}, whilst tuned to give reasonable contrast in the model, and whilst a reasonable starting
-point, are partly derived for the Sun and probably not appropriate for the very different situation represented by
-\prox.
-
-Despite the inadequacies of the model, a reasonably accurate periodicity from the {\ha} Equivalent Width is obtainable
-even down to SNR levels in the teens, well below the noise levels for {\harps} and {\uves} which are mostly over
-100. The model and these techniques may well be suitable for stars with a much lower rotation period and with rotational
-velocity much greater than that of {\prox} which has one of less than 90 m/s and provided that any other activity on the
-star in question does not greatly affect the {\ha} line in proportion. It is hard to give more than a qualitative view
-of the validity of the Peak Ratio method with this model as applied to \prox, although {\Firstp} did attempt to obtain
-periods from the Peak Ratios in the model, despite the negligible variations, obtaining results approaching (and in a
-few cases better than) the accuracy of the Equivalent Width results.
-
-{\FirstP} considered various scenarios which might apply to cause the variations in the Peak Ratio. If {\prox} and stars
-exhibiting similar behaviour are to be adequately modelled, the model used will have to be significantly extended to
-cater for a wider set of effects. One aspect would be the possibility of differential rotation as discussed in as
-discussed for CJ1243 in \citet{davenport15}. Ruled out in \citet{barnes05}.
-% This would probably not apply to {\prox} as it has a mass of 0.123 Solar \citep{segransan03} and a
-% radius of 0.141 Solar \citep{demory09} this means the average density of {\prox} is about 44 times Solar which would
-% make this seem unlikely. Moreover
-The results from {\hst} and {\asas} in Section \ref{chapter:photometry} appear to rule out differential rotation periods.
-Also such a model ought to cater the possibility of Ellerman Bombs as described by Ellerman (1917) and recently
-discussed in \citet{rutten13} and \citet{vissers15} and \citet{rutten16} as particularly affecting the {\ha} line.
+%A variety of phenomena in the literature were considered for this \paperorthesis. Also such a model ought to cater the
+%possibility of Ellerman Bombs as described by Ellerman (1917) and recently discussed in \citet{rutten13} and
+%\citet{vissers15} and \citet{rutten16} as particularly affecting the {\ha} line.
 % These however were all treatments of the Sun. Again, this probably would not apply to {\prox} as they relate to much
 % higher temperatures, in the range 10,000K to 20,000K, which would be very much less frequent with {\prox} and are
 % explicitly stated to be a photospheric phenomenon.
-Another feature to be catered for in a more comprehensive model would be the possibility of prominence and plage
-activity as discussed by \citet{eibe98} for RE~1816+541. However this is a rapidly-rotating star, of the order of 12
-hours, rather than the 82 days of \prox. Also the literature such as \citet{skelly09}, building on earlier work such as
-\citet{donati99}, \citet{dunstone06} and \citet{colliercameron89} discusses the possibility of slingshot
-prominences. These however focus on K-dwarfs and appear to be associated with strong magnetic fields which would not be
-expected with a slow rotator such as \prox, although possibly the dynamo discussed in \citet{yadav16} may provide a clue
-to this.
+%Another feature to be catered for in a more comprehensive model would be the possibility of prominence and plage
+%activity as discussed by \citet{eibe98} for RE~1816+541. However this is a rapidly-rotating star, of the order of 12
+%hours, rather than the 82 days of \prox. Also the literature such as \citet{skelly09}, building on earlier work such as
+%\citet{donati99}, \citet{dunstone06} and \citet{colliercameron89} discusses the possibility of slingshot
+%prominences. These however focus on K-dwarfs and appear to be associated with strong magnetic fields which would not be
+%expected with a slow rotator such as \prox, although possibly the dynamo discussed in \citet{yadav16} may provide a clue
+%to this.
 
-{\FirstP} finally noted the work on chromospheres in the review of \citet[Section VII]{linsky80} considering systematic
-chromospheric flow patterns. Linsky mostly considers Ca lines, but that review cites \citet{athay70} which particularly
-considers {\ha} and also \citet{athay70a}. These papers and others argue that vertically propagating shock waves can
-account for the red and blue asymmetries observed in various lines. In \citet{shkolnik03}, the authors build on this
-work to suggest that planets would induce such chromospheric activity on HD 179949 (an F8V star). The presence of the
-red and blue asymmetries in the {\ha} line on {\prox} as {\Firstp} observed does suggest this as a possible line of
-enquiry to build into new models. Somewhat similar to this is the discussion of line asymmetry of H, K and Ca lines in
-\citet{rauscher06}, however these were for earlier type of stars, K7 to M5, than \prox, for which {\ha} is in
-absorption. The \horn s shown in fig. 2 in that paper have the red {\horn} smaller than the blue {\horn} as opposed to
-{\prox} as shown in Fig. \ref{fig:harpsfirstha}, for which it is in most cases the other way round. In section 4.2 of
-that paper the authors suggest that line asymmetry is caused by a slowly-decelerating motion toward the observer which
-does not fall back ballistically away from the observer which would therefore be blue-shifted and hence enhance the blue
-\horn. On the other hand with \prox, it might be a similar effect is taking place but the self-absorption portion is
-blue-shifted which would be inverted to resemble a red shift.
+In \citet{leenaarts12} a successful 3D MHD simulation was performed for the Sun. Also work on seismic shock waves has
+been undertaken for example in \citet{donea06}. Similar conclusions are reached by \citet{rauscher06} as an explanation
+for H, K and Ca line asymmetry, however these were for earlier type of stars than \prox, of type K7 to M5, for which
+{\ha} is in absorption. The \horn s shown in fig. 2 in that paper have the red {\horn} smaller than the blue {\horn} as
+opposed to {\prox} as shown in Fig. \ref{fig:harpsfirstha}, for which it is in most cases the other way round. The
+authors suggest that this effect is caused by slowly-decelerating motion toward the observer which does not fall back
+ballistically away from the observer which would therefore be blue-shifted and hence enhance the blue \horn. With \prox,
+it might be a similar effect is taking place but the self-absorption portion is blue-shifted which would be inverted to
+resemble a red shift.
 
-Future directions for {\prox} would therefore be to develop models to simulate some of these effects and attempt to
-relate them to the observed variations, particularly in the Peak Ratio. As for the measurements based on the {\ha} line
-and probably other lines, whilst {\Firstp} consider that they are currently less powerful than photometry for {\prox} in
-isolation, they may well be useful for other stars with a smaller rotation period whose Doppler variations in the
-morphology of the {\ha} and other lines dominate the effects.
+%{\FirstP} finally noted the work on chromospheres in the review of \citet[Section VII]{linsky80} considering systematic
+%chromospheric flow patterns. Linsky mostly considers Ca lines, but that review cites \citet{athay70} which particularly
+%considers {\ha} and also \citet{athay70a}. These papers and others argue that vertically propagating shock waves can
+%account for the red and blue asymmetries observed in various lines. In \citet{shkolnik03}, the authors build on this
+%work to suggest that planets would induce such chromospheric activity on HD 179949 (an F8V star). The presence of the
+%red and blue asymmetries in the {\ha} line on {\prox} as {\Firstp} observed does suggest this as a possible line of
+%enquiry to build into new models. Somewhat similar to this is the discussion of line asymmetry of H, K and Ca lines in
+%\citet{rauscher06}. In section 4.2 of
+%that paper the authors suggest that line asymmetry is caused by a slowly-decelerating motion toward the observer which
+%does not fall back ballistically away from the observer which would therefore be blue-shifted and hence enhance the blue
+%\horn. On the other hand with \prox, it might be a similar effect is taking place but the self-absorption portion is
+%blue-shifted which would be inverted to resemble a red shift.
+
+%Future directions for {\prox} would therefore be to develop models to simulate some of these effects and attempt to
+%relate them to the observed variations, particularly in the Peak Ratio. As for the measurements based on the {\ha} line
+%and probably other lines, whilst {\Firstp} consider that they are currently less powerful than photometry for {\prox} in
+%isolation, they may well be useful for other stars with a smaller rotation period whose Doppler variations in the
+%morphology of the {\ha} and other lines dominate the effects.
 

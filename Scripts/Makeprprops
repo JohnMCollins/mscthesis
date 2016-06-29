@@ -1,0 +1,70 @@
+#! /bin/bash
+
+PERIODS=40d:.01d:130d
+export PERIODS
+
+ORIGSPI=../../Workspace/Prox-HARPS.spi
+FULLSPI=../../Workspace/Prox-AllHARPS.spi
+
+Btchewcalc --interp --out Orig.ew $ORIGSPI
+Btchewcalc --interp --out Full.ew $FULLSPI
+
+Btchewcalc --interp --divspec 48 8 11 49 51 --out origresid.ew $ORIGSPI
+Btchewcalc --interp --divspec 48 8 11 49 51 --out fullresid.ew $FULLSPI
+
+Pruneew --upper 1 --lower 400 --median Orig.ew Prune1sorig.ew
+Pruneew --upper 1 --lower 400 --median Full.ew Prune1sfull.ew
+Pruneew --upper 3.8 --lower 0 --byval Full.ew Prune3p8full.ew
+
+Bucketew --sepdays 1 --lonely 300 Orig.ew Bucket1orig.ew
+Bucketew --sepdays 1 --lonely 300 Full.ew Bucket1full.ew
+Bucketew --sepdays .5 --lonely 300 Orig.ew Bucketp5orig.ew
+Bucketew --sepdays .5 --lonely 300 Full.ew Bucketp5full.ew
+
+Bucketew --sepdays 1 --lonely 300 Prune1sorig.ew P1sB1orig.ew
+Bucketew --sepdays 1 --lonely 300 Prune1sfull.ew P1sB1full.ew
+Bucketew --sepdays 1 --lonely 300 Prune3p8full.ew P3p8B1full.ew
+Bucketew --sepdays .5 --lonely 300 Prune1sorig.ew P1sBp5orig.ew
+Bucketew --sepdays .5 --lonely 300 Prune1sfull.ew P1sBp5full.ew
+Bucketew --sepdays .5 --lonely 300 Prune3p8full.ew P3p8Bp5full.ew
+
+for typ in Orig Prune1sorig Bucket1orig Bucketp5orig P1sB1orig P1sBp5orig origresid Full Prune1sfull Prune3p8full Bucket1full Bucketp5full P1sB1full P3p8B1full P1sBp5full P3p8Bp5full fullresid
+do
+	lsconv --type pr --out $typ.ls $typ.ew &
+	Alsconv --type pr --out $typ.als $typ.ew &
+	Glsconv --type pr --out $typ.gls $typ.ew &
+done
+wait
+
+prow()
+{
+	typ="$1"
+	descr1="$2"
+	descr2="$3"
+	descr3="$4"
+	Printpgram --prec 1 --maxn 5 $typ.ls $typ.als $typ.gls
+}
+
+(prow Orig "None" "" ""
+prow Prune1sorig 'Clipped 1$\sigma$' "" ""
+prow Bucket1orig "Binned" "1 day" ""
+prow Bucketp5orig "Binned" "0.5 day" ""
+prow P1sB1orig 'Clipped 1$\sigma$' "binned" "1 day"
+prow P1sBp5orig 'Clipped 1$\sigma$' "binned" "0,5 day"
+prow origresid "Residuals" "" "") >PRO.m5
+echo
+echo
+(prow Full "None" "" ""
+prow Prune1sfull 'Clipped 1$\sigma$' "" ""
+prow Prune3p8full "Clipped" "To 3.8 EW" ""
+prow Bucket1full "Binned" "1 day" ""
+prow Bucketp5full "Binned" "0.5 day" ""
+prow P1sB1full 'Clipped 1$\sigma$' "binned" "1 day"
+prow P3p8B1full "Clipped" "To 3.8 EW" "binned 1 day"
+prow P1sBp5full 'Clipped 1$\sigma$' "binned" "0.5 day"
+prow P3p8Bp5full "Clipped" "To 3.8 EW" "binned 0.5 day"
+prow fullresid "Residuals" "" "") >PRF.m5
+
+rm -f *.ew *.ls *.als *.gls
+
+

@@ -49,12 +49,19 @@ Fig. \ref{fig:asaspgram1} is obtained, restricting the display from 20 to 160 da
 \end{figure}
 
 As some of the observations were duplicated or apparently overlapping, these were initially binned to 1 day, in line
-with several of the {\harps} results described in section ??. This reduced the number of points to 624. From the result
-the periodogram shown in Fig. \ref{fig:asaspgram2} was obtained. This appeared to clarify the peaks by reducing the
-number with very short periods and enhancing the two major ones. Also attempted was the removal of clearly duplicated
-points in the data, which could be done by binning to 18 minutes. This resulted in a more modest reduction to 924 points
-and even smaller FAP of the main peak, to the order of $10^{-9}$. Also noticeable is that that the third highest peak is
-in the region of 130 dayshas an FAP of 0.5.
+with several of the {\harps} results described in Section \ref{section:harpsper}. This reduced the number of points to
+624. From the result the periodogram shown in Fig. \ref{fig:asaspgram2} was obtained. This appeared to clarify the peaks
+by reducing the number with very short periods and enhancing the two major ones. Some binning appeared to be necessary
+as some of the points had duplicated times. It appeared worthwhile to experiment with sizes of binning to see at what
+point the result was optimal, in terms of yielding the strongest peaks with the lowest FAP and least extraneous peaks
+and after trying various binning values between several days down to 1 minute, the optimal binning was found to be 18
+minutes, yielding the periodogram shown in Fig. \ref{fig:asaspgram3}. Note that the scale of this is the same but the
+figure has been made taller to accommodate the more powerful 82.6 day peak. The reduction of the points in the binning to
+18 minutes was found to be a much more modest reduction, to 924 observations from 970.
+
+The explanation of this 18-minute binning result may be related to the 3-minute exposure time for {\asas} 3
+\citep{pojmanski01}. Possibly also this may also be related to a p-mode oscillation of \prox, however no current results
+are available for this in the literature.
 
 Although the recommended aperture by {\asas} for {\prox} is the second aperture, it appeared valuable to compare the
 three highest peaks from each of the apertures finding that nearly all the data gave a first peak of 82.6 days, a second
@@ -110,7 +117,7 @@ Aperture & Peak 1 & FAP & Peak 2 & FAP & Peak 3 & FAP \\\hline
 
 It was noticeable that all of the Lomb-Scargle routines listed in Appendix \ref{chapter:lsroutines} gave exactly
 the same results (apart from differences to scaling of the power) with all the {\asas} data, including the lower quality
-data. This was in contrast to the Spectroscopic resutls discussed in later chapters of this \paperorthesis.
+data. This was in contrast to the Spectroscopic results discussed in later chapters of this \paperorthesis.
 
 A search was made for very long periods up to the period spanned by the data in each case, however no strong periods
 could be found, in particular nothing close to the 442 days reported in \citet{cincunegui07}.
@@ -155,6 +162,7 @@ $ \frac{1}{\frac{1}{82.6} - \frac{1}{365.25}} = 106.7 $
 
 \end{center}
 
-This suggests the possibility that this period is an alias thrown up by the observation times as indeed the strong
-77.8-day period seen in the HST data is a similar alias. In Section ?? the interactions between competing periods are
-considered further.
+This suggests the possibility that this period is an alias thrown up by the observation times as indeed possibly the
+strong 77.8-day period seen in the {\hst} data but not in the {\asas} data is a similar
+alias. %In Section ?? the interactions between competing periods are
+%considered further.
