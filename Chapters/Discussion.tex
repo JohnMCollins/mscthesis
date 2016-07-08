@@ -13,65 +13,74 @@ Fig. \ref{fig:asasprop}, give confidence in assigning the error bar on this peri
 It was not possible to obtain as clear-cut results from spectroscopic methods involving analysis of the {\ha} peak of
 the {\prox} spectra, in terms of returning the period at all, obtaining a clear-cut topmost peak in the periodograms or
 obtaining a reasonable error bar. As can be seen in the summary in Table \ref{table:perftable} or the full results in
-Appendix \ref{chapter:pgramdetail}, the Peak Ratio method appears to perform significantly better more often than the
-Equivalent Width method, with Skewness and Kurtosis methods somewhere in between. The results are of the same kind of
-order as the performance illustrated in Fig. \ref{fig:asasprop}, for similar numbers of observations, but clearly cannot
-be used standing alone to compute the rotation period. Clipping high equivalent width observations, or binning to
-various periods can improve some results, but not in any consistent way and only seem to have an effect on Equivalent
-Width and Peak Ratio measurements, not with Skewness and Kurtosis measurements.
+Appendix \ref{chapter:pgramdetail}, the Peak Ratio method appears to perform significantly better, in terms of rate of
+recovery of the correct period, than the Equivalent Width method, with skewness and kurtosis methods somewhere in
+between. The results are of the same kind of order as the performance illustrated in Fig. \ref{fig:asasprop}, for
+similar numbers of observations, but clearly cannot be used, standing alone, to compute the rotation period. Clipping high
+equivalent width observations, or binning to various periods can improve some results, but not in any consistent way and
+only seem to have an effect on Equivalent Width and Peak Ratio measurements, not with skewness and kurtosis
+measurements, to which these made little difference.
 
 There is also a strong peak of 106.3 $\pm$ 0.1 days on the {\asas} results and seen in some of the spectroscopic results
 and the modelling, but not seen in the {\hst} results. This period would appear to be a ``beat'' between the rotation
 period and an Earth year, which would not affect the {\hst} results, which are far less constrained by the time of
 year. There is also a strong peak of 77.8 days on the {\hst} results which is not seen in the other results. Possibly
-this is an alias induced by the {\hst} observation times.
+this is an alias or similar ``beat'' induced by the {\hst} observation times.
 
 It has proved possible to reproduce the 116.6 days of \citet[Table 3]{suarezmascareno15} in both the treatments of
 Equivalent Width and {\ha} Index and in some of the other variants of the handling of those, together with periodograms
 taken from the skewness and kurtosis. However, this peak is the fifth strongest in the periodograms if the period search
 is extended to 40 days and disappears if any kind of selection or binning is made from the data or if additional data
-from 2016 is included. In addition, it was noticed that some of the modelling results which failed to give the expected
-period (see Section \ref{section:addflares}) also gave periods close to 116.6 days from the same observation times as in
-the {\harps} data. From this analysis, this would have to be discounted as a false positive, probably an artefact of the
-observation times.
+from 2016 is included. In addition, it was noticed that some of the modelling results (see Section
+\ref{section:addflares}) also gave periods close to 116.6 days from the same observation times as in the {\harps}
+data. From this analysis, this would clearly have to be discounted as a false positive, almost certainly an artefact of
+the observation times.
 
-Limiting the portion of the spectrum to just the {\ha} line of \prox, even with the instrumental stability of {\harps}
-was proven to be less useful than {\asas} ground-based photometry for the recovery of period. A future line of
+Limiting the portion of the spectrum examined to just the {\ha} line of \prox, even with the instrumental stability of
+{\harps} was proven to be less useful than {\asas} ground-based photometry for the recovery of period. A future line of
 investigation which might be worth considering is that of combining fluxes from various magnetic/activity sensitive
 lines in various spectral orders to re-evaluate the Composite Spectral Index referred to in \citet{hall99} and
-\citet{hall00}. This was briefly explored in the context of the examination of the TiO line in Section
-{section:harpsper}, but little benefit was achieved owing to the overwhelming strength of the {\ha} line.
+\citet{hall00}. This was very briefly explored in the context of the examination of the TiO line and the He-6678 lines
+described in Appendix \ref{chapter:tioline}, but a full treatment would require analysis of the prominent lines from all
+the spectral orders.
 
 It was possible to reproduce the variations in Equivalent Width seen in {\prox} using the DoTS model and show that the
 recovery of the rotation period has validity. However, even with extensive experimentation, including relatively extreme
 values for the various parameters for limb-darkening and contrast or extreme distributions of plage, it was not possible
-to model the observed variations in Peak Ratio found either in the {\uves} or {\harps} data. It is clear that the
-variations in the two \horn s that are purely due to Doppler shift from the rotational velocity are not large; with a
-radius of 0.141 Solar \citep{demory09} and assuming a period of the order of 80 days the rotational velocity is at most
-90 m/s yielding a Doppler shift of at most 0.003{\AA} in the {\ha} line between the extremes of the disk and the centre,
-far too low to reproduce the variations in the {\ha} line profile as as illustrated in Fig. \ref{fig:harpsfirstha} for
-which the Peak Ratios were calculated as 0.997 $ \pm $ 0.018 (see Table \ref{table:ewtabfirst}). On the other hand, the
-best standard deviation on a Peak Ratio close to 1.0 which could be obtained from the models was $2{\times}10^{-5}$ or
-$2{\times}10^{-4}$ with very extreme plage distributions. This was not surprising due to the lack of Doppler broadening
-of the line profile.
+to model the observed variations in Peak Ratio found either in the {\uves} or {\harps} data with a symmetric flux
+profile. It is clear that the variations in the two \horn s that are purely due to Doppler shift from the rotational
+velocity are not large; with a radius of 0.141 Solar \citep{demory09} and assuming a period of the order of 80 days the
+rotational velocity is at most 90 m/s yielding a Doppler shift of at most 0.003{\AA} in the {\ha} line between the
+extremes of the disk and the centre, far too low to reproduce the variations in the {\ha} line profile as as illustrated
+in Fig. \ref{fig:harpsfirstha} for which the Peak Ratios were calculated as 0.997 $ \pm $ 0.018 (see Table
+\ref{table:ewtabfirst}). The best standard deviation on a Peak Ratio close to 1.0 which could be obtained from the
+models was $2{\times}10^{-5}$ or $2{\times}10^{-4}$ with very extreme plage distributions. This was not surprising due
+to the lack of Doppler broadening of the line profile. However, more success with Peak Ratios was achieved by selecting
+asymmetric flux profiles, as seen in Section \ref{section:vertvels}, suggesting that some additional net vertical
+velocity may account for the observed behaviour of \prox, although this was a crude experiment as DoTS does not permit
+this additional component to be properly varied according to the line of sight.
 
 What was clear from the models was the way in which period recovery was adversely affected by the inclination and
 improved as the rotation period was decreased, this is demonstrated by the results obtained in Section
-\ref{section:addflares} and samples shown in Fig. \ref{fig:noiseresults} and Fig. \ref{fig:noiseresults60}. This
-at least suggests that deducing the rotation period by photometric measurements may become more feasible for faster
+\ref{section:addflares} and samples shown in Fig. \ref{fig:noiseresults} and Fig. \ref{fig:noiseresults60}. This at
+least suggests that deducing the rotation period by photometric measurements may become increasingly feasible for faster
 rotating stars.
 
 It is probably naive to expect the plage configurations to be comparatively unchanged over such a long rotation period
 as that for {\prox} and basing the models on this assumption is unlikely to reflect the observed variations
-correctly. More importantly, it is also clear that the 2D model of static plage and spots supported by DoTS cannot
-reproduce the observed variations in the Peak Ratios. Likewise it cannot reproduce the range of phenomena which
-adversely affects obtaining periodicity from the Equivalent Widths. An experiment with adding the effect of a net
-vertical velocity to the flux profiles to the DoTS model showed some improvement in the variation of the Peak Ratios,
-but this cannot be a proper model as it does not reflect the variation of the vertical component towards the edge. Also
-it does not adversely effect the Equivalent Width measure. This points to the need for a properly-constructed 3D model
-including vertical processes to properly understand the behaviour of \prox. In \citet{mohanty02} and \citet{mohanty03},
-where the activity of late \rdwarf s is found to be less closely tied to the rotation period for earlier type stars the
-authors propose a ``turbulent dynamo'' as the source of the activity, for which a 3D model is required.
+correctly. More importantly, it is also clear that the model of static plage and spots supported by DoTS cannot
+accurately reproduce the observed variations in the Peak Ratios. Likewise it cannot reproduce the range of phenomena which
+adversely affects obtaining periodicity from the Equivalent Widths.
+
+This, together with the experiment with adding the effect of a net vertical velocity to the flux profiles to the DoTS
+model showed some improvement in the variation of the Peak Ratios, but as noted this cannot be a proper model as it does
+not reflect the variation of the vertical component towards the edge. Also it does not adversely effect the Equivalent
+Width measure. This points to the need for a properly-constructed 3D model including vertical processes to properly
+understand the behaviour of \prox.
+
+In \citet{mohanty02} and \citet{mohanty03}, where the activity of late \rdwarf s is found to be less closely tied to the
+rotation period for earlier type stars the authors propose a ``turbulent dynamo'' as the source of the activity, for
+which a 3D model is required.
 
 %A variety of phenomena in the literature were considered for this \paperorthesis. Also such a model ought to cater the
 %possibility of Ellerman Bombs as described by Ellerman (1917) and recently discussed in \citet{rutten13} and

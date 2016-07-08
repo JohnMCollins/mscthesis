@@ -58,11 +58,12 @@ rotational velocity much greater than the instrument resolution, line asymmetrie
 
 During the course of experimentation with models, a selection of plage distributions was tried, ranging from a single
 large spot on one face to randomly-placed spots of random sizes. However it was found that the variation in equivalent
-widths from a low spot coverage was bore no possible resemblance to that from observational data, in that just exhibited
-two extremes of Equivalent Widths and no intermediate values. On the other hand a coverage of more than about 30\%
-provided very limited swings in the Equivalent Width compared those observed from {\harps} and {\uves}. After some
-experimentation, a randomly distributed plage was settled upon which filled up to 2.5\% of the surface,towards the high
-end of the coverage of up to 2.7\% reported in \citet{guttenbrunner14} in relation to the Sun.
+widths from a low spot coverage was bore no possible resemblance to that from observational data, in that the generated
+simulated spectra just exhibited two extremes of Equivalent Widths and no intermediate values. On the other hand a
+coverage of more than about 30\% provided very limited swings in the Equivalent Width compared those observed from
+{\harps} and {\uves}. After some experimentation, a randomly distributed plage was settled upon which filled up to 2.5\%
+of the surface, towards the high end of the coverage of up to 2.7\% reported in \citet{guttenbrunner14} in relation to
+the Sun.
 % The second was the same combined with a highly fairly asymmetric
 % additional 1\% of coverage in a wedge between 0{\degree} and 37{\degree}. To avoid a concentration at the poles the
 %likelihood of selecting a latitude point was made to be approximately proportional to the cosine of the latitude.
@@ -70,9 +71,9 @@ end of the coverage of up to 2.7\% reported in \citet{guttenbrunner14} in relati
 The models were all generated with the observation dates from the Original Set of {\harps}\footnote{This work was
   completed before the 2016 data was available. Also, as discussed in Section \ref{section:addflares}, it proved useful
   to study the Original Set of data as the 116.6 day period of \citet[Table 3]{suarezmascareno15} appeared in some
-  cases, as illustrated in Fig. \ref{fig:rec116}.}, using possible rotation periods between 15 and 90 days in steps of 5 days and inclinations between
-10{\degree} and 90{\degree} in steps of 5{\degree} to observe the various effects. Only a limited selection, usually
-multiples of 10 days and 10{\degree} are shown in this {\paperorthesis} to conserve space.
+  cases, as illustrated in Fig. \ref{fig:rec116}.}, using possible rotation periods between 15 and 90 days in steps of 5
+days and inclinations between 10{\degree} and 90{\degree} in steps of 5{\degree} to observe the various effects. Only a
+limited selection, usually multiples of 10 days and 10{\degree} are shown in this {\paperorthesis} to conserve space.
 
 In Fig. \ref{fig:extremew} some example spectra showing extremes of equivalent width and the median  are shown, and in
 Fig. \ref{fig:extremewpics} the corresponding visible faces of the star with the plage spots marked in.
@@ -97,11 +98,11 @@ Fig. \ref{fig:extremewpics} the corresponding visible faces of the star with the
 \protect\label{fig:extremewpics}
 \end{figure}
 
-Here are presented in table \ref{table:modelcomp} a selection of typical results showing means and standard deviations
+In table \ref{table:modelcomp} are presented a selection of typical results showing means and standard deviations
 for the Equivalent Width method (EW) with the two plage distributions for various periods and with 30{\degree},
 60{\degree} and 90{\degree} inclinations and for 70, 80 and 90-day periods with 10{\degree} to 90{\degree} inclinations.
 Note that the PR results are not displayed as variations were insufficient to be displayed in less than 6 figures, the
-Doppler variations are just not substantial enough.
+Doppler variations are just too insubstantial.
 
 \begin{table}[!htbp]
 \centering
@@ -145,8 +146,8 @@ Plage Dist & Incl\degree & \multicolumn{1}{|c|}{70 days}&\multicolumn{1}{|c|}{80
 
 For each set of generated spectra for both plage distributions, rotation period (between 15 and 90 days in steps of 5
 and inclination (between 10{\degree} and 90{\degree} in steps of 5\degree), a periodogram was obtained, viewing periods
-between 10 days and 130 days in steps of 0.01 days, from the calculated equivalent widths and noted the RMS error over
-all inclinations. In nearly all cases the error was rarely more than 0.02 days. It was rather a different matter for the
+between 10 days and 130 days in steps of 0.01 days, from the calculated equivalent widths and the RMS error over
+all inclinations noted. In nearly all cases the error was rarely more than 0.02 days. It was rather a different matter for the
 Peak Ratios however, in that the variations observed in the Peak Ratios were typically $2{\times}10^{-5}$ at most or with
 the most extreme plage distributions could be stretched to $2{\times}10^{-4}$. These variations are just above the level
 at which it is possible to reliably measure the Peak Ratio from the observed data but far below the observed Peak Ratio
@@ -170,14 +171,13 @@ how that affected the rate of recovery.
 
 It was noticeable that doing this only started to have any significant effect with SNR below 20. Below this level, two
 things started to happen, increasingly as the SNR was reduced. Either the error in the recovered period increased,
-although not by very much, alternatively the recovered period was manifestly incorrect, giving a clear False Positive
-such as returning a period of 50 days from a starting period of 80 days.
+although not by very much (typically less than 2\%), alternatively the recovered period was manifestly incorrect, giving
+a clear False Positive such as returning a period of 50 days from a starting period of 80 days.
 
 It was easy to discriminate between these two cases by setting a threshold of 5\% for the difference between the
 recovered period and the starting period. If the difference exceeded this, then the period was regarded as incorrectly
 recovered, otherwise it was regarded as correctly recovered but with the given error. However in all the cases the
-difference was either substantially greater or substantially less than this. It was noticeable that in quite a number of
-cases a period close to 116 days was returned as a False Positive.
+difference was either substantially greater or substantially less than this.
 
 Also examined was the possible effect of flares. The effect of flares was simulated by taking the spectra
 which were clipped as having excessive Equivalent Width in Section \ref{section:harpsper}\footnote{N.B. This was done
@@ -190,11 +190,13 @@ values of SNR are much lower than the published values for {\uves} and {\harps},
   uncertainty in the these values, which remained of the same order.}.
 
 In Fig. \ref{fig:noiseresults} is shown the effect of varying SNR and adding in simulated flare data on the rate of
-recovery, expressed as a percentage of the correct period of 80 days. The blue plot shows the effect of just adding
+recovery, expressed as a percentage of the correct period of 80 days. Each data point was calculated 100 times with
+different randomly-generated noise\footnote{For an exhaustive analysis this would clearly have to be repeated many more
+  times, but 100 times seemed adequate for an overview.}. The blue plot shows the effect of just adding
 noise, the green that of adding in the four largest flares and noise and the red shows the effect of adding simulated
 flares from all the values in the {\harps} data clipped having Equivalent Width over 3.8. This is illustrated for
 inclinations of 30{\degree}, 60{\degree} and 90{\degree}. it can be seen that the smaller inclinations have a
-significant effect on the rate of recovery.
+significantly deleterious effect on the rate of recovery especially in the presence of flares.
 
 It should be stressed that this is the rate of recovery of the correct period as the \underline{strongest} peak in the
 periodograms, not as one of the top 5 as in, for example, Table \ref{table:perftable}. All of the models apart from a
@@ -216,7 +218,10 @@ few from the very poorest SNRs of less than 5 at low inclination gave the correc
 It was of interest to note the impact of the rotation period on these results, in Fig. \ref{fig:noiseresults60} is shown
 effectively the same data as Fig. \ref{fig:noiseresults}, but with a period of 60 days instead of 80 days. It was
 noticeable how this performed significantly better than the 80-day period, closer to the 82.6-day period calculated for
-\prox.
+\prox. Further reductions in the period improved the recovery still further, in a relationship apparently better than
+linear (although many more simulations, in terms of numbers of runs and length of periods, would be required to
+establish this with accuracy), lending weight to the contention that the spectroscopic line measurements are likely to
+prove of more value with stars with a faster rotation period than \prox.
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -229,7 +234,8 @@ noticeable how this performed significantly better than the 80-day period, close
 
 Some of the false positives from these simulations were noted and in quite a few cases it was noticed that periods close
 to 116.6 days reported in \citet[Table 3]{suarezmascareno15} appeared as one of the prominent peaks in the modelling
-results. An example is shown in Fig. \ref{fig:rec116}.
+results. An example is shown in Fig. \ref{fig:rec116}. This period is clearly an artefact of the observation times,
+which were copied from the Original Set of {\harps} data for use in the model.
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -246,16 +252,17 @@ gives the strongest peak as 103.7 days, marked in black and the correct period a
 \protect\label{section:vertvels}
 
 It was clear that the Peak Ratio variations observed in the {\harps} data, of the order of about 3\%, could not be
-reproduced merely from Doppler variations on static plage, which, as noted in Section \ref{section:plagedists} only with
-some extreme plage distributions could be raised above $10^{-4}$, due to the low rotational velocity of less than 0.1
+reproduced merely from Doppler variations on static plage, which, as noted in Section \ref{section:plagedists}, only with
+some extreme plage distributions could be raised to the order of $10^{-4}$, due to the low rotational velocity of less than 0.1
 km/s.  Some additional vertical velocities need to be included in a more comprehensive model.
 
 By way of an experiment, an asymmetric flux profile for the plage was created, with one of the two \horn s larger than
-the other, whilst maintaining the flat photospheric flux profile. Performing the same simulations as were used to
-produce Fig. \ref{fig:extremew} and Fig. \ref{fig:extremewpics}, using the same plage data, the simulated spectra in
-Fig. \ref{fig:extremeasym} were obtained. It was found that the Peak Ratio variations thereby increased so that with the
-type of profile shown in Fig. \ref{fig:extremeasym}, they were 1.020 $\pm$ 0.002. This is still an order of magnitude
-less than observed in the {\harps} results.
+the other, whilst maintaining the flat photospheric flux profile. By adjusting the sizes so that the Peak Ratios had a
+mean value of 1.020 (i.e. a 2\% increase), it was possible to raise the Peak Ratio standard deviation to 0.002,
+i.e. approximately 2\%, approximately in line with the variations observed in {\harps} and recorded in Table
+\ref{table:ewtabfirst}. Performing the same simulations with the same simulated plage as were used to produce
+Fig. \ref{fig:extremew} and Fig. \ref{fig:extremewpics}, the simulated spectra in Fig. \ref{fig:extremeasym} were
+obtained.
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -266,12 +273,13 @@ less than observed in the {\harps} results.
   the spectrum with the median value of Peak Ratio. The Equivalent Widths were 4.3, 8.5 and 6.7 respectively. As before
   this was generated with a period of 80 days and an inclination of 80\degree, but using an asymmetric flux profile. The
   epochs from the {\harps} data are used in the model and the selected generated spectra superimposed. Also marked in
-  are the ranges used for computation of the Equivalent Width.}
+  are the ranges used for computation of the Equivalent Width (vertical black lines) and Peak Ratio (blue and red shaded
+  areas).}
 \protect\label{fig:extremeasym}
 \end{figure}
 
-The possibility was considered of extending this asymmetry to the point where the Peak Ratio variations were similar to
-\harps, but this appeared to somewhat strain the limitations of DoTS. Also the vertical velocity enhancement of the
-plage profile was was uniform, whereas it would fall off according to the cosine of the angle to the line of
-sight. Nevertheless, it does emphasise the need for more comprehensive 3D models if {\prox} is to be adequately
-modelled.
+This has to be seen as a demonstration only as the vertical velocity enhancement of the plage profile was was uniform in
+the models, whereas if it were a real component of the spectra it would fall off according to the cosine of the angle to
+the line of sight. Also no reduction in the accuracy of the Equivalent Width periodicity calculations was occasioned,
+as seen in the {\harps} measurements. Nevertheless, it does emphasise the need for more comprehensive models than is
+possible with DoTS, including 3D simulation, if {\prox} is to be adequately modelled.
