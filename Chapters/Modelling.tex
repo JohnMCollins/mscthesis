@@ -146,13 +146,19 @@ Plage Dist & Incl\degree & \multicolumn{1}{|c|}{70 days}&\multicolumn{1}{|c|}{80
 
 For each set of generated spectra for both plage distributions, rotation period (between 15 and 90 days in steps of 5
 and inclination (between 10{\degree} and 90{\degree} in steps of 5\degree), a periodogram was obtained, viewing periods
-between 10 days and 130 days in steps of 0.01 days, from the calculated equivalent widths and the RMS error over
-all inclinations noted. In nearly all cases the error was rarely more than 0.02 days. It was rather a different matter for the
-Peak Ratios however, in that the variations observed in the Peak Ratios were typically $2{\times}10^{-5}$ at most or with
-the most extreme plage distributions could be stretched to $2{\times}10^{-4}$. These variations are just above the level
-at which it is possible to reliably measure the Peak Ratio from the observed data but far below the observed Peak Ratio
-changes in the data which are two orders of magnitude higher, e.g. combining all the {\harps} data, a result of 0.997 $
-\pm $ 0.018 (one $\sigma$) was obtained.
+between 10 days and 130 days in steps of 0.01 days, from the calculated equivalent widths and the RMS error over all
+inclinations noted. In nearly all cases the error was rarely more than 0.02 days. It was rather a different matter for
+the Peak Ratios however, in that the variations observed in the Peak Ratios were typically $2{\times}10^{-5}$ at most or
+with the most extreme plage distributions could be stretched to $2{\times}10^{-4}$. These variations are just above the
+level at which it is possible to reliably measure the Peak Ratio from the observed data but far below the observed Peak
+Ratio changes in the data which are two orders of magnitude higher, e.g. combining all the {\harps} data, a result of
+0.997 $ \pm $ 0.018 (one $\sigma$) was obtained.
+
+\examrevision{An attempt was made to reproduce the Peak Ratio variations by considering an asymmetric pair of Gaussians
+  either side of the central wavelength for the plage flux profiles, but in order to achieve the observed variations
+  observed, a vertical velocity approaching 100 km/s would be required. This is well in excess of the speed of sound in
+  the chromosphere, estimated for the Sun as approximately 8 km/s \citep{uitenbroek04} and would therefore have to be
+  discounted as unphysical.}
 
 \section{Adding in noise and flares}
 \protect\label{section:addflares}
@@ -247,39 +253,3 @@ of 80{\degree} and a SNR of 3. Here 116.5 days appears as the third-strongest pe
 gives the strongest peak as 103.7 days, marked in black and the correct period as 80.45 days, marked in green.}
 \protect\label{fig:rec116}
 \end{figure}
-
-\section{Adding vertical velocities}
-\protect\label{section:vertvels}
-
-It was clear that the Peak Ratio variations observed in the {\harps} data, of the order of about 3\%, could not be
-reproduced merely from Doppler variations on static plage, which, as noted in Section \ref{section:plagedists}, only with
-some extreme plage distributions could be raised to the order of $10^{-4}$, due to the low rotational velocity of less than 0.1
-km/s.  Some additional vertical velocities need to be included in a more comprehensive model.
-
-By way of an experiment, an asymmetric flux profile for the plage was created, with one of the two \horn s larger than
-the other, whilst maintaining the flat photospheric flux profile. By adjusting the sizes so that the Peak Ratios had a
-mean value of 1.020 (i.e. a 2\% increase), it was possible to raise the Peak Ratio standard deviation to 0.002,
-i.e. approximately 2\%, approximately in line with the variations observed in {\harps} and recorded in Table
-\ref{table:ewtabfirst}. Performing the same simulations with the same simulated plage as were used to produce
-Fig. \ref{fig:extremew} and Fig. \ref{fig:extremewpics}, the simulated spectra in Fig. \ref{fig:extremeasym} were
-obtained.
-
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[scale=0.40]{Figures/extremeasym.png} \\
-\end{center}
-\caption{This displays simulated spectra similar to Fig. \ref{fig:extremew} showing the extremes for both Equivalent
-  Width and Peak Ratios (the same spectra, shown as the first and third depictions in Fig. \ref{fig:extremewpics}) and
-  the spectrum with the median value of Peak Ratio. The Equivalent Widths were 4.3, 8.5 and 6.7 respectively. As before
-  this was generated with a period of 80 days and an inclination of 80\degree, but using an asymmetric flux profile. The
-  epochs from the {\harps} data are used in the model and the selected generated spectra superimposed. Also marked in
-  are the ranges used for computation of the Equivalent Width (vertical black lines) and Peak Ratio (blue and red shaded
-  areas).}
-\protect\label{fig:extremeasym}
-\end{figure}
-
-This has to be seen as a demonstration only as the vertical velocity enhancement of the plage profile was was uniform in
-the models, whereas if it were a real component of the spectra it would fall off according to the cosine of the angle to
-the line of sight. Also no reduction in the accuracy of the Equivalent Width periodicity calculations was occasioned,
-as seen in the {\harps} measurements. Nevertheless, it does emphasise the need for more comprehensive models than is
-possible with DoTS, including 3D simulation, if {\prox} is to be adequately modelled.
