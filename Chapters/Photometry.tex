@@ -6,26 +6,28 @@ To process the data for all the periodicity studies in this \paperorthesis, all 
   Lomb-Scargle program, the Fortran version of which was modified and used.} of the associated software was written in
 Python using the Lomb-Scargle routines described in Appendix \ref{chapter:lsroutines}.
 
-As nearly all previous measurements of periodicity in {\prox} were made using Photometric observations, in this
+As nearly all previous measurements of periodicity in {\prox} were made using photometric observations, in this
 {\paperorthesis}, before discussing spectroscopic measurements such as with the {\harps} data and the various methods of
 analysing the {\ha} lines, some photometric observations for {\prox} are considered.
 
 \section{ASAS}
 \protect\label{section:asas}
 
-First is presented results obtained from the Photometric observations for {\prox} taken from the V-Band (there were no
-data for the I-Band) of the All Sky Automated Survey (\asas), \citep{pojmanski97}, which contains data between the
-periods December 2000 to September 2009.
+\examrevision{First are presented results obtained from the photometric observations of {\prox} taken in the V-Band
+  (there were no data for the I-Band) from the All Sky Automated Survey (\asas), \citep{pojmanski97}, which comprises
+  data obtained between the dates December 2000 to September 2009.}
 
-As indicated by the {\asas} guidelines\footnote{This is described in http://www.astrouw.edu.pl/asas/explanations.html},
-with {\prox} having magnitude 11 in the V-band, the data was taken from the second aperture. Initially only the ``best''
-(grade A) data from this aperture is considered, which has 970 points. Obtaining a periodogram from this, using the
-{\numrecs} routine, which returns False Alarm Probabilities, the periodogram shown in Fig. \ref{fig:asaspgram1} is
-obtained, restricting the display from 20 to 160 days.
+\examrevision{The data acquired by {\asas} is collected via five apertures from 2 to 6 pixels wide. The {\asas}
+  guidelines\footnote{These are described in http://www.astrouw.edu.pl/asas/explanations.html}, recommend the selection
+  of an aperture appropriate to the magnitude of the target object in the selected band and suggest a formula for doing
+  so. Following these guidelines, taking into account that {\prox} has magnitude 11 in the V-band, the dataset from the
+  second (3 pixel) aperture was selected.  Fig. \ref{fig:asaspgram1} shows the Lomb-Scargle periodogram obtained from
+  the 970 measurements of the ``best'' (grade A) data from this aperture, using the {\numrecs} routine, which returns
+  false alarm probabilities (FAP), restricting the display from 20 to 160 days.}
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.30]{Figures/asasnobin.png} \\
+\includegraphics[scale=0.50]{Figures/asasnobin.png} \\
 \end{center}
 \caption{This is a periodogram from the {\asas} database for {\prox} second aperture, without binning, containing 970
   points, considering only periods between 20 and 160 days.}
@@ -34,7 +36,7 @@ obtained, restricting the display from 20 to 160 days.
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.30]{Figures/asasbin1.png} \\
+\includegraphics[scale=0.50]{Figures/asasbin1.png} \\
 \end{center}
 \caption{This is a periodogram from the {\asas} database for {\prox} second aperture, binned to 1 day, containing 624 points.}
 \protect\label{fig:asaspgram2}
@@ -42,7 +44,7 @@ obtained, restricting the display from 20 to 160 days.
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.30]{Figures/asasbin18min.png} \\
+\includegraphics[scale=0.50]{Figures/asasbin18min.png} \\
 \end{center}
 \caption{This is a periodogram from the {\asas} database for {\prox} second aperture, binned to 18 minutes, containing 924 points.}
 \protect\label{fig:asaspgram3}
@@ -56,12 +58,9 @@ as some of the points had duplicated times. It appeared worthwhile to experiment
 point the result was optimal, in terms of yielding the strongest peaks with the lowest FAP and least extraneous peaks
 and after trying various binning values between several days down to 1 minute, the optimal binning was found to be 18
 minutes, yielding the periodogram shown in Fig. \ref{fig:asaspgram3}. Note that the scale of this is the same but the
-figure has been made taller to accommodate the more powerful 82.6 day peak. The reduction of the points in the binning to
-18 minutes was found to be a much more modest reduction, to 924 observations from 970.
-
-The explanation of this 18-minute binning result may be related to the 3-minute exposure time for {\asas} 3
-\citep{pojmanski01}. Possibly this may also be related to a p-mode oscillation of \prox, however no current results are
-available for this in the literature.
+figure has been made taller to accommodate the more powerful 82.6 day peak. The reduction of the points in the binning
+to 18 minutes was found to be a much more modest reduction, to 924 observations from 970. The explanation of this
+18-minute binning result may be related to the 3-minute exposure time for {\asas} 3 \citep{pojmanski01}.
 
 Although the recommended aperture by {\asas} for {\prox} is the second aperture, it appeared valuable to compare the
 three highest peaks from each of the apertures finding that nearly all the data gave a first peak of 82.6 days, a second
@@ -76,7 +75,8 @@ results for 18-minute binning are shown in Table \ref{table:lqasas}.
 \scalebox{0.8}{
 \begin{tabular}{|l|l|r|r|r|}
 \hline
-Aperture & binning & Peak 1 & Peak 2 & Peak 3 \\\hline
+Aperture & binning & Peak 1 & Peak 2 & Peak 3 \\
+&&(days)&(days)&(days)\\\hline
 1 & none & 83.1 & 106.4 & 131.3 \\
 2 & none & 82.6 & 106.4 & 22.0 \\
 3 & none & 82.6 & 106.4 & 131.3 \\

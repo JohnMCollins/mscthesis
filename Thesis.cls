@@ -61,6 +61,9 @@
 \newcommand*\actaa{Acta Astron.}
 \newcommand*\solphys{Sol.~Phys.}
 
+\newcommand\examrevision[1]{\textbf{#1}}
+%\newcommand\examrevision[1]{#1}
+
 \newcommand\Declaration[1]{
 \btypeout{Declaration}
 %\addtotoc{Declaration of Authorship}
@@ -226,7 +229,7 @@
 \newcommand{\kms}{\hbox{kms$^{-1}$}}
 \newcommand{\ms}{\hbox{ms$^{-1}$}}
 \newcommand{\cms}{\hbox{cms$^{-1}$}}
-\newcommand{\vsini}{\hbox{$v$\,sin\,$i$}}
+\newcommand{\vsini}{$V_{\rm eq}\sin i$}
 \newcommand{\vs}{\hbox{$v$\,sin\,$i$}}
 \newcommand{\rsini}{\hbox{$R$\,sin\,$i$}}
 \newcommand{\vrad}{\hbox{$v_{rad}$}}
