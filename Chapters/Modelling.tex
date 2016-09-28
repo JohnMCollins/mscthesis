@@ -5,29 +5,30 @@
 In order to develop and refine the methods for evaluation of the periodicity of the sub-peaks in the {\prox} spectra, a
 version of the ``Doppler Tomography of Stars'' (DoTS) modelling software \citep{CCamerondotsa} was used. Although DoTS
 was written to recover surface imhomogeneities from time series spectra, here the forward modelling routines were used
-to generate synthetic spectra, with some modifications. Specifically, \forcomment{a model of the star as a spherical
-  shell} was constructed, covered in a finite number of pixels. The intensity of each pixel can vary from a photospheric
-value to a value appropriate for plage. In order to obtain the appropriate photospheric intensity for each pixel at a
-given rotation phase of the stellar model,the 4-parameter limb darkening law introduced by Claret from Phoenix model
-atmospheres \citep{claret00a} was used for an effective temperature of 3000K. The plage intensities were calculated
-according to \citet[Section 4.1]{unruh99}, who identified the centre to limb variability from plage regions relative to
-the photospheric (quiet) intensity for the Sun. Since no such observations exist for other stars, the same
-\forcomment{technique was adopted, with the limb-darkening law appropriate for the lower photosphere temperature of
-  {\prox} and} with appropriate facular contrasts for {\ha} wavelengths (see \citet[figs 3 \& 4]{unruh99}).
+to generate synthetic spectra, with some modifications. Specifically, \forcomment{a 3D model of the star, but with a 2D
+  spherical model of the photosphere} was constructed, covered in a finite number of pixels. The intensity of each pixel
+can vary from a photospheric value to a value appropriate for plage. In order to obtain the appropriate photospheric
+intensity for each pixel at a given rotation phase of the stellar model,the 4-parameter limb darkening law introduced by
+Claret from Phoenix model atmospheres \citep{claret00a} was used for an effective temperature of 3000K. The plage
+intensities were calculated according to \citet[Section 4.1]{unruh99}, who identified the centre to limb variability
+from plage regions relative to the photospheric (quiet) intensity for the Sun. Since no such observations exist for
+other stars, the same \forcomment{centre-to-limb variation as for the solar plage was used relative to the photospheric
+  centre-to-limb variation of \prox, selecting the limb-darkening law appropriate for the lower photosphere temperature
+  and} with appropriate facular contrasts for {\ha} wavelengths (see \citet[figs 3 \& 4]{unruh99}).
 
 Since it was desired to simulate the {\ha} line profile, a local intensity profile was assumed for the photosphere and
 the plage. For inactive photospheres of \rdwarf s with similar spectral type to {\prox}, {\ha} is not visible (e.g. see
 {\ha} profile in \citet[fig. 6]{barnes14} for GJ1061). Hence for the quiet photosphere, a flat continuum was assumed For
 active stars, {\ha} possesses a characteristic emission profile with self-absorption, resulting in a double-peaked
-profile. Since the {\vsini} is probably less than 0.1 km/s for \prox, the local line profile shape for {\ha} was
-based on the observed {\prox} line profile since it is unlikely to show rotational broadening. This profile was tuned to
+profile. Since the {\vsini} is probably less than 0.1 km/s for \prox, the local line profile shape for {\ha} was based
+on the observed {\prox} line profile since it is unlikely to show rotational broadening. This profile was tuned to
 resemble the average {\ha} profile shown in the {\uves} data analysed in \citet{fuhrmeister11}, but symmetric about the
 central wavelength. Specifically, a Gaussian profile was used to generate the emission peak and a second Gaussian with
-narrow width to represent the central self-absorption as illustrated in Fig. \ref{fig:integregions}.
-\forcomment{The profile was selected with width resembling the {\ha} peak and with strength so as to resemble an
-  mean peak in the {\harps} data. The intensity could be fine-adjusted in the lookup-table parameters for the DoTS
-  program so as to yield a variation in equivalent width comparable to that of the {\harps} observations ignoring those
-  affected by flares with the selected plage distribution in use.}
+narrow width to represent the central self-absorption as illustrated in Fig. \ref{fig:integregions}.  \forcomment{The
+  profile was selected with width resembling the {\ha} peak and with equivalent width so as to resemble an mean peak in
+  the {\harps} data. The intensity could be fine-adjusted in the lookup-table parameters for the DoTS program so as to
+  yield a variation in equivalent width comparable to that of the {\harps} observations ignoring those affected by
+  flares with the selected plage distribution in use.}
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -46,32 +47,33 @@ With the two-temperature model, in subsequent simulations below, either photosph
 assigned to each pixel. For a pixel containing plage, the synthetic {\ha} profile is scaled and for the photosphere with
 no visible profile (as note above), the continuum level is used. The line profile is shifted appropriately for the
 Doppler shift of each pixel in the model, \forcomment{however with the small Doppler shift due to the {\vsini} of less
-  than 0.1 km/s on {\prox}, the main variation observed is due to the asymmetry of the plage distribution}. The model
-enables the user to place circular spots of specified radii anywhere on the star. For each viewing angle (or
+  than 0.1 km/s on {\prox}, the main velocity variation observed is due to the asymmetry of the plage distribution}. The
+model enables the user to place circular spots of specified radii anywhere on the star. For each viewing angle (or
 equivalently observation phase), the appropriate intensity profiles of all visible pixels is calculated (according to
 position on the line and centre-to-limb variation) and sum them to obtain the simulated line profile.
 
 A model star with plage regions that rotate into and out of view can thus potentially exhibit variability in the line
 shape since the pixels on different parts of the star possess different Doppler velocities. For stars such as \prox,
-which probably possess a {\vsini} much less than the instrumental resolution, any distortions in the the line profile
-due to spots rotating into and out of view are insignificant or very small. A plage region that rotates into view may
-nevertheless have a significant effect on the the equivalent width of the simulated line since the local intensity
-profile for {\ha} \forcomment{possesses a normalised peak intensity of the set number of times} the continuum. For stars
-with rotational velocity much greater than the instrument resolution, line asymmetries are likely to be much more
-reliable.
+which probably possess a {\vsini} much less than the instrumental resolution, \examrevision{any velocity distortions in
+  the the line profile due to spots rotating into and out of view will be insignificant or very small}. A plage region
+that rotates into view may nevertheless have a significant effect on the the equivalent width of the simulated line
+since the local intensity profile for {\ha} \forcomment{possesses a normalised peak intensity of the set number of
+  times} the continuum. For stars with rotational velocity much greater than the instrument resolution, line asymmetries
+are likely to be much more reliable.
 
 \section{Plage distribution and results}
 \protect\label{section:plagedists}
 
 During the course of experimentation with models, a selection of plage distributions was tried, ranging from a single
-large spot on one face to randomly-placed spots of random sizes. However it was found that the variation in equivalent
-widths from a low spot coverage was bore no possible resemblance to that from observational data, in that the generated
-simulated spectra just exhibited two extremes of equivalent widths and no intermediate values. On the other hand a
-coverage of more than about 30\% provided very limited swings in the equivalent width compared those observed from
-{\harps} and {\uves}. After some experimentation, a randomly distributed plage was settled upon which filled up to 2.5\%
-of the surface, towards the high end of the coverage of up to 2.7\% reported in \citet{guttenbrunner14} in relation to
-the Sun, \forcomment{with the intensity parameters in the flux profile and the model adjusted to yield a variation in
-  equivalent widths similar to the {\harps} observations}.
+large spot on one face to randomly-placed spots of random sizes. \examrevision{In all cases a 100\% filling factor of
+  the plage was selected.} However it was found that the variation in equivalent widths from a low spot coverage was
+bore no possible resemblance to that from observational data, in that the generated simulated spectra just exhibited two
+extremes of equivalent widths and no intermediate values. On the other hand a coverage of more than about 30\% provided
+very limited swings in the equivalent width compared those observed from {\harps} and {\uves}. After some
+experimentation, a randomly distributed plage was settled upon which \examrevision{covered} up to 2.5\% of the surface,
+towards the high end of the coverage of up to 2.7\% reported in \citet{guttenbrunner14} in relation to the Sun,
+\forcomment{with the intensity parameters in the flux profile and the model adjusted to yield a variation in equivalent
+  widths similar to the {\harps} observations}.
 
 The models were all generated with the observation dates from the Original Set of {\harps}\footnote{This work was
   completed before the 2016 data was available. Also, as discussed in Section \ref{section:addflares}, it proved useful
