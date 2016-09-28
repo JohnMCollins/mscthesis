@@ -3,11 +3,10 @@
 \lhead{Appendix \ref{chapter:tioline}. \emph{Tio Line}}
 
 A prominent absorption line consistent across the spectra was identified to be a TiO transition at 6572.468{\AA} to
-6573.288{\AA}, highlighted as the dark green shading in the right panel of Fig. \ref{fig:harpsfirstha}. This is enlarged
-in Fig. \ref{fig:tispec}. The Equivalent Widths of this line from the {\harps} data and also a version of the Peak
-Ratios in the same manner as for Table \ref{table:ewtabfirst}. Results are shown in Table \ref{table:titable} and
-derived periodograms in Table \ref{table:tipeakall} in the same manner as in Appendix \ref{chapter:pgramdetail}, however
-the peaks are much less clear-cut than for \ha.
+6573.288{\AA}, highlighted as the dark green shading in the right panel of Fig. \ref{fig:harps2}. This is enlarged
+in Fig. \ref{fig:tispec}. The equivalent widths of this line from the {\harps} data and also a version of the peak
+ratios in the same manner as for Table \ref{table:ewtabfirst}. Results are shown in Table \ref{table:titable}.
+\examrevision{Attempts were made to derive periodograms in the same manner as for {\ha} but no clear-cut results were obtained.}
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -42,43 +41,3 @@ From & To & No. & EW  & Index & PR \\\hline
 
 As Table \ref{table:titable} shows, an ``index'' was also considered along the same lines as the {\ha} Index, but the
 size and variations (0.032 $\pm$ 0.001) were far too small to be useful.
-
-\begin{table}[!htbp]
-\centering
-\scalebox{0.75}{
-\begin{tabular}{|l|l|r|r|r|r|r|}
-\hline
-\textbf{Treatment}&\textbf{Routine}&\textbf{Peak 1}&\textbf{Peak 2}&\textbf{Peak 3}&\textbf{Peak 4}&\textbf{Peak 5}\\\hline
-Original data & \scipy & 104.4 & 71.0 & 55.5 & 57.4 & 73.5 \\
-EW & \astroml & 71.0 & 68.1 & 89.0 & 104.8 & 43.5 \\
- & \gatspy & 68.1 & 71.0 & 104.5 & 105.4 & 75.0 \\\hline
-Original data & \scipy & 70.9 & 49.6 & 67.9 & 89.1 & 104.1 \\
-EW & \astroml & 71.0 & 51.2 & 76.3 & 49.8 & 89.1 \\
-Binned & \gatspy & 70.9 & 49.6 & 67.9 & 104.2 & 89.1 \\\hline
-Original data & \scipy & 94.2 & 88.6 & 105.2 & 99.5 & 42.3 \\
-PR & \astroml & 88.1 & 76.0 & 105.2 & 99.9 & 121.4 \\
- & \gatspy & 88.2 & 88.6 & 105.9 & 71.2 & 94.0 \\\hline
-Original data & \scipy & 74.0 & 99.3 & 71.9 & 68.9 & 92.6 \\
-PR & \astroml & 76.1 & 57.9 & 88.7 & 53.3 & 95.0 \\
-binned & \gatspy & 99.1 & 73.8 & 71.8 & 120.1 & 121.8 \\\hline
-Full data & \scipy & 97.6 & 106.2 & 109.5 & 44.3 & 70.8 \\
-EW & \astroml & 42.4 & 40.8 & 46.1 & 54.1 & 50.9 \\
- & \gatspy & 106.2 & 46.0 & 97.1 & 44.2 & 75.0 \\\hline
-Full data & \scipy & 121.6 & 43.6 & 40.7 & 49.5 & 108.9 \\
-EW & \astroml & 47.0 & 54.2 & 49.8 & 59.4 & 43.7 \\
-Binned & \gatspy & 121.6 & 43.6 & 40.7 & 49.5 & 109.0 \\\hline
-Full data & \scipy & 50.6 & 42.2 & 68.0 & 106.3 & 46.1 \\
-PR & \astroml & 54.1 & 46.1 & 51.6 & 60.2 & 47.0 \\
- & \gatspy & 46.1 & 68.0 & 63.1 & 50.5 & 42.3 \\\hline
-Full data & \scipy & 98.2 & 121.7 & 107.6 & 106.3 & 120.4 \\
-PR & \astroml & 65.8 & 47.0 & 54.1 & 71.4 & 76.6 \\
-binned & \gatspy & 121.0 & 98.5 & 107.6 & 106.4 & 44.5 \\\hline
-\end{tabular}}
-\caption{This table shows the 5 highest peaks from the periodograms for various treatments of the TiO peak highlighted
-  in Fig. \ref{fig:tispec} for Original and Full Sets of {\harps} data. The clipping where applicable was to the extreme
-values of the {\ha} Equivalent Widths and binning was to 1 day.}
-\protect\label{table:tipeakall}
-\end{table}
-
-As is clear, there are no periods found acceptably close to the 82.6 days argued herein to be the rotation period of
-\prox. The intensity of the TiO line is clearly not great enough for any clear-cut result to be found.

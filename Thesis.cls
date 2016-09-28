@@ -45,6 +45,7 @@
 \LoadClass{\baseclass}
 \newcommand\bhrule{\typeout{------------------------------------------------------------------------------}}
 
+\usepackage{color}
 
 \def\mnras{MNRAS}% Monthly Notices of the RAS
 \def\aj{AJ}% Astronomical Journal
@@ -63,6 +64,9 @@
 
 \newcommand\examrevision[1]{\textbf{#1}}
 %\newcommand\examrevision[1]{#1}
+
+\newcommand\forcomment[1]{\textcolor{red}{#1}}
+%\newcommand\forcomment[1]{#1}
 
 \newcommand\Declaration[1]{
 \btypeout{Declaration}

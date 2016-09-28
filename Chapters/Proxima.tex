@@ -8,66 +8,99 @@ from the ESO archive\footnote{Based on data obtained from the ESO Science Archiv
   082.C-0718(B), 183.C-0437(A) and 191.C-0505(A).} and referenced in \citet[Table 3]{suarezmascareno15}. The latter were
 supplemented with 56 additional spectra from {\harps} taken between 19 January and 30 March 2016\footnote{Based on data
   obtained from the ESO Science Archive Facility from programs 096.C-0082(A) through to 096.C-0082(F).}. The {\uves}
-data were obtained with a 0.8/1.10'' slit, yielding a resolution of approximately 60,000., while the resolution of {\harps} is
-approximately 120,000. Also studied in Section \ref{section:uvesflares} are the X-ray data from XMM-Newton used in the
-\citet{fuhrmeister11} paper\footnote{Provided by Fuhrmeister, priv. comm.} to identify any association between strong
-X-ray values and possible corresponding changes to the {\ha} profile.
+data were obtained with a 0.8 or 1.10'' slit, yielding a resolving power of approximately 60,000., while the resolution
+of {\harps} is approximately 120,000. Also studied in Section \ref{section:uvesflares} are the X-ray data from
+XMM-Newton used in the \citet{fuhrmeister11} paper\footnote{Provided by Fuhrmeister, priv. comm.} to identify any
+association between strong X-ray \examrevision{emission} and possible corresponding changes to the {\ha} profile.
 
 The bulk of the results from {\harps} in this chapter are taken using the full set of data up to 30 March 2016. However
 reference is made to the original set to January 2014 (``Original Set'') as this is necessary to reproduce previous
 calculations of the rotation period of \prox, in particular the 116.6 days reported by \citet[Table
 3]{suarezmascareno15}, which is not reproducible from the full set to March 2016 (``Full Set''). The observation times
-in the Set to 2014 are used in the modelling results in Chapter \ref{chapter:modelling} as nearly all the work on the
-modelling was completed prior to 2016.
+in the \examrevision{Original Set} are used in the modelling results in Chapter \ref{chapter:modelling} as nearly all
+the work on the modelling was completed prior to 2016.
 
 \section{{\harps} and {\uves} spectra of \prox}
 
-As mentioned in \citet{mohanty03} and subsequent papers such as \citet{jenkins09} and \citet{barnes14} the spectra of
-late \rdwarf s from approximately M5 onward, usually show {\ha} in emission, Several of the \rdwarf s illustrated in
-\citet[Fig. 6]{barnes14} additionally show a distinct ``horned'' appearance, due to a certain amount of self-absorption
-affecting the centre of the {\ha} peak. {\prox} consistently shows this pattern, which is displayed in
-\citet[fig. 14]{fuhrmeister11}. The two \horn s surround a local minimum. As well as the equivalent width of the entire
-{\ha} peak, the two \horn s vary in relative size over time on either side of the local minimum, which does not greatly
-change in morphology over time. This would appear to be because a more symmetrically-distributed spectral line from the
-photosphere is overlaid with plage and chromospheric effects which are asymmetric or localised to regions. These may be
-compared with the H, K and Ca II lines discussed in \citet{rauscher06}. The main aim of this {\paperorthesis} is to
-study the variations in the line and \horn s via various methods to see if periodicity may be reliably recovered.
+As mentioned in \citet{mohanty03} and subsequent papers such as \citet{jenkins09} and \citet{barnes14}, the spectra of
+late \rdwarf s from approximately M5 onward, usually show {\ha} in emission. Several of the \rdwarf s illustrated in
+\citet[Fig. 6]{barnes14} additionally show a distinct ``horned'' appearance, \examrevision{due to self-absorption} at
+the centre of the {\ha} peak.  {\prox} consistently shows this pattern, which is displayed in
+\citet[Fig. 14]{fuhrmeister11}. The two \horn s surround a local minimum. \examrevision{Not only does the equivalent
+  width of the entire {\ha} peak, vary in time, but the two \horn s also vary in relative size over time. The local
+  minimum between the \horn s, however, does not appear to vary greatly over time.} This would appear to be because a more
+symmetrically-distributed spectral line from the photosphere is overlaid with plage and chromospheric effects which are
+asymmetric or localised to regions. These may be compared with the H, K and Ca II lines discussed in
+\citet{rauscher06}. The main aim of this {\paperorthesis} is to study the variations in the line and \horn s via various
+methods to see if periodicity may be reliably recovered.
 
-\section{{\ha} Line measurements}
+\section{{\ha} line measurements}
 \protect\label{section:linemeas}
 
-In Fig. \ref{fig:harpsfirstha}, on the left panel, are shown two example spectra from {\harps} nearly 2 years apart,
-clearly showing the changes in the amplitude and shape of the {\ha} line. Fig. \ref{fig:harpsfirstha} also illustrates
-the regions used to investigate periodic variability.
+In Fig. \ref{fig:harps1} are shown two example spectra from {\harps} nearly 2 years apart, clearly showing the changes
+in the amplitude and shape of the {\ha} line. Fig. \ref{fig:harps1} also illustrates the regions used to
+investigate periodic variability.
 
 The spectra were first normalised by iteratively fitting a cubic polynomial to all the points in all the spectra, apart
 from the {\ha} region, then excluding points outside 2 standard deviations above or below the fitted polynomial to
-eliminate both emission and absorption lines. With the normalised spectra, the Equivalent Widths are calculated. Also
-calculated is what is herein called the ``Peak Ratio'', defined as the ratio of the mean values of the two \horn s. The
-ratio tabulated below is the mean value of the ``red'' \horn, i.e. that for the longer wavelength, divided by the mean
-value of the ``blue'' {\horn} (i.e. the ratio of the longer wavelength to the shorter wavelength \horn). For calculation
-of the Equivalent Width, values of the flux are interpolated up to the boundaries of the regions chosen, to minimise
-integer pixel noise effects. The number of pixels in the regions, as highlighted in Fig. \ref{fig:harpsfirstha} are
-either 35 or 36 for the {\ha} region and 11 or 12 for the red {\horn} and 14 or 15 for the blue {\horn} on {\uves}. The
-corresponding numbers on {\harps} are 98 or 99, 26 or 27 and 27 or 28 respectively. The number of pixels could vary by
-one due to differing wavelength corrections caused by the heliocentric component of the Radial Velocities. The
-interpolations were not necessary for the Peak Ratios as these rely on the mean values of the pixels in the range.
+\examrevision{eliminate other lines, both emission and absorption. The computations discussed in this {\paperorthesis}
+  are then calculated from these normalised spectra.}
 
-The {\ha} region for calculation of the Equivalent Width is set to encompass the {\ha} peak and runs from 6561.917{\AA}
-to 6563.839\AA) as delineated by the dark red vertical lines in the left panel of Fig. \ref{fig:harpsfirstha}.  The
-regions selected for the blue and red \horn s are shaded in blue and red and run from 6562.072{\AA} to 6562.613{\AA} and
-6563.000{\AA} to 6563.517{\AA} respectively. These regions were chosen to optimise variability in the line
-profiles. Note that the regions selected for calculation of the Peak Ratios are not quite the same width, the ``blue''
-{\horn} region having a width of 0.541{\AA} and the ``red'' {\horn} region a width of 0.517\AA. This is because in the
-observed data the ``red'' {\horn} tends to be higher but narrower than the ``blue'' \horn. Again, as the Peak Ratio is
-the ratio of the mean value in the two areas, this should not be of significance.
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.50]{Figures/harps1.png} \\
+\end{center}   
+\caption{\examrevision{This figure depicts the {\ha} region of example spectra of {\prox} taken from {\harps} on 27 May 2004 02:10:14
+  UTC (black) and 15 March 2006 09:16:35 (brown) after normalisation. The region delineated with the dark red solid
+  vertical lines shows the region used for calculation of the {\ha} equivalent width in this \paperorthesis. The regions
+  shaded in red and blue respectively show the regions used for calculation of the sizes of the two \horn s. The solid
+  vertical green lines delineate the region used for calculation of the {\ha} index in other papers.
+  At the top, is displayed the telluric line spectrum for an air mass of 1.4, to which 2.5 has been added for clarity of display.}}
+\protect\label{fig:harps1}
+\end{figure}
 
-In the left panel pf Fig. \ref{fig:harpsfirstha}, at the top, is displayed the telluric line spectrum for an air mass of
-1.4, to which 2.5 has been added for clarity of display. As demonstrated in \citet[Fig. 1]{reiners15}, the telluric
-effects are negligible in this region. (The Gaussian used to simulate {\ha} in that paper is considerably broader than
-that observed in \prox, so the telluric line at 6564.2{\AA} can impinge on the former but not \prox.) All the spectral
-lines identifiable from the Vienna Atomic Line Database (VALD) are TiO transitions, with the exception of a MgH line at
-6564.29\AA.
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.50]{Figures/harps2.png} \\
+\end{center}   
+\caption{\examrevision{This figure depicts the earlier of the two example spectra of {\prox} taken from {\harps} on 27
+    May 2004 02:10:14 UTC (black) shown in Fig. \ref{fig:harps1}, but selecting a larger region and without
+    normalisation. The solid vertical green lines and green shaded areas in the right panel show the regions for
+    calculation of the {\ha} index in other papers. The shaded dark green region in the right panel from 6572.468{\AA}
+    to 6573.288{\AA} show the prominent TiO I transition line referred to in Appendix \ref{chapter:tioline}.}}
+  \protect\label{fig:harps2}
+\end{figure}
+
+\examrevision{Fig. \ref{fig:harps1} illustrates the regions used to calculate various measurements discussed in this
+  \paperorthesis. To calculate equivalent widths of the {\ha} peak, points in the range delineated by the dark read
+  solid lines are considered, running from 6561.917{\AA} to 6563.839\AA, linearly interpolating points in each spectrum
+  up to the boundaries of the region to minimise integer pixel noise effects. The area of this region is then calculated
+  using trapezoidal integration and the value of the equivalent width is calculated as the width (in \AA) of the
+  rectangle of the same area whose height would be 2, i.e., 1 above the normalised continuum\footnote{It is accepted the
+    equivalent widths are normally negative for emission lines, but in this {\paperorthesis} this calculation is used to
+    return analogous positive values throughout.}.}
+
+\examrevision{Also calculated is what is herein called the ``Peak Ratio'', defined as the ratio of the mean values of
+  the two \horn s. The ratio tabulated below is the mean value of the flux at each point in ``red'' \horn,, divided by
+  the mean value of the flux at each value in ``blue'' {\horn}. The regions selected for the blue and red \horn s are
+  shaded in blue and red in Fig. \ref{fig:harps1} and run from 6562.072{\AA} to 6562.613{\AA} and 6563.000{\AA} to
+  6563.517{\AA} respectively. These do not have to be the same widths, the ``blue'' {\horn} region having a width of
+  0.541{\AA} and the ``red'' {\horn} region a width of 0.517\AA. This is because the peak ratio measurement utilises the
+  mean values of the selected points, which does not depend greatly on the actual number in the selected range. These
+  regions were chosen to optimise variability in the line profiles. In the observed data the ``red'' {\horn} tends to be
+  higher but narrower than the ``blue'' \horn.  For similar reasons, there is no need to interpolate points to the
+  boundaries of the region for the peak ratio measurement.}
+
+\examrevision{The number of pixels in the regions, as highlighted in Fig. \ref{fig:harps1} are either 35 or 36 for the
+  {\ha} region and 11 or 12 for the red {\horn} and 14 or 15 for the blue {\horn} on {\uves}. The corresponding numbers
+  on {\harps} are 98 or 99, 26 or 27 and 27 or 28 respectively. The number of pixels could vary by one due to differing
+  wavelength corrections caused by the heliocentric component of the radial velocities.}
+
+In Fig. \ref{fig:harps1}, at the top, is displayed the telluric line spectrum for an air mass of 1.4, to which 2.5 has
+been added for clarity of display. As demonstrated in \citet[Fig. 1]{reiners15}, the telluric effects are negligible in
+this region. (The Gaussian used to simulate {\ha} in that paper is considerably broader than that observed in \prox, so
+the telluric line at 6564.2{\AA} can impinge on the former but not \prox.) All the spectral lines identifiable from the
+Vienna Atomic Line Database (VALD) are TiO transitions, with the exception of a MgH line at 6564.29\AA.
 
 In \citet{suarezmascareno15}, the authors use an \textit{{\ha} index}, based in turn upon the work in
 \citet{gomesdasilva11}, computed by the formula:
@@ -78,41 +111,27 @@ $ H\alpha_{index} = \frac{H\alpha_{core}}{H\alpha_L + H\alpha_R} $
 
 \end{center}
 
-In this $ H\alpha_{core} $ is defined as the bandpass of width 1.6{\AA} centred on 6562.808{\AA} and $ H\alpha_L $ and
+In this $ H\alpha_{core} $ is defined \examrevision{as the flux in the bandpass} of width 1.6{\AA} centred on 6562.808{\AA} and $ H\alpha_L $ and
 $H \alpha_R $ are defined respectively as continuum bands of widths 10.75{\AA} and 8.75{\AA} centred on 6550.87{\AA} and
-6580.31\AA. That $ H\alpha_{core} $ region is delineated by the solid green vertical lines in both parts of
-Fig. \ref{fig:harpsfirstha} and the two continuum regions as the green shaded areas in the right-hand panel of the
-figure. An important difference between this and calculation of the Equivalent Widths and Peak Ratios is that the
+6580.31\AA. That $ H\alpha_{core} $ region is delineated by the solid green vertical lines in both Fig. \ref{fig:harps1}
+and Fig. \ref{fig:harps2} and the two continuum regions as the green shaded areas in Fig. \ref{fig:harps2}.
+An important difference between this and calculation of the equivalent widths and peak ratios is that the
 spectra do not have to be normalised for the {\ha} Index calculation as the calculation supplies its own normalisation.
 
-The region chosen for calculation of the {\ha} Equivalent Width in this {\paperorthesis} is slightly wider than that
-chosen for the {\ha} index in the \citet{suarezmascareno15}. This was chosen as it appeared on average to encompass the
-whole of the {\ha} peak more accurately and better record the variations. In practice there was negligible difference
-between the calculated results for either method using the two pairs of limits. Adjusting the continuum ranges used for
-calculation of the {\ha} Index to cover much wider ranges, including the entire area of that spectral order clear of the
-{\ha} peak, whilst yielding different values, the proportionate ranges were very similar and it made negligible
-difference (less than 0.1\%) to the periodicity calculations.
+The region chosen for calculation of the {\ha} equivalent width in this {\paperorthesis} is slightly wider than that
+chosen for the {\ha} index in the \citet{suarezmascareno15}. This was chosen as it appeared on-average to encompass the
+whole of the {\ha} peak more accurately and \examrevision{to} better record the variations. In practice, there was
+negligible difference between the calculated results for either method using the two pairs of limits. Adjusting the
+continuum ranges used for calculation of the {\ha} Index to cover much wider ranges, including the entire area of that
+spectral order clear of the {\ha} peak, whilst yielding different values, the proportionate ranges were very similar and
+it made negligible difference (less than 0.1\%) to the periodicity calculations.
 
-\begin{figure}[!htbp]
-\begin{center}
-\includegraphics[scale=0.25]{Figures/harpsfirstha4.png} \\
-\end{center}   
-\caption{In the left panel the {\ha} region of example spectra of {\prox} taken from {\harps} on 27 May 2004 02:10:14
-  UTC (black) and 15 March 2006 09:16:35 (brown) are depicted. In the right panel a larger region is selected, just for
-  the earlier spectrum in the left panel, however without normalisation. The region delineated with the dark red solid
-  vertical lines shows the region used for calculation of the {\ha} equivalent width in this \paperorthesis. The regions
-  shaded in red and blue respectively show the regions used for calculation of the sizes of the two \horn s. The solid
-  vertical green lines and green shaded areas in the right panel show the regions for calculation of the {\ha} index in
-  other papers. The shaded dark green region in the right panel from 6572.468{\AA} to 6573.288{\AA} show the prominent
-  TiO I transition line referred to in Appendix \ref{chapter:tioline}.
-}
- \protect\label{fig:harpsfirstha}
-\end{figure}
-
-In Table \ref{table:ewtabfirst} are listed the Equivalent Widths, {\ha} Index and Peak Ratios from the {\uves} and
-{\harps} data for {\prox}. Histograms of the Equivalent Widths are shown in Fig. \ref{fig:proxhists}. Note
-that all the Equivalent Widths from the {\uves} data are displayed, but the seven very highest from the {\harps} data are
-omitted, which have Equivalent Widths of over 6, which are listed in Table \ref{table:excessews}.
+In Table \ref{table:ewtabfirst} are listed the equivalent widths, {\ha} Index and peak ratios from the {\uves} and
+{\harps} data for {\prox}. Histograms of the equivalent widths are shown in Fig. \ref{fig:proxhists}. Note
+that all the equivalent widths from the {\uves} data are displayed, but the seven very highest from the {\harps} data are
+omitted, which have Equivalent Widths of over 6, which are listed in Table \ref{table:excessews}. \examrevision{These
+  were omitted from Fig. \ref{fig:proxhists} as their display would have caused Fig. \ref{fig:proxhists} to be too wide
+  for no particular benefit.}
 
 \begin{table}[!htbp]
 \centering
@@ -158,10 +177,10 @@ Spectra & From & To & No. & EW & {\ha} Ind & PR \\\hline
 Bearing in mind the study of kurtosis in {\ha} in \citet{flores16} for HD 45184, for this {\paperorthesis} other
 possible calculations of periodicity were derived from skewness and kurtosis of the {\ha} peak and from residual {\ha}
 lines. The residuals were created by division of each spectrum by mean of the 5 spectra with the lowest equivalent
-widths. In Table \ref{table:divcompar} are displayed the median residual Equivalent Widths and Peak Ratios for {\harps}
-as are displayed in Table \ref{table:ewtabfirst}. The same two spectra which are displayed in the left panel of
-Fig. \ref{fig:harpsfirstha} are re-displayed after this treatment in Fig. \ref{fig:harpsfirsthad5}. A histogram of the
-residual Equivalent Widths is displayed in Fig. \ref{fig:residhists}.
+widths. \examrevision{In Table \ref{table:divcompar} are recalculated the figures for the median residual equivalent widths and peak
+ratios for {\harps} which were previously displayed in Table \ref{table:ewtabfirst}}. The same two spectra which are
+displayed in Fig. \ref{fig:harps1} are re-displayed after this treatment in Fig. \ref{fig:harpsfirsthad5}. A histogram
+of the residual equivalent widths is displayed in Fig. \ref{fig:residhists}.
 
 \begin{table}[!htbp]
 \centering
@@ -189,10 +208,9 @@ From & To & No. & EW & PR \\\hline
 \begin{center}
 \includegraphics[scale=0.4]{Figures/harpsfirsthad5.png} \\
 \end{center}   
-\caption{This figure shows the residuals of the same two spectra as previously shown in the left panel of
- Fig. \ref{fig:harpsfirstha} after division by the mean of the first five spectra with minimum equivalent width
-timed at 16 March 2006 UTC 06:37:59, 14 March 2007 UTC 07:28:29, 5 April 2011 UTC 03:26:33, 8 April 2011 UTC 06:28:17
-and 22 April 2011 UTC 05:07:46.}
+\caption{This figure shows the residuals of the same two spectra as previously shown in Fig. \ref{fig:harps1} after
+  division by the mean of the first five spectra with minimum equivalent width timed at 16 March 2006 UTC 06:37:59, 14
+  March 2007 UTC 07:28:29, 5 April 2011 UTC 03:26:33, 8 April 2011 UTC 06:28:17 and 22 April 2011 UTC 05:07:46.}
 \protect\label{fig:harpsfirsthad5}
 \end{figure}
 
@@ -205,7 +223,7 @@ and 22 April 2011 UTC 05:07:46.}
 \end{figure}
 
 The spectra from {\harps} also contained a prominent absorption line in the same spectral order as the {\ha} line. This
-can be seen shaded in dark green in the right panel of Fig. \ref{fig:harpsfirstha}. Identifying this from VALD as
+can be seen shaded in dark green in Fig. \ref{fig:harps2}. Identifying this from VALD as
 primarily a TiO transition, it seemed worth looking briefly to see if the Equivalent Width variations and a version of
 the Peak Ratio calculation yielded any periodicity results, albeit as stemming from the photosphere it is not a similar
 measure to the chromosphere as with \ha. However, no clear period could be identified, in particular the 82.6-day period
@@ -219,69 +237,84 @@ spectral index as discussed in \citet{hall99} and \citet{hall00}, however initia
 the {\ha} line proved of little value as the {\ha} peak is so much greater and the results were indistinguishable from
 the {\ha} results alone.
 
-\section{Longer periods}
-\protect\label{section:longperiods}
-
-Again as with the {\asas} and {\hst} data, after checking for other periodic signals of up to the span of the data, it
-was not possible to discern any strong period and in particular no sign of the 442-day period reported in
-\citet{cincunegui07}.
-
-\section{Flares on {\uves} data and X-ray values}
+\section{Flares in {\uves} data and X-ray values}
 \protect\label{section:uvesflares}
 
 In \citet[fig. 1 to fig. 3]{fuhrmeister11} the measured flux for various wavelengths for each of the three observation
-nights are presented. In Fig. \ref{fig:uvrxp1} are displayed the {\ha} equivalent width and the X-ray counts for these
-nights together with the peak ratios. As the X-ray flux is so much greater on the third day, the third panel is
-potentially misleading, so these are re-displayed all to the same scale below in the bottom panel.
+nights are presented. In Fig. \ref{fig:uves1}, Fig. \ref{fig:uves2} and Fig. \ref{fig:uves3} are displayed the {\ha}
+equivalent width and the X-ray counts for these nights together with the peak ratios. As the X-ray flux is so much
+greater on the third day, the third panel is potentially misleading, so these are re-displayed all to the same scale
+below in the bottom panel.
 
 \begin{figure}[!htbp]
-\begin{center}
-\includegraphics[scale=0.18]{Figures/uvrx-onepic.png} \\
-\end{center}   
-\caption{The horizontal panels from left to right are for each of the three days of the {\uves} data, 10, 12 and 14
-  March 2009.  The Equivalent Width (top panel), Peak Ratio (second panel) and X-ray data (third and bottom panels) of the
-  {\ha} flux as shown in \citet[Fig. 1 to Fig.3]{fuhrmeister11}. The top two panels are on the same scale
-  throughout. The X-rays displayed are-displayed to the same scale on the fourth panel of each image.}
- \protect\label{fig:uvrxp1}
+\centering
+\includegraphics[scale=0.30]{Figures/uves1.png} \\
+\caption{This plot is derived from the data from {\uves} on 10 March 2009.
+  The Equivalent Width (top panel), Peak Ratio (second panel) and X-ray data (third and bottom panels) of the
+  {\ha} flux as shown in \citet[Fig. 1]{fuhrmeister11}. The top two panels are on the same scale
+  throughout. The X-rays displayed are-displayed to the same scale on the fourth panel as for Fig. \ref{fig:uves2} and
+  Fig. \ref{fig:uves3}}
+ \protect\label{fig:uves1}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.30]{Figures/uves2.png} \\
+\caption{This plot is derived from the data from {\uves} on 12 March 2009.
+  The Equivalent Width (top panel), Peak Ratio (second panel) and X-ray data (third and bottom panels) of the
+  {\ha} flux as shown in \citet[Fig. 1]{fuhrmeister11}. The top two panels are on the same scale
+  throughout. The X-rays displayed are-displayed to the same scale on the fourth panel as for Fig. \ref{fig:uves1} and
+  Fig. \ref{fig:uves3}}
+ \protect\label{fig:uves2}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+\includegraphics[scale=0.30]{Figures/uves3.png} \\
+\caption{This plot is derived from the data from {\uves} on 14 March 2009.
+  The Equivalent Width (top panel), Peak Ratio (second panel) and X-ray data (third and bottom panels) of the
+  {\ha} flux as shown in \citet[Fig. 1]{fuhrmeister11}. The top two panels are on the same scale
+  throughout. The X-rays displayed are-displayed to the same scale on the fourth panel as for Fig. \ref{fig:uves1} and
+  Fig. \ref{fig:uves2}}
+ \protect\label{fig:uves3}
 \end{figure}
 
-In Fig. \ref{fig:uvrxp1} it is apparent that the Peak Ratios for the first day (10 March 2009) seemed to have periodic
-nature for a portion of the plot, as did a much smaller portion of the plot for the third day (14 March 2009). The
-portion on the first day had a strong period of approximately half an hour and the third day a much weaker period of
-about 20 minutes.  However there were no other periods found in the other day of a similar strength or value, either for
-Peak Ratios or Equivalent Widths. However it was noted that in \citet[Section 4.1]{barnes14} there is speculation of
-instrumentation error on the first and third days applied to this data. By cross-correlation using the 6565-6585{\AA}
-region, it is possible to shift the spectra to compensate for apparent radial velocity variations. This enables the
-periodic signal to be reduced substantially in the first day's plot and almost completely in the third day's plot. As
-these periods were not directly relevant to this project, focusing on the rotation period of {\prox} which was believed
-to be much greater, it was decided not to investigate this particular possible behaviour further.
+In Fig. \ref{fig:uves1} it is apparent that the Peak Ratios for the first day (10 March 2009) seemed to have periodic
+nature for a portion of the plot, as did a much smaller portion of the plot for the third day (14 March 2009), shown in
+Fig. \ref{fig:uves3}. The portion on the first day had a strong period of approximately half an hour and the third day a
+much weaker period of about 20 minutes.  However there were no other periods found in the other day of a similar
+strength or value, either for Peak Ratios or Equivalent Widths. However it was noted that in \citet[Section
+4.1]{barnes14} there is speculation of instrumentation error on the first and third days applied to this data. By
+cross-correlation using the 6565-6585{\AA} region, it is possible to shift the spectra to compensate for apparent radial
+velocity variations. This enables the periodic signal to be reduced substantially in the first day's plot and almost
+completely in the third day's plot. As these periods were not directly relevant to this project, focusing on the
+rotation period of {\prox} which was believed to be much greater, it was decided not to investigate this particular
+possible behaviour further.
 
 The {\uves} data showed a large flare during the third of the observation periods starting at approximately 06:15 on
 14th March 2009. Both the equivalent width and X-ray counts rapidly reached a peak, with the equivalent width peaking
 approximately a minute before the X-ray count peaked. The equivalent width reached a similar level at the end of the
 first observation period to that which it reached during the flare in the third, albeit much more slowly, but with only
 very slight evidence of a corresponding increase in the X-ray count. However there was an increase in the {\uves}
-optical ''blue'' flux on the first day, as shown in \citet[fig. 1]{fuhrmeister11} corresponding to the higher Equivalent
-Widths suggestive of an alternative temperature.
+optical ''blue'' flux on the first day, as shown in \citet[fig. 1]{fuhrmeister11} corresponding to the higher equivalent
+widths, \examrevision{suggestive of some other process than that in the third day which did show the higher X-ray level}.
 
 \section{Possible flares on {\harps}}
 \protect\label{section:harpsflares}
 
-There is no corresponding X-ray data available for the {\harps} data, but as the {\uves} data suggests that {\ha}
-Equivalent Width increases with flares, the higher values of Equivalent Width in the {\harps} data as were selected as
-indicative of flares. After some experimentation with investigation of periodicity, the effects of possible flares seemed to be
-minimised if the proportion of data with the lower 90\% of Equivalent Widths were selected. In both {\uves} and {\harps}
-this was approximately one standard deviation from the median, 2.0 in the case of {\uves} and 4.2 in the case of
-{\harps}.
+There are no corresponding X-ray data available for the {\harps} data, but as the {\uves} data suggests that {\ha}
+Equivalent Width increases with flares, the higher values of equivalent width in the {\harps} data as were selected as
+indicative of flares. After some experimentation with investigation of periodicity, the effects of possible flares
+seemed to be minimised if the proportion of data with the lower 90\% of equivalent widths were selected. In both {\uves}
+and {\harps} this was approximately one standard deviation from the median, 2.0{\AA} in the case of {\uves} and 4.2{\AA}
+in the case of {\harps}.
 
-The {\harps} data contains seven spectra with particularly large values of Equivalent Width of over 6.000, listed in
+The {\harps} data contains seven spectra with particularly large values of Equivalent Width of over 6.0{\AA}, listed in
 Table \ref{table:excessews}.  Following \citet[fig. 8]{fuhrmeister08} in relation to flares on CN Leonis, the He-6678
 line Equivalent Widths were also calculated and are also included in that table. It was noticeable that only a few
-spectra had any significant He-6678 activity, only seven spectra had Equivalent Widths greater than one standard
-deviation of 0.059 above the median of 0.054, which are listed in the table. If these are clipped from the He-6678
-results, the standard deviation of the He-6678 line Equivalent Widths sinks to 0.10. In Fig. \ref{fig:dualews} the
-Equivalent Widths for {\ha} and He-6678 are plotted against each other for each of the three years 2013, 2014 and
-2016, showing the correlation only when the {\ha} line is maximal.
+spectra had any significant He-6678 \examrevision{emission}, only seven spectra had Equivalent Widths greater than one
+standard deviation of 0.059 above the median of 0.054, which are listed in the table. If these are clipped from the
+He-6678 results, the standard deviation of the He-6678 line Equivalent Widths sinks to 0.10. In Fig. \ref{fig:dualews1},
+Fig. \ref{fig:dualews2} and Fig. \ref{fig:dualews3} the Equivalent Widths for {\ha} and He-6678 are plotted against each
+other for each of the three years 2013, 2014 and 2016, showing the correlation only when the {\ha} line is maximal.
 
 \begin{table}[!htbp]
 \centering
@@ -299,19 +332,41 @@ Epoch & \multicolumn{1}{|c|}{EW} & He-6678 \\\hline
 14/05/2013 UTC 06:07:49 & $\dagger$5.425 & 0.115 \\
 05/05/2013 UTC 03:53:13 & $\dagger$5.786 & 0.114 \\\hline
 \end{tabular}}
-\caption{The seven spectra with Equivalent Widths over 6.000, in descending order, also showing the values of the
-  Equivalent Width and that of the He-6678 absorption line. Five spectra have the one of the seven strongest {\ha} lines
-  and also one of the seven strongest {\ha} lines. The two He-6678 Equivalent Widths marked with * are where the spectra
-  have one of the seven strongest {\ha} lines but are not in the seven strongest He-6678 lines and vice versa for the
-  two lines at the bottom of the table marked with $\dagger$.}
+\caption{\examrevision{This table lists, in descending order of {\ha} equivalent width, the seven spectra mentioned in
+    Section \ref{section:linemeas} and Fig. \ref{fig:proxhists} as having equivalent widths over 6.0 (and not displayed
+    in that figure). As well as showing the values of the {\ha} equivalent width, that of the He-6678 line is also
+    displayed. This table also shows the seven spectra having the He-6678 line with the largest equivalent width, five
+    of which, not marked with * or $\dagger$, are common to the set of seven with largest \ha. The two remaining out of the seven
+    with exceptional {\ha} but not an exceptional He line are marked with * and vice versa for the ones marked with $\dagger$.}}
 \protect\label{table:excessews}
 \end{table}
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.18]{Figures/dualcomb.png} \\
+\includegraphics[scale=0.50]{Figures/dualcomb1.png} \\
 \end{center}   
-\caption{The plots show the {\ha} Equivalent Width in black and the He-6678 Equivalent Widths in blue for the {\harps}
-  observations in the years 2013, 2014 and 2015. Vertical scales for {\ha} and for He-6678 are the same in each plot.}
- \protect\label{fig:dualews}
+\caption{This plots show the {\ha} equivalent width in black and the He-6678 equivalent widths in blue for the {\harps}
+  observations during 2013. Vertical scales for {\ha} and for He-6678 are the same as in Fig. \ref{fig:dualews2} and
+  Fig. \ref{fig:dualews3}.}
+ \protect\label{fig:dualews1}
+\end{figure}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.50]{Figures/dualcomb2.png} \\
+\end{center}   
+\caption{This plots show the {\ha} equivalent width in black and the He-6678 equivalent widths in blue for the {\harps}
+  observations during 2014. Vertical scales for {\ha} and for He-6678 are the same as in Fig. \ref{fig:dualews1} and
+  Fig. \ref{fig:dualews3}.}
+ \protect\label{fig:dualews2}
+\end{figure}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.50]{Figures/dualcomb3.png} \\
+\end{center}   
+\caption{This plots show the {\ha} equivalent width in black and the He-6678 equivalent widths in blue for the {\harps}
+  observations during 2015. Vertical scales for {\ha} and for He-6678 are the same as in Fig. \ref{fig:dualews1} and
+  Fig. \ref{fig:dualews2}.}
+ \protect\label{fig:dualews3}
 \end{figure}

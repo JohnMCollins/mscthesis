@@ -3,9 +3,9 @@
 \lhead{Appendix \ref{chapter:lsroutines}. \emph{Lomb-Scargle Routines}}
 
 A selection of Lomb-Scargle routines were employed to process the data in this {\paperorthesis} as no single routine
-provided all the facilities needed. As many of the processes undertaken were repetitive in order to produce the tables
-for example in Appendix \ref{chapter:pgramdetail}, routines which could operate in ``batch'' mode were required. This
-ruled out using Systemic\footnote{Obtainable from http://www.stefanom.org}, for example, which has a GUI interface.
+provided all the facilities needed. As many of the processes undertaken were repetitive, routines which could operate in
+``batch'' mode were required. This ruled out using Systemic\footnote{Obtainable from http://www.stefanom.org}, for
+example, which has a GUI interface.
 
 \section{Numerical Recipes}
 
@@ -82,3 +82,11 @@ A final argument specifies the input file.
 Alternative versions of the programs, \textbf{Lsconv}, \textbf{Alsconv} and \textbf{Glsconv} are provided for quickly
 processing Equivalent Width result files described in \ref{section:ewfmt}, taking the argument \texttt{--type} with value \texttt{EW} or \texttt{PR} to
 select the appropriate column\footnote{Together with \texttt{PS} to select the now unused column.}.
+
+\section{Window functions}
+
+It was not possible to use any of these routines to calculate window functions by supplying a constant value of
+intensity, all either generated overflows or reported zero values.
+
+A solution to this was achieved by supplying random numbers as the intensity and calculating the periodograms, averaging
+results over several hundred iterations.
