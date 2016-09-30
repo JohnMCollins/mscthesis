@@ -26,7 +26,7 @@ the five strongest peaks in the analyses of the periodograms.
 
 In Fig. \ref{fig:harpspgrams1} is shown how the different routines give different results with identical data; the upper
 panel showing the results from the {\astroml} routine and the lower panel showing the results from {\gatspy}. In
-Fig. \ref{fig:harpspgrams2} is shown a result from Peak Ratio calculation giving a value of 82.2 days returned by
+Fig. \ref{fig:harpspgrams2} is shown a result from peak ratio calculation giving a value of 82.2 days returned by
 \gatspy.
 
 \begin{figure}[!htbp]
@@ -50,10 +50,10 @@ Fig. \ref{fig:harpspgrams2} is shown a result from Peak Ratio calculation giving
 \end{figure}
 
 Some efforts were made to remove data contaminated from flares, either by clipping spectra with various upper bounds of
-Equivalent Width, by binning data or both. Following the lead from {\uves} in Section \ref{section:uvesflares}, spectra
+equivalent width, by binning data or both. Following the lead from {\uves} in Section \ref{section:uvesflares}, spectra
 were clipped where the equivalent width exceeded one standard deviation from the median. This was 3.8{\AA} for the
 Original Set or 4.2{\AA} for the Full Set of data. However the latter, which included some spectra with very large
-equivalent widths taken in 2016, did not yield any particular benefit, so with the full set of data, clipping to a
+equivalent widths taken in 2016, did not yield any particular benefit, so with the Full Set of data, clipping to a
 maximum equivalent width of 3.8{\AA} in line with the Original Set was tried. \examrevision{Binning to various fractions
   of a day up to one day was attempted.  Nothing was observed to improve the performance of any of the measurements in
   any consistent way, with the possible exception of peak ratios, which appeared to improve very slightly if binned to
@@ -65,7 +65,7 @@ maximum equivalent width of 3.8{\AA} in line with the Original Set was tried. \e
   period reported in \citet[Table 3]{suarezmascareno15}. This completely disappeared if any clipping or binning was done
   or the Full Set of data was examined. The window function of both these sets of observation times are shown in
   Fig. \ref{fig:harpswfos} and Fig. \ref{fig:harpswffs}. It can be seen that 116.5 days can be found as a peak in the
-  window function for the Original Set, suggesting this as the cause of the period in periodograms derived from this
+  window function for the Original Set, suggesting this as the cause of this period in periodograms derived from this
   data.}
 
 \begin{figure}[!htbp]
