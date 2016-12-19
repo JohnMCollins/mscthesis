@@ -24,6 +24,7 @@ However in the case of the photometric results in Chapter \ref{chapter:photometr
 routine, are the ones of interest and a good estimate of the FAP is returned.
 
 \section{Scipy, AstroML, Gatspy}
+\protect\label{section:pythonls}
 
 Also used were the Python Lomb-Scargle routines provided by {\scipy} library \citep{jones01}, the {\astroml} library,
 \citep{vanderplas12} and the {\gatspy} library, \citep{vanderplas15} and incorporated into Python software.
@@ -85,8 +86,10 @@ select the appropriate column\footnote{Together with \texttt{PS} to select the n
 
 \section{Window functions}
 
-\examrevision{It was not possible to use any of these routines to calculate window functions by supplying a constant value of
-intensity, all either generated overflows or reported zero values.}
-
-\examrevisiona{The Window functions were all produced using \textit{Period04}. It was not practical to use this
-  throughout, particularly with the modelling as a ``batch mode'' as opposed to a ``GUI'' style of operation was required.}
+\examrevisiona{The window functions displayed in Figs. \ref{fig:asaswf1}, \ref{fig:hstwf}, \ref{fig:harpswfos} and
+  \ref{fig:harpswffs} were derived using the \textit{Numerical Recipes} routine. It was not possible to use any of the
+  Python routines described in Section \ref{section:pythonls} to calculate the window functions by supplying a
+  constant value of intensity, all either generated overflows or reported zero values.  The calculated window functions
+  were confirmed by using   \textit{Period04}\footnote{\examrevisiona{https://www.univie.ac.at/tops/Period04/}}. \textit{Period04} was not used
+  throughout as it is a GUI-based program and many of the calculations in this {\paperorthesis} required a repetitive
+  ``batch mode'' mode of operation.}
