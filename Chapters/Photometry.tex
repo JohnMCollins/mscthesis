@@ -28,7 +28,7 @@ analysing the {\ha} lines, some photometric observations for {\prox} are conside
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.50]{Figures/asasnobin.png} \\
+\includegraphics[scale=0.40]{Figures/asasnobin.png} \\
 \end{center}
 \caption{\examrevision{This is a periodogram calculated from the {\asas} database for {\prox} using 970 points of ``class A'' V-band
   data from the second aperture. In this periodogram no binning has been applied. The topmost 3 peaks at 82.6 days,
@@ -38,19 +38,39 @@ analysing the {\ha} lines, some photometric observations for {\prox} are conside
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.50]{Figures/asasnobinwf-orig.png} \\
+\includegraphics[scale=0.40]{Figures/asaswf3.png} \\
 \end{center}
-\caption{\examrevision{This figure displays the window function of the observation times of the periodogram displayed in
-    Fig. \ref{fig:asaspgram1}. Note that that Y axis is on a considerably enlarged scale ($\times 67$) to that in
-    Fig. \ref{fig:asaspgram1}.}}
+\caption{\examrevisionb{This figure displays the window function of the observation times of the {\asas} data from
+    {\prox} as displayed in Fig. \ref{fig:asaspgram1}, calculated using \textit{Period04}. There is a strong peak at 0.0027
+    c/day, which is a period of approximately 370 days.}}
 \protect\label{fig:asaswf1}
+\end{figure}
+
+\begin{figure}[!htbp]
+\begin{center}
+\includegraphics[scale=0.40]{Figures/asaswf2.png} \\
+\end{center}
+\caption{\examrevisionb{This figure redisplays together in the upper panel the main peaks in the periodogram of the {\asas} data from
+    {\prox} as displayed in Fig. \ref{fig:asaspgram1}, calculated using Period04 and on a cycle/day X axis, together
+    with the window function on the same X axis scale in the lower panel.}}
+\protect\label{fig:asaswf2}
 \end{figure}
 
 \examrevision{The 163.3-day period is close to double the 82.6-day period reported in the papers previously discussed
   and given here as the strongest peak and has a poorer FAP. It was therefore considered that the 82.6-day period was
-  not likely to be a sub-harmonic of this. The window function of the observation times was also computed and is
-  displayed in Fig. \ref{fig:asaswf1}. Construction of a phase-folded light curve from the 18-minute binned data yields
-  Fig. \ref{fig:asaspflc}.}
+  not likely to be a sub-harmonic of this.}
+
+\examrevisionb{In Fig. \ref{fig:asaswf1} is displayed the window function of the observation times of this data,
+  calculated using \textit{Period04}\footnote{\examrevisionb{Obtainable from https://www.univie.ac.at/tops/Period04/}},
+  showing a clear peak of 0.0027 c/day, equivalent to a period of 370 days\footnote{\examrevisionb{The periods given by
+      \textit{Period04} are up to 1.3\% different from the Lomb-Scargle based routines.}}. It was also found useful to
+  re-plot the periodogram and the window function on the same scale, as shown in Fig. \ref{fig:asaswf2}, calculated
+  using \textit{Period04}, as the window function shows the same clear peak of 0.0027. Subtracting this frequency from
+  the strongest period of 0.0121 c/day in the periodogram (corresponding to the 82.6-day period) gives 0.0094 c/day,
+  which is the next strongest peak in the periodogram corresponding to the 106.3-day period in
+  Fig. \ref{fig:asaspgram1}. Taking into account the methods described in \citet{dawson10}, it is possible to express
+  confidence that 82.6 days is a genuine period and the 106.3 day period an alias in consequence of the strong 0.0027
+  c/day peak in the window function.}
 
 As some of the observations were duplicated or apparently overlapping, these were initially binned to 1 day, in line
 with several of the {\harps} results described in Section \ref{section:harpsper}. This reduced the number of points to
@@ -94,6 +114,8 @@ to 18 minutes was found to be a much more modest reduction, to 924 observations 
   appeared to be easier to follow in this instance, as opposed to Fig. \ref{fig:hstpf}.)}}
 \protect\label{fig:asaspflc}
 \end{figure}
+
+\examrevisionb{Construction of a phase-folded light curve from the 18-minute binned data yields Fig. \ref{fig:asaspflc}.}
 
 Although the recommended aperture by {\asas} for {\prox} is the second aperture, it appeared valuable to compare the
 three highest peaks from each of the apertures finding that nearly all the data gave a first peak of 82.6 days, a second
@@ -169,7 +191,7 @@ Fig. \ref{fig:hstb4min}.
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.50]{Figures/hstb4min.png} \\
+\includegraphics[scale=0.40]{Figures/hstb4min.png} \\
 \end{center}
 \caption{This is a periodogram \examrevision{derived} from the {\hst} data discussed in \citet{benedict98} between July 1995 and
   January 1998 plus some additional points up to January 2001 examining periods showing the three highest peaks and with
@@ -179,20 +201,20 @@ Fig. \ref{fig:hstb4min}.
 
 \begin{figure}[!htbp]
 \begin{center}
-\includegraphics[scale=0.50]{Figures/hstwinfunc-orig.png} \\
+\includegraphics[scale=0.40]{Figures/hstwf2.png} \\
 \end{center}
-\caption{\examrevision{Window function for the {\hst} observation times highlighting three peaks close to the 77.8 day
-    and 82.6 day peaks observed in Fig. \ref{fig:hstb4min}. Note the Y scale in this figure is considerably enlarged by
-    comparison with that figure.}}
+\caption{\examrevisionb{In the upper panel is displayed a periodogram derived from the same data as Fig. \ref{fig:hstb4min}
+    calculated with \textit{Period04} and with an X-axis of cycles/day. In the lower panel is displayed the
+    corresponding window function.}}
 \protect\label{fig:hstwf}
 \end{figure}
 
 Again, as with the {\asas} data, all the Lomb-Scargle routines listed in Appendix \ref{chapter:lsroutines}
 \examrevision{gave almost identical periodograms} (other than the scaling of the power). \examrevision{A phase-folded
   light curve of this is displayed in Fig. \ref{fig:hstpf}. \examrevisiona{Calculation} of the window function of these
-  observation times gave the result shown in Fig. \ref{fig:hstwf}.}. \examrevisiona{It would appear from the window
-  function that the peak of around 78 days in Fig. \ref{fig:hstb4min} could well be due to the peak at around 76 days
-  and the close-by peak at 82 days observed in the window function.}
+  observation times gave the result shown in Fig. \ref{fig:hstwf}.}. \examrevisionb{The window function peak at 0.0007
+  cycles/day would appear to account for the peak of around 78 days in Fig. \ref{fig:hstb4min} which corresponds to
+  0.0129 cycles/day in the in upper panel of Fig. \ref{fig:hstwf}.}
 
 \begin{figure}[!htbp]
 \begin{center}
@@ -224,6 +246,7 @@ $ \frac{1}{\frac{1}{82.6} - \frac{1}{365.25}} = 106.7 $
 
 \end{center}
 
-There remains the strong 77.8-day period seen in the {\hst} data but not in the {\asas} data to be accounted for,
-\examrevisiona{but this would appear to correspond to a close-by peak in the window function illustrated in Fig. \ref{fig:hstwf}, so}
-\examrevision{this is quite possibly an alias thrown up by the observation times.}
+\examrevisionb{This corresponds to the findings from the study of the window function in Fig. \ref{fig:asaswf2}. Similarly the strong
+77.8-day period seen in the {\hst} data but not in the {\asas} data appears to be related to the 0.0007 cycles/day peak
+in the window function illustrated in Fig. \ref{fig:hstwf}, so again}
+\examrevisionb{it is concluded to be an alias thrown up by the observation times.}

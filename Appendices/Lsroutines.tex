@@ -86,10 +86,19 @@ select the appropriate column\footnote{Together with \texttt{PS} to select the n
 
 \section{Window functions}
 
-\examrevisiona{The window functions displayed in Figs. \ref{fig:asaswf1}, \ref{fig:hstwf}, \ref{fig:harpswfos} and
-  \ref{fig:harpswffs} were derived using the \textit{Numerical Recipes} routine. It was not possible to use any of the
-  Python routines described in Section \ref{section:pythonls} to calculate the window functions by supplying a
-  constant value of intensity, all either generated overflows or reported zero values.  The calculated window functions
-  were confirmed by using   \textit{Period04}\footnote{\examrevisiona{https://www.univie.ac.at/tops/Period04/}}. \textit{Period04} was not used
-  throughout as it is a GUI-based program and many of the calculations in this {\paperorthesis} required a repetitive
-  ``batch mode'' mode of operation.}
+\examrevisionb{It was not possible to derive window functions directly from any of the Lomb-Scargle routines used,
+  either the Python routines or \textit{Numerical Recipes}. Putting a constant value as the intensity alongside the
+  observation times failed, either zero results were reported or overflows generated.}
+
+\examrevisionb{Some window function results were obtained from a third-party modification to the \textit{Numerical
+    Recipes} routine. It also proved possible to obtain window functions from the Python routines by supplying ``white
+  noise'' (a uniform, a Gaussian and a combination function were tried with similar results) as the intensity alongside
+  the observation times, repeating the calculation a number of times and averaging the results. The results obtained
+  were all consistent with each other and with those for \textit{Numerical Recipes} routine.}
+
+\examrevisionb{The window functions displayed in Figs. \ref{fig:asaswf1}, \ref{fig:asaswf2}, \ref{fig:hstwf},
+  \ref{fig:harpswfos} and \ref{fig:harpswffs} were calculated by using \textit{Period04} to avoid doubt about the
+  validity of these, although they appeared to be comparable in the range of periods in question, at least for the
+  photometric data. \textit{Period04} did give results for periods up to 1.3\% different from the Lomb-Scargle routines
+  for {\asas} and {\hst} and gave completely different results for the {\harps} data, as illustrated in
+  Fig. \ref{fig:harpswfos} and Fig. \ref{fig:harpswffs}, hence this was not used elsewhere in this \paperorthesis.}
