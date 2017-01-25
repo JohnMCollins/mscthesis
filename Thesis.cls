@@ -62,14 +62,16 @@
 \newcommand*\actaa{Acta Astron.}
 \newcommand*\solphys{Sol.~Phys.}
 
-\newcommand\examrevision[1]{\textbf{#1}}
-%\newcommand\examrevision[1]{#1}
+%\newcommand\examrevision[1]{\textbf{#1}}
+\newcommand\examrevision[1]{#1}
 \definecolor{darkgreen}{rgb}{0.00, 0.50, 0.00}
 \definecolor{darkbrown}{rgb}{0.40, 0.40, 0.00}
-\newcommand\examrevisiona[1]{\textcolor{darkgreen}{#1}}
-\newcommand\examrevisionb[1]{\textcolor{darkbrown}{#1}}
-\newcommand\forcomment[1]{\textcolor{red}{#1}}
-%\newcommand\forcomment[1]{#1}
+%\newcommand\examrevisiona[1]{\textcolor{darkgreen}{#1}}
+\newcommand\examrevisiona[1]{#1}
+%\newcommand\examrevisionb[1]{\textcolor{darkbrown}{#1}}
+\newcommand\examrevisionb[1]{#1}
+%\newcommand\forcomment[1]{\textcolor{red}{#1}}
+\newcommand\forcomment[1]{#1}
 
 \newcommand\Declaration[1]{
 \btypeout{Declaration}
